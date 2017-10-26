@@ -1,0 +1,38 @@
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+    float: left;
+}
+
+.Logo-container {
+    position: relative;
+}
+
+.Logo-text {
+    font-size: 40px;
+    float: left;
+    vertical-align: bottom;
+    padding-top: 20px;
+}
+
+.App-header-container {
+    background-color: #222;
+    height: 75px;
+    padding: 1vh;
+    color: white;
+}
+
+.Login-Link {
+    text-align: right;
+    padding-top: 35px;
+    padding-right: 20px;
+    color: white;
+    display: inline;
+    float: right;
+    font-size: 25px;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

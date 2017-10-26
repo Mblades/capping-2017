@@ -1,0 +1,38 @@
+.Personal-Profile-Window-Container {
+    width: 25%;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    float: left;
+    padding-top: 10px;
+    background-color: #007EFF;
+    min-height: 86vh;
+}
+
+.HR-Options-Button {
+    position: absolute;
+    height: 20px;
+    width: 75%;
+    left: 10%;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #007EFF;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.Profile-Edit-Button {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    height: 20px;
+    width: 75%;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #007EFF;
+    cursor: pointer;
+}

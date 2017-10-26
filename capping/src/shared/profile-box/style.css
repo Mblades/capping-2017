@@ -1,0 +1,38 @@
+.Profile-Box-Container {
+    height: 80px;
+    width: 100%;
+    min-width: 275px;
+    padding: 5px;
+    display: inline-block;
+    background-color: #F4F5F7;
+    border-radius: 20px;
+    border: 1px solid #007EFF;
+    cursor: pointer;
+}
+
+.Profile-text {
+    font-size: 40px;
+    vertical-align: bottom;
+    padding: 5px;
+    width: 100%;
+}
+
+.Profile-picture {
+    display: inline;
+    width: 70px;
+    border-radius: 15px;
+    float: left;
+}
+
+.Profile-summary-content {
+    display: inline;
+    float: left;
+    position: relative;
+    padding-left: 16px;
+}
+
+.Profile-summary-line {
+    font-size: 14px;
+    text-align: left;
+    display: block;
+}
