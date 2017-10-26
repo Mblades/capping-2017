@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2b6b67fd-272a-4224-81f5-9ac515bc3307" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/capping/.gitignore" afterPath="$PROJECT_DIR$/capping/.gitignore" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-container/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/components/Home/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+              <folding>
+                <element signature="e#31#72#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <folding>
+                <element signature="e#16#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/capping/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/shared/search-container/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#126#147#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#17#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/shared/profile-box/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/server/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-summary/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/capping/src/components/App/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/components/NotFound/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/index.js" />
+        <option value="$PROJECT_DIR$/capping/package.json" />
+        <option value="$PROJECT_DIR$/capping/Dockerfile" />
+        <option value="$PROJECT_DIR$/capping/server/app.js" />
+        <option value="$PROJECT_DIR$/capping/src/shared/header/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/components/Home/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/shared/content-box/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/shared/personal-profile-container/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/shared/personal-profile-summary/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/shared/personal-profile-container/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/database/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/components/About/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/components/NotFound/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/shared/header/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/shared/personal-profile-summary/index.js" />
+        <option value="$PROJECT_DIR$/capping/server/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/shared/profile-box/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/shared/profile-box/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/shared/search-container/style.css" />
+        <option value="$PROJECT_DIR$/capping/src/shared/search-container/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/components/Home/index.js" />
+        <option value="$PROJECT_DIR$/capping/src/routes.js" />
+        <option value="$PROJECT_DIR$/capping/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/capping/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Capping-Corporate-Directory" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Blades\capping\capping\src\shared\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Blades\capping\capping\src\components\App" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b6b67fd-272a-4224-81f5-9ac515bc3307" name="Default" comment="" />
+      <created>1508869586121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508869586121</updated>
+      <workItem from="1508869587246" duration="31868000" />
+      <workItem from="1509059279019" duration="52000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="31920000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3035431" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.50608146" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3495475" sideWeight="0.49391857" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.49814913" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.50608146" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3499268" sideWeight="0.49391857" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30391505" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.49814913" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-container/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/components/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding>
+            <element signature="e#16#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/search-container/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#126#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#17#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/profile-box/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-summary/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/components/App/App.js" />
+    <entry file="file://$PROJECT_DIR$/capping/src/components/About/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/components/NotFound/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/server/app.js" />
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/header/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/components/Home/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-container/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-summary/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/database/index.js" />
+    <entry file="file://$PROJECT_DIR$/capping/src/components/About/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/components/NotFound/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-summary/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/personal-profile-container/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/header/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/profile-box/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/profile-box/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/search-container/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/components/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/shared/search-container/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#126#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#17#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding>
+            <element signature="e#16#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/capping/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
