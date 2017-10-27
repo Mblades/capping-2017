@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
-import './style.css';
-import PersonalProfileSummary from "../personal-profile-summary/index";
+import './personal-profile-container.css';
+import PersonalProfileSummary from "../personal-profile-summary/personal-profile-summary";
 
 
 class PersonalProfileContainer extends Component {

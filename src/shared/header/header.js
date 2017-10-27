@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
-import './style.css';
+import './header.css';
 
  class CompanyHeader extends Component {
     render() {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Dropdown from 'react-dropdown'
 //import {Field, reduxForm} from 'redux-form'
-import './style.css';
+import './search-container.css';
 import classnames from 'classnames';
-import ProfileBox from "../profile-box/index";
+import ProfileBox from "../profile-box/profile-box";
 
 // import searchBtn from '../Images/searchBtn.jpg';
 
@@ -32,10 +32,7 @@ class SearchContainer extends Component {
             return (
                 <div className="Profile-Box-Spacing">
                     <ProfileBox
-                        name={value.name}
-                        phone={value.phonenumber}
-                        position={value.jobtitle}
-                        location={value.location}
+                        employee={value}
                     />
                 </div>
             )

@@ -1,4 +1,5 @@
 // server/index.js
+/* This is where all of the APIs will be housed */
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -7,7 +8,7 @@ const pg = require('pg');
 const PORT = 3000;
 
 const { Pool, Client } = require('pg');
-
+//This is the connection information for the database
 const pool = new Pool({
     user: 'postgres',
     host: '127.0.0.1',
@@ -15,34 +16,21 @@ const pool = new Pool({
     password: 'mattsoccer10',
     port: 5432,
 });
-/*
-pool.connect((err, db, done) => {
-    if(err){
-        return console.log(err);
-    } else {
-        db.query('SELECT * FROM employees', (err, res) => {
-            if(err) {
-                return console.log(err);
-            } else {
-                console.log(res.rows[0]);
-            }
-        })
-    }
-})
-*/
+
 let app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));
-//36:36
+
 app.use(function(request, response, next) {
     response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     next();
 });
-
+//  API to get all em[ployees from the employee table, this is used
+//  on the home screen when generating profile boxes
 app.get('/api/get-all-employees', function(request, response) {
     pool.connect((err, db, done) => {
         if(err) {
@@ -61,25 +49,24 @@ app.get('/api/get-all-employees', function(request, response) {
         }
     })
 });
-
-app.post('/api/add-employees', function(request, response) {
+//  This is the start of the login API but it still needs work
+app.get('/api/login', function(request, response) {
     pool.connect((err, db, done) => {
         if(err) {
             return response.status(400).send(err);
         } else {
-            db.query('SELECT * FROM employees', (err, res) => {
+            db.query('SELECT * FROM singlesignon WHERE eid = #### AND password = ++++++', (err, res) => {
                 done();
-                if (err) {
+                if(err){
                     return response.status(400).send(err);
                 } else {
-                    console.log('Data Got');
+                    console.log('Correct');
                     db.end();
                     response.status(201).send(res);
                 }
-            });
+            })
         }
     })
-    //use for insert into 38:00
 });
-
+//Logs the port that the APIs are currently listening to
 app.listen(PORT, () => console.log('Listening on port ' + PORT));
