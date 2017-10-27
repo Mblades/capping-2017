@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import basicProfilePic from '../images/basicProfilePic.png';
-import './style.css';
+import './personal-profile-summary.css';
 
 class PersonalProfileSummary extends Component {
     //all of this information will need to passed in from the database

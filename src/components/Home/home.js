@@ -1,11 +1,11 @@
-// src/components/App/index.js
+// src/components/Home/home.js
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import logo from './logo.svg';
-import './style.css';
-import CompanyHeader from "../../shared/header/index";
-import SearchContainer from "../../shared/search-container/index";
-import PersonalProfileContainer from "../../shared/personal-profile-container/index";
+import './home.css';
+import CompanyHeader from "../../shared/header/header";
+import SearchContainer from "../../shared/search-container/search-container";
+import PersonalProfileContainer from "../../shared/personal-profile-container/personal-profile-container";
 
 class Home extends Component {
     constructor() {
@@ -14,10 +14,12 @@ class Home extends Component {
             employees: []
         }
     }
-//This is wear we will make all of the AJAX Calls
+//  This is wear we will make all of the AJAX Calla
     componentDidMount() {
+        //  This fires before the page renders to gather all profiles,
+        //  I may move this so that we have a loader while the employee
+        //  list loads
         let that = this;
-        console.log('Component Has Mounted');
         fetch('http://localhost:3000/api/get-all-employees')
             .then(function(response) {
                 response.json()
@@ -27,14 +29,13 @@ class Home extends Component {
                         that.setState({
                             employees: employees
                         });
-                        console.log(data, 'data');
                     })
             })
             .catch(function(err) {
                 console.log(err);
             })
     }
-
+//Example of a post API call only keeping fo a referance to be used later
    /* addTest(event) {
         let that = this;
         event.preventDefault();
@@ -67,13 +68,9 @@ class Home extends Component {
     }
 */
     render() {
-        let employees = JSON.stringify(this.state.employees);
         const { className, ...props } = this.props;
         return (
             <div className={classnames('Home', className)} {...props}>
-                <form ref="test_form">
-                    <pre>{employees}</pre>
-                </form>
                 <CompanyHeader
                     logo={logo}
                 />

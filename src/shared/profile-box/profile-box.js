@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
 import basicProfilePic from '../images/basicProfilePic.png';
-import './style.css';
+import './profile-box.css';
 
 class ProfileBox extends Component {
     //  Name, Phone, Position, and Location all get passed from the search container and are then populated
     //  into each of the profile boxes
     render() {
-        const { name, phone, position, location } = this.props;
+        const { employee } = this.props;
         const { className, ...props } = this.props;
         return (
             <div className={classnames('ProfileBox', className)} {...props}>
@@ -19,7 +19,8 @@ class ProfileBox extends Component {
                     pathname: '/profile',
                     state: {
                         id: this.props.id,
-                        loggedIn: true
+                        loggedIn: true,
+                        employee: this.props.employee
                     }
                 })}}>
 
@@ -28,16 +29,16 @@ class ProfileBox extends Component {
                 </div>
                 <div className="Profile-summary-content">
                     <div className="Profile-summary-line">
-                        Name: { name }
+                        Name: { employee.name }
                     </div>
                     <div className="Profile-summary-line">
-                        Phone: { phone }
+                        Phone: { employee.phonenumber }
                     </div>
                     <div className="Profile-summary-line">
-                        Position: { position.substring(0,16) }
+                        Position: { employee.jobtitle.substring(0,16) }
                     </div>
                     <div className="Profile-summary-line">
-                        Location: { location }
+                        Location: { employee.location }
                     </div>
                 </div>
             </button>

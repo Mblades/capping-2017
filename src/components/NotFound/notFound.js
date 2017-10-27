@@ -2,12 +2,11 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import './style.css';
+import './notFound.css';
 
 export default class NotFound extends Component {
-    // static propTypes = {}
-    // static defaultProps = {}
-    // state = {}
+    //Simple not found page to be implemented if the user is logged in but tries to access a page
+    //that does not exist
 
     render() {
         const { className, ...props } = this.props;

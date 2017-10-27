@@ -1,6 +1,7 @@
 .Personal-Profile-picture {
     display: inline;
     width: 50%;
+    margin-left: 25%;
     border-radius: 15px;
 }
 

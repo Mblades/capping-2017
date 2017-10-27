@@ -2,12 +2,10 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import './style.css';
+import './about.css';
 
 export default class About extends Component {
-    // static propTypes = {}
-    // static defaultProps = {}
-    // state = {}
+    // THis page is only here for testing will e removed soon
 
     render() {
         const { className, ...props } = this.props;
