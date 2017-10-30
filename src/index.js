@@ -2,12 +2,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import { reducer as formReducer } from 'redux-form'
+
+
 
 import Routes from './routes';
 
 import './index.css';
 
+const rootReducer = combineReducers({
+    // ...your other reducers here
+    // you have to pass formReducer under 'form' key,
+    // for custom keys look up the docs for 'getFormState'
+    form: formReducer
+});
+
+const store = createStore(rootReducer);
+
 ReactDOM.render(
-    <Routes history={browserHistory} />,
+    <Provider store={store}>
+        <Routes history={browserHistory} />
+    </Provider>,
     document.getElementById('root')
 );
