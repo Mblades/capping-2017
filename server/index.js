@@ -11,9 +11,9 @@ const { Pool, Client } = require('pg');
 //This is the connection information for the database
 const pool = new Pool({
     user: 'postgres',
-    host: '127.0.0.1',
-    database: 'Capping',
-    password: 'mattsoccer10',
+    host: '10.10.7.151',
+    database: 'Capping2017',
+    password: 'Capping2017',
     port: 5432,
 });
 
