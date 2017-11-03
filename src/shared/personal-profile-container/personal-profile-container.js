@@ -28,15 +28,15 @@ class PersonalProfileContainer extends Component {
                         })}}>
                         Edit My Profile
                     </div>
-                    { this.props.id === 2 &&
-                    <div className="HR-Options-Button" onClick={() => {
-                        history.push({
-                            pathname: '/HR',
-                            state: {
-                                id: this.props.id,
-                                loggedIn: true
-                            }
-                        })}}>
+                        { this.props.id === 2 &&
+                        <div className="HR-Options-Button" onClick={() => {
+                            history.push({
+                                pathname: '/HR',
+                                state: {
+                                    id: this.props.id,
+                                    loggedIn: true
+                                }
+                            })}}>
                         HR Options
                     </div>
                     }
