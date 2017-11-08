@@ -1,0 +1,31 @@
+.Login-Form {
+    border-radius: 20px;
+    border: 1px solid #007EFF;
+    width: 50%;
+    margin-left: 25%;
+    margin-top:15vh;
+    padding-bottom: 3vh;
+    padding-top: 5vh;
+    min-width: 220px;
+}
+
+.Login-Form-Line {
+    font-size: 40px;
+    padding-bottom: 15px;
+}
+
+.input {
+    width: 50%;
+    font-size: 16px;
+    vertical-align: middle;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.inputLable {
+    width: 50%;
+}

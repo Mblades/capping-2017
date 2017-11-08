@@ -35,7 +35,7 @@ class ProfileBox extends Component {
                         Phone: { employee.phonenumber }
                     </div>
                     <div className="Profile-summary-line">
-                        Position: { employee.jobtitle.substring(0,16) }
+                        Position: { employee.organization.substring(0,16) }
                     </div>
                     <div className="Profile-summary-line">
                         Location: { employee.location }

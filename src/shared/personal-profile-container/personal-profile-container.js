@@ -13,27 +13,24 @@ class PersonalProfileContainer extends Component {
             <div className="Personal-Profile-Window-Container">
                 <div>
                     <PersonalProfileSummary
-                        name="Matthew Blades"
-                        phone="123-456-7890"
-                        position="CEO"
-                        location="United States"
+                        user={this.props.user}
                     />
                     <div className="Profile-Edit-Button" onClick={() => {
                         history.push({
                             pathname: '/profile',
                             state: {
-                                id: this.props.id,
+                                employee: this.props.user,
                                 loggedIn: true
                             }
                         })}}>
                         Edit My Profile
                     </div>
-                    { this.props.id === 2 &&
+                    { this.props.user.accesslevel <= 2 &&
                     <div className="HR-Options-Button" onClick={() => {
                         history.push({
-                            pathname: '/HR',
+                            pathname: '/options',
                             state: {
-                                id: this.props.id,
+                                user: this.props.user,
                                 loggedIn: true
                             }
                         })}}>
