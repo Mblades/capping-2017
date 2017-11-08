@@ -20,7 +20,7 @@ class Home extends Component {
         //  I may move this so that we have a loader while the employee
         //  list loads
         let that = this;
-        fetch('http://localhost:3000/api/get-all-employees')
+        fetch('http://10.10.7.153:3000/api/get-all-employees')
             .then(function(response) {
                 response.json()
                     .then(function(data) {
@@ -35,38 +35,7 @@ class Home extends Component {
                 console.log(err);
             })
     }
-//Example of a post API call only keeping fo a referance to be used later
-   /* addTest(event) {
-        let that = this;
-        event.preventDefault();
-        let test_data = {
-            test_name: this.refs.test_name.value,
-            test_name2: this.refs.test_name2.value
-        };
-        var request = new Request('http://localhost:3000/api/add-employees', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(test_data)
-        });
-        //xmlhttprequest
-        fetch(request)
-            .then(function(response) {
-                response.json()
-                    .then(function(data) {
-                        let employees = that.state.employees;
-                        console.log(test_data, 'test_data');
-                        employees = data.rows;
-                        that.setState({
-                            employees: employees
-                        });
-                        console.log(data, 'data');
-                    })
-            })
-            .catch(function(err) {
-                console.log(err);
-            })
-    }
-*/
+
     render() {
         const { className, ...props } = this.props;
         return (
@@ -74,7 +43,8 @@ class Home extends Component {
                 <CompanyHeader
                     logo={logo}
                 />
-                <PersonalProfileContainer/>
+                <PersonalProfileContainer
+                    user={this.props.location.state.user}/>
                 <SearchContainer
                 employees={ this.state.employees }
                 />

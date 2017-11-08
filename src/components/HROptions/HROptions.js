@@ -32,7 +32,7 @@ class HROptions extends Component {
                 <div className="Option-Box-Container">
                     <div className="HR-Option-Box" onClick={() => {
                         history.push({
-                            pathname: 'action',
+                            pathname: '/action',
                             state: {
                                 loggedIn: true,
                                 action: 'Remove'
@@ -46,7 +46,7 @@ class HROptions extends Component {
                 <div className="Option-Box-Container">
                     <div className="HR-Option-Box" onClick={() => {
                         history.push({
-                            pathname: 'action',
+                            pathname: '/action',
                             state: {
                                 loggedIn: true,
                                 action: 'Suspend'

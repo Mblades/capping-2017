@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
 import './HRAction.css';
 import CompanyHeader from "../../shared/header/header";
+import Modal from "../../shared/modal/modal";
 import logo from '../../shared/images/logo.svg';
 
 let HRActionForm = props => {
@@ -32,9 +33,13 @@ HRActionForm = reduxForm({
 })(HRActionForm);
 
 class HRAction extends Component {
-
+    constructor(props) {
+        super(props)
+        this.state = { isModalOpen: false }
+    }
     submit = (values) => {
         // print the form values to the console
+        //needs to be a pop up confirm not a separate page
         history.push({
             pathname: '/HR/Action/Confirm',
             state: {
@@ -46,6 +51,13 @@ class HRAction extends Component {
         })
     };
 
+    toggleModal = () => {
+        console.log('test');
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
     render() {
         const { className, ...props } = this.props;
 
@@ -55,8 +67,13 @@ class HRAction extends Component {
                 <CompanyHeader
                     logo={logo}
                 />
+                <Modal show={this.state.isOpen} onClose={() => this.toggleModal()}>
+                    <h1>Modal title</h1>
+                    <p>hello</p>
+                    <p><button onClick={() => this.toggleModal()}>Close</button></p>
+                </Modal>
                 <HRActionForm
-                    onSubmit={this.submit}
+                    onSubmit={() => this.toggleModal()}
                     SelectedAction={this.props.location.state.action}
                 />
             </div>

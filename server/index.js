@@ -29,6 +29,10 @@ app.use(function(request, response, next) {
     response.header("Access-control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     next();
 });
+
+app.get('/', function(request, response) {
+    response.send('Express Works');
+});
 //  API to get all em[ployees from the employee table, this is used
 //  on the home screen when generating profile boxes
 app.get('/api/get-all-employees', function(request, response) {
@@ -50,17 +54,18 @@ app.get('/api/get-all-employees', function(request, response) {
     })
 });
 //  This is the start of the login API but it still needs work
-app.get('/api/login', function(request, response) {
+app.post('/api/pass-check', function(request, response) {
+    var username = request.body.username;
+    var password = request.body.password;
     pool.connect((err, db, done) => {
         if(err) {
             return response.status(400).send(err);
         } else {
-            db.query('SELECT * FROM singlesignon WHERE eid = #### AND password = ++++++', (err, res) => {
+            db.query('SELECT * FROM pass_check($1, $2)', [username, password], (err, res) => {
                 done();
                 if(err){
                     return response.status(400).send(err);
                 } else {
-                    console.log('Correct');
                     db.end();
                     response.status(201).send(res);
                 }
@@ -69,4 +74,5 @@ app.get('/api/login', function(request, response) {
     })
 });
 //Logs the port that the APIs are currently listening to
-app.listen(PORT, () => console.log('Listening on port ' + PORT));
+app.listen(process.env.PORT, () => console.log('Listening on port ' + process.env.PORT));
+//app.listen(PORT, () => console.log('Listening on port ' + PORT));
