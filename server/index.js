@@ -15,6 +15,9 @@ const pool = new Pool({
     database: 'Capping2017',
     password: 'Capping2017',
     port: 5432,
+    idleTimeoutMillis: 1000,
+    min: 4,
+    max: 20
 });
 
 let app = express();
