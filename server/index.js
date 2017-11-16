@@ -43,7 +43,7 @@ app.get('/api/get-all-employees', function(request, response) {
         if(err) {
             return response.status(400).send(err);
         } else {
-            db.query('SELECT * FROM employees', (err, res) => {
+            db.query('SELECT * FROM get_all()', (err, res) => {
                 done();
                 if (err) {
                     return response.status(400).send(err);
@@ -56,7 +56,7 @@ app.get('/api/get-all-employees', function(request, response) {
         }
     })
 });
-//  This is the start of the login API but it still needs work
+//  The login API
 app.post('/api/pass-check', function(request, response) {
     var username = request.body.username;
     var password = request.body.password;
@@ -76,6 +76,60 @@ app.post('/api/pass-check', function(request, response) {
         }
     })
 });
+//The delete employee API
+app.post('/api/delete-employee', function(request, response) {
+    var eid = request.body.eid;
+    pool.connect((err, db, done) => {
+        if(err) {
+            return response.status(400).send(err);
+        } else {
+            db.query('SELECT * FROM delete_employee($1)', [eid], (err, res) => {
+                done();
+                if(err){
+                    return response.status(400).send(err);
+                } else {
+                    db.end();
+                    response.status(201).send(res);
+                }
+            })
+        }
+    })
+});
+//The add employee API
+app.post('/api/add-employee', function(request, response) {
+    var eid = request.body.eid | '123';
+    var mid = request.body.mid | '123';
+    var first = request.body.first | 'test';
+    var last = request.body.last | 'Ltest';
+    var phone = request.body.phone | '1231231234';
+    var address = request.body.address | '1234 trest 234';
+    var title = request.body.title | 'TESTER';
+    var dob = request.body.dob | '10/08/1996';
+    var roleId = request.body.roleId | '123421';
+    var city = request.body.city | 'test';
+    var organization = request.body.organization | 'test';
+    var email = request.body.email | 'test';
+    var location = request.body.location | 'test';
+    var description = request.body.description | 'test';
+    var pic =request.body.pic | 'test';
+    var accessLevel = request.body.accessLevel | 'test';
+    pool.connect((err, db, done) => {
+        if(err) {
+            return response.status(400).send(err);
+        } else {
+            db.query('SELECT * FROM add_employee($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)',
+                [eid, mid, first, last, phone, address, title, dob, roleId, city, organization, email, location, description, pic, accessLevel], (err, res) => {
+                done();
+                if(err){
+                    return response.status(400).send(err);
+                } else {
+                    db.end();
+                    response.status(201).send(res);
+                }
+            })
+        }
+    })
+});
 //Logs the port that the APIs are currently listening to
-app.listen(process.env.PORT, () => console.log('Listening on port ' + process.env.PORT));
-//app.listen(PORT, () => console.log('Listening on port ' + PORT));
+//app.listen(process.env.PORT, () => console.log('Listening on port ' + process.env.PORT));
+app.listen(PORT, () => console.log('Listening on port ' + PORT));

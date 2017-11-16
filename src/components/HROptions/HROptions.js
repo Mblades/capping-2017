@@ -18,7 +18,7 @@ class HROptions extends Component {
                 <div className="Option-Box-Container" >
                     <div className="HR-Option-Box" onClick={() => {
                         history.push({
-                            pathname: '/action',
+                            pathname: '/add',
                             state: {
                                 loggedIn: true,
                                 action: 'add'

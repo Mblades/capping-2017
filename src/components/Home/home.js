@@ -15,12 +15,12 @@ class Home extends Component {
         }
     }
 //  This is wear we will make all of the AJAX Calla
-    componentDidMount() {
+  componentDidMount() {
         //  This fires before the page renders to gather all profiles,
         //  I may move this so that we have a loader while the employee
         //  list loads
         let that = this;
-        fetch('http://10.10.7.153:3000/api/get-all-employees')
+        fetch('http://localhost:3000/api/get-all-employees')
             .then(function(response) {
                 response.json()
                     .then(function(data) {
