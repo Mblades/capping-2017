@@ -22,7 +22,7 @@ class Profile extends Component {
         let manager_data = {
             eid: this.props.location.state.employee.eid
         };
-        var request = new Request('http://localhost:3000/api/manager-find', {
+        var request = new Request('http://10.10.7.153:3000/api/manager-find', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(manager_data)
@@ -31,8 +31,7 @@ class Profile extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log('manager got');
-                        that.setState({managerFirst: data.rows[0]});
+                        that.setState({manager: data.rows[0]});
                     })
             })
             .catch(function(err) {
@@ -44,7 +43,6 @@ class Profile extends Component {
         console.log(this.props.location.state, 'profile');
         let employee = this.props.location.state.employee;
         let myProfile = this.props.location.state.myProfile;
-        console.log(myProfile);
         let dob = new Date (employee.birthday);
         return (
             <div className="ProfilePage">
@@ -73,7 +71,7 @@ class Profile extends Component {
                     <div className="Profile-Professional-Information">
                         <div className="Profile-Headers">Professional Information</div>
                         {
-                            myProfile.accessLevel <=2 && (
+                            myProfile.accesslevel <=2 && (
                                 <div className="Edit-Button">Edit</div>
                             )
                         }

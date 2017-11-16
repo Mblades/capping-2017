@@ -13,6 +13,7 @@ class HRAction extends Component {
     }
     doAction(event) {
         //let that = this;
+        this.toggleModal();
         event.preventDefault();
         let action_data = {
             eid: this.refs.eid.value
@@ -42,40 +43,54 @@ class HRAction extends Component {
             })
     }
 
-    submit = (values) => {
-        // print the form values to the console
-        //needs to be a pop up confirm not a separate page
-        history.push({
-            pathname: '/HR/Action/Confirm',
-            state: {
-                id: this.props.location.state.id,
-                loggedIn: true,
-                action: this.props.location.state.action,
-                selectedEmployee: values.Employee_ID,
-            }
-        })
+    submit = () => {
+        // when you submit an employee it will the gather the employee information you plan to delete
+        //Need to look up employee with an API to get name and to see if they exist. Then do front end error checking
+        if(this.refs.eid.value !== "") {
+            this.toggleModal();
+        }else {
+            console.log('Missing ID');
+        }
     };
 
+    cancel = () => {
+        console.log(this.props.location.state.myProfile, 'hi');
+        history.push({
+            pathname: '/home',
+            state: {
+                myProfile: this.props.location.state.myProfile
+            }
+        })
+    }
+
     toggleModal = () => {
-        console.log('test');
         this.setState({
-            isOpen: !this.state.isOpen
+            isModalOpen: !this.state.isModalOpen
         });
     }
 
     render() {
+        console.log(this.props.location.state, 'HR actions');
         const { className, ...props } = this.props;
-
+        let myProfile = this.props.location.state.myProfile;
         return (
             <div className={classnames('HRAction', className)} {...props}>
             <div className="App">
                 <CompanyHeader
                     logo={logo}
+                    myProfile={myProfile}
                 />
-                <Modal show={this.state.isOpen} onClose={() => this.toggleModal()}>
-                    <h1>Are you sure you want to {this.props.location.state.action} this employee?</h1>
-                    ><button onClick={this.doAction.bind(this)}>Confirm</button>
-                </Modal>
+                {this.state.isModalOpen && (
+                        <Modal show={this.state.isModalOpen} onClose={() => this.toggleModal()}>
+                            <h1>Are you sure you want to {this.props.location.state.action} </h1>
+                            <div style={{whiteSspace: 'nowrap'}}>
+                                <div className="action-employee-info"><span>{this.refs.eid.value}</span>?</div>
+                            </div>
+                            <button className="confirm-delete-button" onClick={this.doAction.bind(this)}>Confirm</button>
+                            <button className="cancel-delete-button" onClick={this.toggleModal}>Close</button>
+                        </Modal>
+                    )
+                }
                 <form ref="action_form" className="HRAction-Form">
                     <div>
                         <div className="Action_Text">
@@ -83,10 +98,10 @@ class HRAction extends Component {
                         </div>
                         <div className="Employee_ID_Box">
                             Enter Employee ID:
-                            <input className="input" ref="eid" name="Employee_ID" component="input" value="" type="text" required placeholder="Employee ID"/>
+                            <input className="input" ref="eid" name="Employee_ID" component="input" type="text" placeholder="Employee ID" required/>
                         </div>
-                        <button className="HR_Action_Button" type="button"> Cancel</button>
-                        <button className="HR_Action_Button" type="button" onClick={this.toggleModal}>Submit</button>
+                        <button className="HR_Action_Button" type="button" onClick={this.cancel.bind(this)}> Cancel</button>
+                        <button className="HR_Action_Button" type="button" onClick={this.submit.bind(this)}>Submit</button>
                     </div>
                 </form>
             </div>

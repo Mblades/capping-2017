@@ -16,34 +16,39 @@ class Login extends Component {
 
     addTest(event) {
          //let that = this;
-         event.preventDefault();
-         let login_data = {
-             username: this.refs.username.value,
-             password: this.refs.password.value
-         };
-         var request = new Request('http://10.10.7.153:3000/api/pass-check', {
-             method: 'POST',
-             headers: new Headers({ 'Content-Type': 'application/json' }),
-             body: JSON.stringify(login_data)
-         });
-         fetch(request)
-             .then(function(response) {
-                 response.json()
-                     .then(function(data) {
-                         if(data.rows.length === 1) {
-                             history.push({
-                                 pathname: '/home',
-                                 state: {
-                                     myProfile: data.rows[0],
-                                     loggedIn: true
-                                 }
-                             })
-                         }
-                     })
-             })
-             .catch(function(err) {
-                 console.log(err);
-             })
+        //Validation for login fields
+        if(this.refs.username.value !== "" && this.refs.password.value !== "") {
+            event.preventDefault();
+            let login_data = {
+                username: this.refs.username.value,
+                password: this.refs.password.value
+            };
+            var request = new Request('http://10.10.7.153:3000/api/pass-check', {
+                method: 'POST',
+                headers: new Headers({ 'Content-Type': 'application/json' }),
+                body: JSON.stringify(login_data)
+            });
+            fetch(request)
+                .then(function(response) {
+                    response.json()
+                        .then(function(data) {
+                            if(data.rows.length === 1) {
+                                history.push({
+                                    pathname: '/home',
+                                    state: {
+                                        myProfile: data.rows[0],
+                                        loggedIn: true
+                                    }
+                                })
+                            }
+                        })
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+        } else {
+            console.log('Missing Username and Password');
+        }
      }
 /*
     submit = (values) => {

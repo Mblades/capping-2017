@@ -20,7 +20,7 @@ class Home extends Component {
         //  I may move this so that we have a loader while the employee
         //  list loads
         let that = this;
-        fetch('http://localhost:3000/api/get-all-employees')
+        fetch('http://10.10.7.153:3000/api/get-all-employees')
             .then(function(response) {
                 response.json()
                     .then(function(data) {
