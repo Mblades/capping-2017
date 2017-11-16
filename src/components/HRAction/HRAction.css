@@ -20,6 +20,33 @@
     font-size: 16px;
 }
 
+.confirm-delete-button {
+    width: 30%;
+    margin: 20px;
+    background-color: #06CA0B;
+    border-radius: 20px;
+    border: 2px solid #4ADB1E;
+    font-size: 16px;
+}
+
+.cancel-delete-button {
+    width: 30%;
+    margin: 20px;
+    background-color: #E52332;
+    border-radius: 20px;
+    border: 2px solid #F23746;
+    font-size: 16px;
+}
+
+.action-employee-info {
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.action-employee-info span {
+    text-decoration: underline;
+}
+
 .HR_Action_Button {
     border-radius: 20px;
 }

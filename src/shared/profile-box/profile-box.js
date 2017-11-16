@@ -8,7 +8,6 @@ class ProfileBox extends Component {
     //  Name, Phone, Position, and Location all get passed from the search container and are then populated
     //  into each of the profile boxes
     render() {
-        console.log(this.props, 'profile box');
         const { employee } = this.props;
         const { className, ...props } = this.props;
         return (

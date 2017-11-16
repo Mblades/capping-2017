@@ -7,13 +7,15 @@ import './HROptions.css';
 
 class HROptions extends Component {
     render() {
-        console.log(this.props.location.state, 'HROPTIONS');
+        console.log(this.props.location.state, 'HR options');
+        let myProfile = this.props.location.state.myProfile;
         const { className, ...props } = this.props;
         return (
             <div className={classnames('HROptions', className)} {...props}>
             <div className="App">
                 <CompanyHeader
                     logo={logo}
+                    myProfile={myProfile}
                 />
                 <div className="Option-Box-Container" >
                     <div className="HR-Option-Box" onClick={() => {
@@ -21,7 +23,8 @@ class HROptions extends Component {
                             pathname: '/add',
                             state: {
                                 loggedIn: true,
-                                action: 'add'
+                                action: 'add',
+                                myProfile: myProfile
                             }
                         })}}>
                         <div className="Option-Text">
@@ -35,7 +38,8 @@ class HROptions extends Component {
                             pathname: '/action',
                             state: {
                                 loggedIn: true,
-                                action: 'Remove'
+                                action: 'Remove',
+                                myProfile: myProfile
                             }
                         })}}>
                         <div className="Option-Text">
@@ -49,7 +53,8 @@ class HROptions extends Component {
                             pathname: '/action',
                             state: {
                                 loggedIn: true,
-                                action: 'Suspend'
+                                action: 'Suspend',
+                                myProfile: myProfile
                             }
                         })}}>
                         <div className="Option-Text">
@@ -64,7 +69,8 @@ class HROptions extends Component {
                                 pathname: '/action',
                                 state: {
                                     loggedIn: true,
-                                    action: 'Reinstate'
+                                    action: 'Reinstate',
+                                    myProfile: myProfile
                                 }
                             })}}>
                             Reinstate
