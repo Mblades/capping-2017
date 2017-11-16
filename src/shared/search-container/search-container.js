@@ -27,12 +27,15 @@ SearchBoxForm = reduxForm({
 })(SearchBoxForm);
 */
 class SearchContainer extends Component {
+
     renderProfileBoxes = function() {
+        let myProfile = this.props.myProfile;
         let emp = this.props.employees.map(function (value) {
             return (
                 <div className="Profile-Box-Spacing">
                     <ProfileBox
                         employee={value}
+                        myProfile={myProfile}
                     />
                 </div>
             )
@@ -55,6 +58,7 @@ class SearchContainer extends Component {
     };
 
     render() {
+        console.log(this.props, 'search container');
         const options = [
             'one', 'two', 'three'
         ]

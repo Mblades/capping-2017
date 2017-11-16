@@ -34,7 +34,7 @@ class Login extends Component {
                              history.push({
                                  pathname: '/home',
                                  state: {
-                                     user: data.rows[0],
+                                     myProfile: data.rows[0],
                                      loggedIn: true
                                  }
                              })

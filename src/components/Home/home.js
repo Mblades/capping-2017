@@ -37,16 +37,19 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.props.location.state, 'home')
         const { className, ...props } = this.props;
         return (
             <div className={classnames('Home', className)} {...props}>
                 <CompanyHeader
                     logo={logo}
+                    myProfile={this.props.location.state.myProfile}
                 />
                 <PersonalProfileContainer
-                    user={this.props.location.state.user}/>
+                    myProfile={this.props.location.state.myProfile}/>
                 <SearchContainer
-                employees={ this.state.employees }
+                    employees={ this.state.employees }
+                    myProfile={this.props.location.state.myProfile}
                 />
             </div>
         );

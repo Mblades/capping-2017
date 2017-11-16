@@ -6,6 +6,7 @@
 
 .Logo-container {
     position: relative;
+    cursor: pointer;
 }
 
 .Logo-text {
@@ -30,6 +31,7 @@
     display: inline;
     float: right;
     font-size: 25px;
+    cursor: pointer;
 }
 
 @keyframes App-logo-spin {

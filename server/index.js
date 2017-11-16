@@ -76,6 +76,26 @@ app.post('/api/pass-check', function(request, response) {
         }
     })
 });
+//  The manager fin API
+app.post('/api/manager-find', function(request, response) {
+    var eid = request.body.eid;
+    pool.connect((err, db, done) => {
+        if(err) {
+            return response.status(400).send(err);
+        } else {
+            db.query('SELECT * FROM manager_find($1)', [eid], (err, res) => {
+                done();
+                if(err){
+                    return response.status(400).send(err);
+                } else {
+                    db.end();
+                    response.status(201).send(res);
+                }
+            })
+        }
+    })
+});
+
 //The delete employee API
 app.post('/api/delete-employee', function(request, response) {
     var eid = request.body.eid;

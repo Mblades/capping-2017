@@ -10,41 +10,60 @@ class Profile extends Component {
         super(props);
         //only here as a back-up place holder will be updated to be a fall back soon
         this.state = {
-            person: {
-                name: 'John Doe',
-                dob: '05-01-1900',
-                address: '42 Wallaby Way',
-                cid: 'D34DB33F',
-                phone: '8675309',
-                email: 'nunya(at)acme(dot)com',
-                position: 'ACME Employee',
-                location: 'USA',
-                department: 'Quality Control',
-                manager: 'Boss Man',
-                loctime: 'EST',
-                doh: 'September 2017'
-            },
             image: '../Images/basicProfilePic.png',
+            manager: {firstname: 'N/A', lastname: ''}
         }
 
     };
 
+    componentDidMount() {
+        //  This fires before the page renders to gather all profiles,
+        let that = this;
+        let manager_data = {
+            eid: this.props.location.state.employee.eid
+        };
+        var request = new Request('http://localhost:3000/api/manager-find', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(manager_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                        console.log('manager got');
+                        that.setState({managerFirst: data.rows[0]});
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+    }
+
     render() {
-        console.log(this.props.location.state.employee);
+        console.log(this.props.location.state, 'profile');
         let employee = this.props.location.state.employee;
+        let myProfile = this.props.location.state.myProfile;
+        console.log(myProfile);
+        let dob = new Date (employee.birthday);
         return (
             <div className="ProfilePage">
                 <CompanyHeader
                     logo={logo}
+                    myProfile={myProfile}
                 />
                 <div className="personal-information-container">
                     <img src={ basicProfilePic } className="Image" alt="proPic" />
                     <div className="Profile-Personal-Information">
                         <div className="Profile-Headers">Personal Information</div>
-                        <div className="Edit-Button">Edit</div>
-                        <div className="information-line">Name: <div className="profile-info">{employee.name}</div></div >
-                        <div className="information-line">Date of Birth: <div className="profile-info">NOT IN DB</div></div>
-                        <div className="information-line">Address: <div className="profile-info">NOT IN DB</div></div>
+                        {
+                            myProfile.eid === employee.eid && (
+                                <div className="Edit-Button">Edit</div>
+                            )
+                        }
+                        <div className="information-line">Name: <div className="profile-info">{employee.firstname} {employee.lastname}</div></div >
+                        <div className="information-line">Date of Birth: <div className="profile-info">{dob.toLocaleDateString()}</div></div>
+                        <div className="information-line">Address: <div className="profile-info">{employee.address}</div></div>
                         <div className="information-line">Company ID: <div className="profile-info">{employee.eid}</div></div>
                         <div className="information-line">Phone: <div className="profile-info">{employee.phonenumber}</div></div>
                         <div className="information-line">Email: <div className="profile-info">{employee.email}</div></div>
@@ -53,12 +72,16 @@ class Profile extends Component {
                 <div className="personal-information-container">
                     <div className="Profile-Professional-Information">
                         <div className="Profile-Headers">Professional Information</div>
-                        <div className="Edit-Button">Edit</div>
+                        {
+                            myProfile.accessLevel <=2 && (
+                                <div className="Edit-Button">Edit</div>
+                            )
+                        }
                         <div className="information-line">Position: <div className="profile-info">{employee.jobtitle}</div></div>
-                        <div className="information-line">Location: <div className="profile-info">{employee.location}</div></div>
+                        <div className="information-line">Location: <div className="profile-info">{employee.city}, Need to change location to string</div></div>
                         <div className="information-line">Department: <div className="profile-info">{employee.organization}</div></div>
-                        <div className="information-line">Manager: <div className="profile-info">NEED AN API</div></div>
-                        <div className="information-line">Local Time: <div className="profile-info">NEED TO DERIVE</div></div>
+                        <div className="information-line">Manager: <div className="profile-info">{this.state.manager.firstname} {this.state.manager.lastname}</div></div>
+                        <div className="information-line">Local Time: <div className="profile-info">NEED TO DISCUSS</div></div>
                     </div>
                 </div>
                 { /* Application Table need to be updated with information and than this need to be changed */ }
