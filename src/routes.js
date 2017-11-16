@@ -9,6 +9,7 @@ import Profile from "./components/Profile/profile";
 import HROptions from "./components/HROptions/HROptions";
 import HRAction from "./components/HRAction/HRAction";
 import Login from "./components/Login/login";
+import newEmployee from "./components/NewEmployee/newEmployee";
 //  Describes the path required  to reach each of the application pages
 
 //  Still need to add a validation function to check if the user is logged in
@@ -21,6 +22,7 @@ const Routes = (props) => (
         <Route path="/options" component={HROptions}/>
         <Route path="/about" component={About} />
         <Route path="/action" component={HRAction}/>
+        <Route path="/add" component={newEmployee}/>
         <Route path="*" component={NotFound} />
     </Router>
 );
