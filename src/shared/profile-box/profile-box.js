@@ -8,6 +8,7 @@ class ProfileBox extends Component {
     //  Name, Phone, Position, and Location all get passed from the search container and are then populated
     //  into each of the profile boxes
     render() {
+        console.log(this.props, 'profile box');
         const { employee } = this.props;
         const { className, ...props } = this.props;
         return (
@@ -18,9 +19,9 @@ class ProfileBox extends Component {
                 history.push({
                     pathname: '/profile',
                     state: {
-                        id: this.props.id,
                         loggedIn: true,
-                        employee: this.props.employee
+                        employee: this.props.employee,
+                        myProfile: this.props.myProfile
                     }
                 })}}>
 
@@ -29,7 +30,7 @@ class ProfileBox extends Component {
                 </div>
                 <div className="Profile-summary-content">
                     <div className="Profile-summary-line">
-                        Name: { employee.name }
+                        Name: { employee.firstname } { employee.lastname }
                     </div>
                     <div className="Profile-summary-line">
                         Phone: { employee.phonenumber }

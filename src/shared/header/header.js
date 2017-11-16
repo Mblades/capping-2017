@@ -13,16 +13,21 @@ import './header.css';
                     history.push({
                         pathname: '/home',
                         state: {
-                            id: 1
+                            myProfile: this.props.myProfile
                         }
                     })}}>
                     <img src={this.props.logo} className="App-logo" alt="logo" />
                     <div className="Logo-text">
                         ACME
                     </div>
-                    <div className="Login-Link">
-                        Log-Out
-                    </div>
+                </div>
+                <div className="Login-Link"  onClick={() => {
+                    history.push({
+                        pathname: '/',
+                        state: {
+                        }
+                    })}}>
+                    Log-Out
                 </div>
             </div>
             </div>

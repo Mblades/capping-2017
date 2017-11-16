@@ -74,6 +74,7 @@ class NewEmployee extends Component {
             <div className="AddEmployeePage">
                 <CompanyHeader
                     logo={logo}
+                    myProfile={this.props.location.state.myProfile}
                 />
                 <form ref="action_form" className="HRAction-Form">
                 <div className="personal-information-container">
