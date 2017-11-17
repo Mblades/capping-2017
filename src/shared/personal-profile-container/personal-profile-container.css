@@ -2,9 +2,9 @@
     width: 25%;
     position: absolute;
     display: inline-block;
-    height: calc(100% - 80px);
+    margin-top: 70px;
+    height: calc(100% - 70px);
     left: 0px;
-    padding-top: 10px;
     background-color: #007EFF;
     min-height: 86vh;
 }

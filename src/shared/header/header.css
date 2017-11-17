@@ -13,19 +13,22 @@
     font-size: 40px;
     float: left;
     vertical-align: bottom;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .App-header-container {
     background-color: #222;
     height: 60px;
     padding: 5px;
+    width: 100%;
     color: white;
+    position: fixed;
+    z-index: 999999;
 }
 
 .Login-Link {
     text-align: right;
-    padding-top: 35px;
+    padding-top: 30px;
     padding-right: 20px;
     color: white;
     display: inline;

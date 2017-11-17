@@ -9,10 +9,10 @@
 
 .Search-Window-Container {
     width: 75%;
+    margin-top: 70px;
     position: absolute;
     background-color: #EAEBEC;
-    height: calc(100% - 80px);
-    padding-top: 10px;
+    height: calc(100% - 70px);
     min-width: 270px;
     display: inline-block;
     right: 0px;
@@ -73,6 +73,7 @@
 .search-area{
     padding-bottom: 15px;
     margin-bottom: 15px;
+    margin-top: 10px;
     border-bottom: solid grey 1px;
 }
 
