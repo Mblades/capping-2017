@@ -34,25 +34,24 @@ class NewEmployee extends Component {
         console.log(this.refs);
         var d = new Date(this.refs.dob.value | '1996-10-08');
         let employee_data = {
-            eid: this.refs.eid | '123',
-            mid: this.refs.mid | '123',
             first: this.refs.Fname.value,
             last: this.refs.Lname.value,
             phone: this.refs.phone.value,
             address: this.refs.address.value,
             title: this.refs.position.value,
-            dob: 'ERRROR',
-            roleId: this.refs.roleId | 'TEST',
             city:  this.refs.city.value,
             organization: this.refs.department.value,
             email: this.refs.email.value,
             location: this.refs.location.value,
-            description: this.refs.description,
-            pic: this.refs.pic| 'test',
-            accessLevel: this.refs.accessLevel.value
+            eid: '15',
+            mid: '15',
+            dob: '2/14/1922',
+            roleId: 'AAAsdcA',
+            description: 'CEO of the companies global branch',
+            accessLevel: 1
         };
         //change to 10.10.7.153
-        var request = new Request('http://10.10.7.153:3000/api/add-employee', {
+        var request = new Request('http://localhost:3000/api/add-employee', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(employee_data)

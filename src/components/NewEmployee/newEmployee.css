@@ -16,6 +16,13 @@
     width: 73%;
 }
 
+.HRAction-Form {
+    margin-top: 70px;
+    position: absolute;
+    height: calc(100% - 70px);
+    width: 100%;
+}
+
 .add-employee-button {
     width: 20%;
     margin-left: 40%;
