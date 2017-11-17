@@ -50,6 +50,7 @@ class Profile extends Component {
                     logo={logo}
                     myProfile={myProfile}
                 />
+                <div className="profile-info-container">
                 <div className="personal-information-container">
                     <img src={ basicProfilePic } className="Image" alt="proPic" />
                     <div className="Profile-Personal-Information">
@@ -95,6 +96,7 @@ class Profile extends Component {
                                 loggedIn: true
                             }
                         })}}>Request Access</div>
+                </div>
                 </div>
             </div>
         );

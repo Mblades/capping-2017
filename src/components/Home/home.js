@@ -1,6 +1,5 @@
 // src/components/Home/home.js
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import logo from './logo.svg';
 import './home.css';
 import CompanyHeader from "../../shared/header/header";
@@ -38,15 +37,16 @@ class Home extends Component {
 
     render() {
         console.log(this.props.location.state, 'home')
-        const { className, ...props } = this.props;
         return (
-            <div className={classnames('Home', className)} {...props}>
+            <div className="home-container">
                 <CompanyHeader
                     logo={logo}
                     myProfile={this.props.location.state.myProfile}
                 />
                 <PersonalProfileContainer
-                    myProfile={this.props.location.state.myProfile}/>
+                    myProfile={this.props.location.state.myProfile}
+                    employeeList={this.state.employees}
+                />
                 <SearchContainer
                     employees={ this.state.employees }
                     myProfile={this.props.location.state.myProfile}

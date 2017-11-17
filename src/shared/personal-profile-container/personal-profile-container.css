@@ -1,10 +1,10 @@
 .Personal-Profile-Window-Container {
     width: 25%;
-    position: relative;
+    position: absolute;
     display: inline-block;
-    height: 100%;
-    float: left;
-    padding-top: 10px;
+    margin-top: 70px;
+    height: calc(100% - 70px);
+    left: 0px;
     background-color: #007EFF;
     min-height: 86vh;
 }

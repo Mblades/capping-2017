@@ -1,9 +1,10 @@
 .Login-Form {
     border-radius: 20px;
+    position: absolute;
     border: 1px solid #007EFF;
     width: 50%;
-    margin-left: 25%;
-    margin-top:15vh;
+    left: 25%;
+    top: calc(25% + 70px);
     padding-bottom: 3vh;
     padding-top: 5vh;
     min-width: 220px;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory as history } from 'react-router';
 import CompanyHeader from "../../shared/header/header";
 import logo from '../../shared/images/logo.svg';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
@@ -62,7 +61,7 @@ class NewEmployee extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log(data, 'addddd');
+                        console.log(data, 'err');
                     })
             })
             .catch(function(err) {
@@ -77,7 +76,7 @@ class NewEmployee extends Component {
                     myProfile={this.props.location.state.myProfile}
                 />
                 <form ref="action_form" className="HRAction-Form">
-                <div className="personal-information-container">
+                <div className="personal-information-container-new">
                     <img src={ basicProfilePic } className="Image" alt="proPic" />
                     <div className="Profile-Personal-Information">
                         <div className="Profile-Headers">Personal Information</div>
@@ -89,7 +88,7 @@ class NewEmployee extends Component {
                         <div className="information-line">Email: <input className="input" ref="email" name="Employee_email" component="input" type="text" required placeholder="Email"/></div>
                     </div>
                 </div>
-                <div className="personal-information-container">
+                <div className="personal-information-container-new">
                     <div className="Profile-Professional-Information">
                         <div className="Profile-Headers">Professional Information</div>
                         <div className="information-line">Position: <input className="input" ref="position" name="Employee_position" component="input" type="text" required placeholder="Position"/></div>

@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
 import Dropdown from 'react-dropdown'
-//import {Field, reduxForm} from 'redux-form'
 import './search-container.css';
-import classnames from 'classnames';
 import ProfileBox from "../profile-box/profile-box";
+import {orderBy} from 'lodash';
 
 // import searchBtn from '../Images/searchBtn.jpg';
-
-
-/*
-let SearchBoxForm = props => {
-    const { handleSubmit } = props;
-    return (
-        <form onSubmit={ handleSubmit } className="Search-Form">
-
-            <Field className="Search-input" name="SearchParam" component="input" type="text" required />
-            <button type="submit" className="search-btn-container"><img src={ searchBtn } className="search-btn" alt="searchBtn" /></button>
-
-        </form>
-    )
-};
-
-SearchBoxForm = reduxForm({
-    // a unique name for the form
-    form: 'SearchBox'
-})(SearchBoxForm);
-*/
 class SearchContainer extends Component {
+    constructor() {
+        super();
+        this.state = {
+            newEmployees: [],
+            filterOn: false,
+            orderEmp: 'firstname',
+            AorDfilter: 'asc'
+        }
+    }
+
+    componentDidMount() {
+        //  This fires before the page renders to gather all profiles
+        this.setState({newEmployees: this.props.employees});
+    }
 
     renderProfileBoxes = function() {
         let myProfile = this.props.myProfile;
-        let emp = this.props.employees.map(function (value) {
+        let curList = [];
+        if(this.state.filterOn) {
+            curList = this.state.newEmployees;
+        } else {
+            curList = this.props.employees;
+        }
+        curList = orderBy(curList, [this.state.orderEmp], [this.state.AorDfilter]);
+        let emp = curList.map(function (value) {
             return (
                 <div className="Profile-Box-Spacing">
                     <ProfileBox
@@ -47,31 +47,50 @@ class SearchContainer extends Component {
         // print the form values to the console
         console.log(values)
     };
-//will be used to apply one of the filters
+//used to apply a sort on filter
     applyFilter = (values) => {
         // print the form values to the console
-        console.log(values)
+        console.log(values);
+        this.setState({orderEmp: values.value});
+    };
+//used to determine ascending or descending
+    applyFilter2 = (values) => {
+        // print the form values to the console
+        console.log(values);
+        this.setState({AorDfilter: values.value});
     };
 
     alphaChange = (values) => {
-        console.log(values);
+        let newEmployees = [];
+        let letter = values;
+        this.props.employees.map(function (value) {
+            if(letter === value.firstname.substring(0,1)){
+                newEmployees.push(value);
+            }
+        });
+        this.setState({newEmployees: newEmployees});
+        this.setState({filterOn: true});
     };
 
     render() {
-        console.log(this.props, 'search container');
-        const options = [
-            'one', 'two', 'three'
+        console.log(this.state, 'state');
+        const filterOptions = [
+            { value: 'location', label: 'Location' },
+            { value: 'lastname', label: 'Last Name' },
+            { value: 'firstname', label: 'First Name'}
+        ];
+        const ascDESC = [
+            { value: 'asc', label: 'Ascending'},
+            { value: 'desc', label: 'Descending'}
         ]
-        const { className, ...props } = this.props;
         return (
-            <div className={classnames('CompanyHeader', className)} {...props}>
             <div className="Search-Window-Container">
                 <div>
                     <div className="search-area">
                         <div>
-                            <Dropdown options={options} onChange={this.applyFilter} value={"test"} placeholder="Select an option" />
-                            <Dropdown options={options} onChange={this.applyFilter} value={"test"} placeholder="Select an option" />
-                            <Dropdown options={options} onChange={this.applyFilter} value={"test"} placeholder="Select an option" />
+                            <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder="First Name" />
+                            <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder="Ascending" />
+
                         </div>
                         <div>
                             <button className="AZsort" onClick={() => { this.alphaChange('A')}}>A</button>
@@ -102,13 +121,13 @@ class SearchContainer extends Component {
                             <button className="AZsort" onClick={() => { this.alphaChange('Z')}}>Z</button>
                         </div>
                     </div>
-
+                    <div className="profile-boxes-container">
                     {
                         //this is used to create the list of drop down boxes
                         this.renderProfileBoxes()
                     }
                 </div>
-            </div>
+                </div>
             </div>
         );
     }

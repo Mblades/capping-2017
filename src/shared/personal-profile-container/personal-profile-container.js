@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
 import './personal-profile-container.css';
 import PersonalProfileSummary from "../personal-profile-summary/personal-profile-summary";
@@ -7,10 +6,7 @@ import PersonalProfileSummary from "../personal-profile-summary/personal-profile
 
 class PersonalProfileContainer extends Component {
     render() {
-        console.log(this.props, 'personal profile container');
-        const { className, ...props } = this.props;
         return (
-            <div className={classnames('PersonalProfileContainer', className)} {...props}>
             <div className="Personal-Profile-Window-Container">
                 <div>
                     <PersonalProfileSummary
@@ -32,6 +28,7 @@ class PersonalProfileContainer extends Component {
                         history.push({
                             pathname: '/options',
                             state: {
+                                employeeList: this.props.employeeList,
                                 myProfile: this.props.myProfile,
                                 loggedIn: true
                             }
@@ -40,7 +37,6 @@ class PersonalProfileContainer extends Component {
                     </div>
                     }
                 </div>
-            </div>
             </div>
         )
     }
