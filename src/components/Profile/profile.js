@@ -31,7 +31,9 @@ class Profile extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        that.setState({manager: data.rows[0]});
+                        if(data.rows.length >= 1){
+                            that.setState({manager: data.rows[0]});
+                        }
                     })
             })
             .catch(function(err) {
@@ -40,7 +42,6 @@ class Profile extends Component {
     }
 
     render() {
-        console.log(this.props.location.state, 'profile');
         let employee = this.props.location.state.employee;
         let myProfile = this.props.location.state.myProfile;
         let dob = new Date (employee.birthday);

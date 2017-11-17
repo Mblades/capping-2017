@@ -18,7 +18,7 @@ class HRAction extends Component {
             eid: this.refs.eid.value
         };
         //DELETE Pointer Local
-        var request = new Request('http://localhost:3000/api/delete-employee', {
+        var request = new Request('http://10.10.7.153:3000/api/delete-employee', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(action_data)
@@ -77,7 +77,7 @@ class HRAction extends Component {
                     logo={logo}
                     myProfile={myProfile}
                 />
-                <div className="HR-Action-Container">
+
                 {this.state.isModalOpen && (
                         <Modal show={this.state.isModalOpen} onClose={() => this.toggleModal()}>
                             <h1>Are you sure you want to {this.props.location.state.action} </h1>
@@ -89,6 +89,7 @@ class HRAction extends Component {
                         </Modal>
                     )
                 }
+                <div className="HR-Action-Container">
                 <form ref="action_form" className="HRAction-Form">
                     <div>
                         <div className="Action_Text">

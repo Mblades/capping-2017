@@ -15,6 +15,7 @@ class Modal extends React.Component {
             bottom: 0,
             left: 0,
             right: 0,
+            zIndex: 999,
             backgroundColor: 'rgba(0,0,0,0.7)',
             padding: 50
         };

@@ -40,6 +40,7 @@ app.get('/', function(request, response) {
 //  on the home screen when generating profile boxes
 app.get('/api/get-all-employees', function(request, response) {
     pool.connect((err, db, done) => {
+        console.log(request);
         if(err) {
             return response.status(400).send(err);
         } else {
@@ -117,22 +118,23 @@ app.post('/api/delete-employee', function(request, response) {
 });
 //The add employee API
 app.post('/api/add-employee', function(request, response) {
-    var eid = request.body.eid | '123';
-    var mid = request.body.mid | '123';
-    var first = request.body.first | 'test';
-    var last = request.body.last | 'Ltest';
-    var phone = request.body.phone | '1231231234';
-    var address = request.body.address | '1234 trest 234';
-    var title = request.body.title | 'TESTER';
-    var dob = request.body.dob | '10/08/1996';
-    var roleId = request.body.roleId | '123421';
-    var city = request.body.city | 'test';
-    var organization = request.body.organization | 'test';
-    var email = request.body.email | 'test';
-    var location = request.body.location | 'test';
-    var description = request.body.description | 'test';
-    var pic =request.body.pic | 'test';
-    var accessLevel = request.body.accessLevel | 'test';
+    var eid = request.body.eid;
+    var mid = request.body.mid;
+    var first = request.body.first;
+    var last = request.body.last;
+    var phone = request.body.phone;
+    var address = request.body.address;
+    var title = request.body.title;
+    var dob = request.body.dob;
+    var roleId = request.body.roleId;
+    var city = request.body.city;
+    var organization = request.body.organization;
+    var email = request.body.email;
+    var location = request.body.location;
+    var description = request.body.description;
+    var pic =request.body.pic;
+    var accessLevel = request.body.accessLevel;
+    console.log(eid, mid, first, last, phone, address, title, dob, roleId, city, organization, email, location, description, pic, accessLevel);
     pool.connect((err, db, done) => {
         if(err) {
             return response.status(400).send(err);

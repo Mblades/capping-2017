@@ -12,7 +12,9 @@ class SearchContainer extends Component {
             newEmployees: [],
             filterOn: false,
             orderEmp: 'firstname',
-            AorDfilter: 'asc'
+            AorDfilter: 'asc',
+            orderLabel: 'First Name',
+            AorDlabel: 'Ascending'
         }
     }
 
@@ -52,12 +54,14 @@ class SearchContainer extends Component {
         // print the form values to the console
         console.log(values);
         this.setState({orderEmp: values.value});
+        this.setState({orderLabel: values.label});
     };
 //used to determine ascending or descending
     applyFilter2 = (values) => {
         // print the form values to the console
         console.log(values);
         this.setState({AorDfilter: values.value});
+        this.setState({AorDlabel: values.label});
     };
 
     alphaChange = (values) => {
@@ -73,7 +77,6 @@ class SearchContainer extends Component {
     };
 
     render() {
-        console.log(this.state, 'state');
         const filterOptions = [
             { value: 'location', label: 'Location' },
             { value: 'lastname', label: 'Last Name' },
@@ -88,8 +91,8 @@ class SearchContainer extends Component {
                 <div>
                     <div className="search-area">
                         <div>
-                            <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder={this.state.orderEmp} />
-                            <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder={this.state.AorDfilter}/>
+                            <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder={this.state.orderLabel} />
+                            <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder={this.state.AorDlabel}/>
 
                         </div>
                         <div>

@@ -36,7 +36,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.props.location.state, 'home')
         return (
             <div className="home-container">
                 <CompanyHeader

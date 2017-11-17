@@ -7,7 +7,6 @@ class PersonalProfileSummary extends Component {
     //all of this information will need to passed in from the database
     // need to add all of the other fields of information we want
     render() {
-        console.log(this.props, 'personal profile summary');
         const { className, ...props } = this.props;
         return (
             <div className={classnames('ProfileBox', className)} {...props}>
