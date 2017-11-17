@@ -51,6 +51,13 @@
     border-radius: 20px;
 }
 
+.HR-Action-Container {
+    margin-top: 70px;
+    position: absolute;
+    width:100%;
+    height: calc(100% - 70px);
+}
+
 .input {
 
 }

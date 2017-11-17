@@ -11,7 +11,6 @@
     width: 75%;
     margin-top: 70px;
     position: absolute;
-    background-color: #EAEBEC;
     height: calc(100% - 70px);
     min-width: 270px;
     display: inline-block;
@@ -57,6 +56,15 @@
     font-size: 18px;
 }
 
+.profile-boxes-container {
+    position: absolute;
+    height: calc(100% - 90px);
+    max-height: calc(100% - 90px);
+    width: 100%;
+    margin-top: 90px;
+    overflow-y: auto;
+}
+
 .search-btn {
     display: inline;
     width: 20px;
@@ -73,7 +81,11 @@
 .search-area{
     padding-bottom: 15px;
     margin-bottom: 15px;
-    margin-top: 10px;
+    height: 55px;
+    width: 100%;
+    position: absolute;
+    padding-top: 10px;
+    background-color: #EAEBEC;
     border-bottom: solid grey 1px;
 }
 

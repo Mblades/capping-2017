@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
 import './header.css';
 
  class CompanyHeader extends Component {
     render() {
-        const { className, ...props } = this.props;
         return (
             <div className="App-header-container">
                 <div className="Logo-container" onClick={() => {

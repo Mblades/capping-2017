@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { browserHistory as history } from 'react-router';
-import classnames from 'classnames';
 import CompanyHeader from "../../shared/header/header";
 import logo from '../../shared/images/logo.svg';
 import './HROptions.css';
@@ -9,14 +8,14 @@ class HROptions extends Component {
     render() {
         console.log(this.props.location.state, 'HR options');
         let myProfile = this.props.location.state.myProfile;
-        const { className, ...props } = this.props;
+        let employeeList = this.props.location.state.employeeList;
         return (
-            <div className={classnames('HROptions', className)} {...props}>
             <div className="App">
                 <CompanyHeader
                     logo={logo}
                     myProfile={myProfile}
                 />
+                <div className="HR-Options-Container">
                 <div className="Option-Box-Container" >
                     <div className="HR-Option-Box" onClick={() => {
                         history.push({
@@ -39,7 +38,8 @@ class HROptions extends Component {
                             state: {
                                 loggedIn: true,
                                 action: 'Remove',
-                                myProfile: myProfile
+                                myProfile: myProfile,
+                                employeeList: employeeList
                             }
                         })}}>
                         <div className="Option-Text">
@@ -54,7 +54,8 @@ class HROptions extends Component {
                             state: {
                                 loggedIn: true,
                                 action: 'Suspend',
-                                myProfile: myProfile
+                                myProfile: myProfile,
+                                employeeList: employeeList
                             }
                         })}}>
                         <div className="Option-Text">
@@ -70,14 +71,15 @@ class HROptions extends Component {
                                 state: {
                                     loggedIn: true,
                                     action: 'Reinstate',
-                                    myProfile: myProfile
+                                    myProfile: myProfile,
+                                    employeeList: employeeList
                                 }
                             })}}>
                             Reinstate
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
             </div>
         );
     }

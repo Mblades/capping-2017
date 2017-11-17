@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
 import './HRAction.css';
 import CompanyHeader from "../../shared/header/header";
@@ -71,15 +70,14 @@ class HRAction extends Component {
 
     render() {
         console.log(this.props.location.state, 'HR actions');
-        const { className, ...props } = this.props;
         let myProfile = this.props.location.state.myProfile;
         return (
-            <div className={classnames('HRAction', className)} {...props}>
             <div className="App">
                 <CompanyHeader
                     logo={logo}
                     myProfile={myProfile}
                 />
+                <div className="HR-Action-Container">
                 {this.state.isModalOpen && (
                         <Modal show={this.state.isModalOpen} onClose={() => this.toggleModal()}>
                             <h1>Are you sure you want to {this.props.location.state.action} </h1>

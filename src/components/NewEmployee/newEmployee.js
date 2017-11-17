@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory as history } from 'react-router';
 import CompanyHeader from "../../shared/header/header";
 import logo from '../../shared/images/logo.svg';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
@@ -62,7 +61,7 @@ class NewEmployee extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log(data, 'addddd');
+                        console.log(data, 'err');
                     })
             })
             .catch(function(err) {
