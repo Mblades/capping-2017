@@ -82,14 +82,14 @@ class SearchContainer extends Component {
         const ascDESC = [
             { value: 'asc', label: 'Ascending'},
             { value: 'desc', label: 'Descending'}
-        ]
+        ];
         return (
             <div className="Search-Window-Container">
                 <div>
                     <div className="search-area">
                         <div>
-                            <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder="First Name" />
-                            <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder="Ascending" />
+                            <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder={this.state.orderEmp} />
+                            <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder={this.state.AorDfilter}/>
 
                         </div>
                         <div>

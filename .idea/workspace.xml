@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b6b67fd-272a-4224-81f5-9ac515bc3307" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HRAction/HRAction.css" afterPath="$PROJECT_DIR$/src/components/HRAction/HRAction.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HRAction/HRAction.js" afterPath="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HROptions/HROptions.css" afterPath="$PROJECT_DIR$/src/components/HROptions/HROptions.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HROptions/HROptions.js" afterPath="$PROJECT_DIR$/src/components/HROptions/HROptions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home/home.js" afterPath="$PROJECT_DIR$/src/components/Home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" afterPath="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/header/header.js" afterPath="$PROJECT_DIR$/src/shared/header/header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/personal-profile-container/personal-profile-container.js" afterPath="$PROJECT_DIR$/src/shared/personal-profile-container/personal-profile-container.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/search-container/search-container.css" afterPath="$PROJECT_DIR$/src/shared/search-container/search-container.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/search-container/search-container.js" afterPath="$PROJECT_DIR$/src/shared/search-container/search-container.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/HROptions/HROptions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -42,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+              <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -60,19 +51,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search-container.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search-container.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="91" column="107" lean-forward="false" selection-start-line="91" selection-start-column="107" selection-end-line="91" selection-end-column="107" />
+            <state relative-caret-position="357">
+              <caret line="84" column="10" lean-forward="true" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1510896342855" expanded="true" signature="2765:6297" ph="..." />
-                <marker date="1510896342855" expanded="true" signature="2787:6278" ph="..." />
-                <marker date="1510896342855" expanded="true" signature="2837:5999" ph="..." />
-                <marker date="1510896342855" expanded="true" signature="2867:3129" ph="..." />
-                <marker date="1510896342855" expanded="true" signature="3159:5972" ph="..." />
-                <marker date="1510896342855" expanded="true" signature="6061:6255" ph="..." />
+                <marker date="1510934959860" expanded="true" signature="2766:6318" ph="..." />
+                <marker date="1510934959860" expanded="true" signature="2788:6299" ph="..." />
+                <marker date="1510934959860" expanded="true" signature="2838:6020" ph="..." />
+                <marker date="1510934959860" expanded="true" signature="2868:3150" ph="..." />
+                <marker date="1510934959860" expanded="true" signature="3180:5993" ph="..." />
+                <marker date="1510934959860" expanded="true" signature="6082:6276" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/shared/header/header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/Home/home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
+              <caret line="14" column="5" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
               <folding>
                 <element signature="e#31#72#0" expanded="true" />
               </folding>
@@ -203,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/shared/header/header.css" />
         <option value="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
         <option value="$PROJECT_DIR$/src/shared/personal-profile-container/personal-profile-container.js" />
-        <option value="$PROJECT_DIR$/src/shared/header/header.js" />
         <option value="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" />
         <option value="$PROJECT_DIR$/src/components/HROptions/HROptions.js" />
         <option value="$PROJECT_DIR$/src/components/HROptions/HROptions.css" />
@@ -211,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/shared/search-container/search-container.css" />
         <option value="$PROJECT_DIR$/src/components/Home/home.js" />
         <option value="$PROJECT_DIR$/src/shared/search-container/search-container.js" />
+        <option value="$PROJECT_DIR$/src/shared/header/header.js" />
       </list>
     </option>
   </component>
@@ -322,41 +325,6 @@
               <item name="shared" type="462c0819:PsiDirectoryNode" />
               <item name="header" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="personal-profile-container" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="personal-profile-summary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="profile-box" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capping" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="search-container" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -407,12 +375,12 @@
       <updated>1508869586121</updated>
       <workItem from="1508869587246" duration="31868000" />
       <workItem from="1509059279019" duration="45009000" />
-      <workItem from="1510178735884" duration="69870000" />
+      <workItem from="1510178735884" duration="70875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146747000" />
+    <option name="totallyTimeSpent" value="147752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -749,7 +717,7 @@
         <state relative-caret-position="117">
           <caret line="54" column="82" lean-forward="false" selection-start-line="54" selection-start-column="82" selection-end-line="54" selection-end-column="82" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -778,14 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/header/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -799,7 +759,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/HROptions/HROptions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -833,7 +793,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/Home/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
+          <caret line="14" column="5" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="e#31#72#0" expanded="true" />
           </folding>
@@ -843,7 +803,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -852,16 +812,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="91" column="107" lean-forward="false" selection-start-line="91" selection-start-column="107" selection-end-line="91" selection-end-column="107" />
+        <state relative-caret-position="357">
+          <caret line="84" column="10" lean-forward="true" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1510896342855" expanded="true" signature="2765:6297" ph="..." />
-            <marker date="1510896342855" expanded="true" signature="2787:6278" ph="..." />
-            <marker date="1510896342855" expanded="true" signature="2837:5999" ph="..." />
-            <marker date="1510896342855" expanded="true" signature="2867:3129" ph="..." />
-            <marker date="1510896342855" expanded="true" signature="3159:5972" ph="..." />
-            <marker date="1510896342855" expanded="true" signature="6061:6255" ph="..." />
+            <marker date="1510934959860" expanded="true" signature="2766:6318" ph="..." />
+            <marker date="1510934959860" expanded="true" signature="2788:6299" ph="..." />
+            <marker date="1510934959860" expanded="true" signature="2838:6020" ph="..." />
+            <marker date="1510934959860" expanded="true" signature="2868:3150" ph="..." />
+            <marker date="1510934959860" expanded="true" signature="3180:5993" ph="..." />
+            <marker date="1510934959860" expanded="true" signature="6082:6276" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/header/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

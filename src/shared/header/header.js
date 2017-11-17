@@ -18,6 +18,7 @@ import './header.css';
                         ACME
                     </div>
                 </div>
+                { this.props.myProfile && (
                 <div className="Login-Link"  onClick={() => {
                     history.push({
                         pathname: '/',
@@ -26,6 +27,7 @@ import './header.css';
                     })}}>
                     Log-Out
                 </div>
+                )}
             </div>
         );
     }
