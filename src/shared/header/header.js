@@ -7,7 +7,6 @@ import './header.css';
     render() {
         const { className, ...props } = this.props;
         return (
-            <div className={classnames('CompanyHeader', className)} {...props}>
             <div className="App-header-container">
                 <div className="Logo-container" onClick={() => {
                     history.push({
@@ -29,7 +28,6 @@ import './header.css';
                     })}}>
                     Log-Out
                 </div>
-            </div>
             </div>
         );
     }

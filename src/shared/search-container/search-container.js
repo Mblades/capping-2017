@@ -64,7 +64,6 @@ class SearchContainer extends Component {
         ]
         const { className, ...props } = this.props;
         return (
-            <div className={classnames('CompanyHeader', className)} {...props}>
             <div className="Search-Window-Container">
                 <div>
                     <div className="search-area">
@@ -108,7 +107,6 @@ class SearchContainer extends Component {
                         this.renderProfileBoxes()
                     }
                 </div>
-            </div>
             </div>
         );
     }

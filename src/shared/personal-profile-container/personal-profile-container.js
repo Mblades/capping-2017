@@ -10,7 +10,6 @@ class PersonalProfileContainer extends Component {
         console.log(this.props, 'personal profile container');
         const { className, ...props } = this.props;
         return (
-            <div className={classnames('PersonalProfileContainer', className)} {...props}>
             <div className="Personal-Profile-Window-Container">
                 <div>
                     <PersonalProfileSummary
@@ -40,7 +39,6 @@ class PersonalProfileContainer extends Component {
                     </div>
                     }
                 </div>
-            </div>
             </div>
         )
     }

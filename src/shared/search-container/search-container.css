@@ -9,13 +9,13 @@
 
 .Search-Window-Container {
     width: 75%;
+    position: absolute;
     background-color: #EAEBEC;
-    height: 100%;
+    height: calc(100% - 80px);
     padding-top: 10px;
     min-width: 270px;
     display: inline-block;
-    float: right;
-    min-height: 86vh;
+    right: 0px;
     text-align: center;
 }
 
