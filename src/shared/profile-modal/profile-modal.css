@@ -1,0 +1,175 @@
+.Profile-modal-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 1px solid #007EFF;
+    background-color: #F4F5F7;
+    border-radius: 20px;
+}
+
+.profile-tabs {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    height: 50px;
+    border: 1px solid #007EFF;
+    border-radius: 20px;
+    background-color: #EAEBEC;
+}
+
+.tabBreak {
+    width: 2px;
+    height: 40px;
+    background-color: #007EFF;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.profile-tab1 {
+    width: calc(100% - 2px);
+    vertical-align: middle;
+    border: 1px solid #007EFF;
+    height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-tab2 {
+    width: calc(50% - 2px);
+    vertical-align: middle;
+    height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+.profile-tab3 {
+    width: calc(33.3% - 2px);
+    vertical-align: middle;
+    height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+.profile-tab4 {
+    width: calc(25% - 2px);
+    vertical-align: middle;
+    border: 1px solid #007EFF;
+    height: 46px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-content {
+    width: 90%;
+    height: calc(90% - 50px);
+    margin: auto;
+    background-color: #D9E5FF;
+    border-radius: 20px;
+    position: absolute;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.information-line {
+    font-size: 30px;
+    margin-bottom: 1px;
+}
+
+.profile-info {
+    font-size: 20px;
+    margin-bottom: 1px;
+    display: inline;
+}
+
+.profestional-information-container {
+    height: calc(100% - 70px);
+    width: 100%;
+    position: absolute;
+}
+
+.personal-information-container {
+    height: calc(100% - 220px);
+    width: calc(100% - 20px);
+    position: absolute;
+}
+
+.information-content {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-image {
+    width: 150px;
+    left: calc(50% - 75px);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.employee-app-list-label {
+    text-align: center;
+    font-size: 30px;
+}
+
+.employee-app-list {
+    max-height: calc(100% - 100px);
+    height: calc(100% - 100px);
+    position: absolute;
+    overflow-y: auto;
+    width: calc(100% - 20px);
+}
+
+.App-Box-Spacing {
+    margin: 10px;
+    width: calc(100% - 30px);
+}
+
+.Profile-Personal-Information {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.employee-name {
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.request-button-container {
+    width: calc(100% - 20px);
+    height: 40px;
+    position: absolute;
+    bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.request-button {
+    width: 50%;
+    height: 30px;
+    background-color: #0441D1;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}

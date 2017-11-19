@@ -51,7 +51,7 @@ class NewEmployee extends Component {
             accessLevel: 1
         };
         //change to 10.10.7.153
-        var request = new Request('http://localhost:3000/api/add-employee', {
+        var request = new Request('http://10.10.7.153:3000/api/add-employee', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(employee_data)
