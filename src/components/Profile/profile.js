@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory as history } from 'react-router';
 import CompanyHeader from "../../shared/header/header";
+import ProfileModal from "../../shared/profile-modal/profile-modal";
 import logo from '../../shared/images/logo.svg';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import './profile.css';
@@ -11,7 +12,8 @@ class Profile extends Component {
         //only here as a back-up place holder will be updated to be a fall back soon
         this.state = {
             image: '../Images/basicProfilePic.png',
-            manager: {firstname: 'N/A', lastname: ''}
+            manager: {firstname: 'N/A', lastname: ''},
+            applications: {}
         }
 
     };
@@ -39,6 +41,25 @@ class Profile extends Component {
             .catch(function(err) {
                 console.log(err);
             })
+
+        let application_data = {
+            eid: this.props.location.state.employee.eid
+        };
+        var request = new Request('http://10.10.7.153:3000/api/get_employee_applications', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(application_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                            that.setState({applications: data.rows});
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
     }
 
     render() {
@@ -51,6 +72,16 @@ class Profile extends Component {
                     logo={logo}
                     myProfile={myProfile}
                 />
+                <div className="profile-place">
+                    <ProfileModal
+                        employee={employee}
+                        myProfile={myProfile}
+                        tabCount={3}
+                        manager={this.state.manager}
+                        apps={this.state.applications}
+                    />
+                </div>
+                {/*
                 <div className="profile-info-container">
                 <div className="personal-information-container">
                     <img src={ basicProfilePic } className="Image" alt="proPic" />
@@ -84,7 +115,9 @@ class Profile extends Component {
                         <div className="information-line">Local Time: <div className="profile-info">NEED TO DISCUSS</div></div>
                     </div>
                 </div>
+                */}
                 { /* Application Table need to be updated with information and than this need to be changed */ }
+                {/*
                 <div className="personal-information-container">
                     <div className="Profile-Headers">Applications</div>
                     <img src={ basicProfilePic } className="App-Images" alt="proPic" />
@@ -98,7 +131,7 @@ class Profile extends Component {
                             }
                         })}}>Request Access</div>
                 </div>
-                </div>
+                </div> */}
             </div>
         );
     }

@@ -77,6 +77,25 @@ app.post('/api/pass-check', function(request, response) {
         }
     })
 });
+//  The get application api
+app.post('/api/get_employee_applications', function(request, response) {
+    var eid = request.body.eid;
+    pool.connect((err, db, done) => {
+        if(err) {
+            return response.status(400).send(err);
+        } else {
+            db.query('SELECT * FROM get_employee_applications($1)', [eid], (err, res) => {
+                done();
+                if(err){
+                    return response.status(400).send(err);
+                } else {
+                    db.end();
+                    response.status(201).send(res);
+                }
+            })
+        }
+    })
+});
 //  The manager fin API
 app.post('/api/manager-find', function(request, response) {
     var eid = request.body.eid;
@@ -134,7 +153,6 @@ app.post('/api/add-employee', function(request, response) {
     var description = request.body.description;
     var pic =request.body.pic;
     var accessLevel = request.body.accessLevel;
-    console.log(eid, mid, first, last, phone, address, title, dob, roleId, city, organization, email, location, description, pic, accessLevel);
     pool.connect((err, db, done) => {
         if(err) {
             return response.status(400).send(err);
