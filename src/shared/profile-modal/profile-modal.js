@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './profile-modal.css';
 import AppBox from '../../shared/app-box/app-box';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
+import SearchContainer from '../../shared/search-container/search-container'
 
 
 class ProfileModal extends Component {
@@ -118,11 +119,13 @@ class ProfileModal extends Component {
                         {
                             this.state.currentTab === 1 && (
                                 <div>
-                                    <img src={ basicProfilePic } className="profile-image" alt="proPic" />
+                                    <div className="employee-name-container">
+                                        <div className="employee-name">{employee.firstname} {employee.lastname}</div>
+                                    </div>
+                                    <div className="profile-image-container">
+                                        <img src={ basicProfilePic } className="profile-image" alt="proPic" />
+                                    </div>
                                     <div className="Profile-Personal-Information">
-                                        <div className="employee-name-container">
-                                            <div className="employee-name">{employee.firstname} {employee.lastname}</div>
-                                        </div>
                                         <div className="personal-information-container">
                                             <div className="information-content">
                                                 <div className="information-line">Date of Birth: <div className="profile-info">{dob.toLocaleDateString()}</div></div>
@@ -178,8 +181,11 @@ class ProfileModal extends Component {
                         }
                         {
                             this.state.currentTab === 4 && (
-                                <div>
-                                    test 4
+                                <div className="profile-search-container">
+                                    <SearchContainer
+                                        employees={ this.props.employees }
+                                        myProfile={this.props.myProfile}
+                                    />
                                 </div>
                             )
                         }

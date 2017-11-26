@@ -13,7 +13,8 @@ class Profile extends Component {
         this.state = {
             image: '../Images/basicProfilePic.png',
             manager: {firstname: 'N/A', lastname: ''},
-            applications: {}
+            applications: {},
+            employees: []
         }
 
     };
@@ -54,7 +55,26 @@ class Profile extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                            that.setState({applications: data.rows});
+                        that.setState({applications: data.rows});
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+
+        let managed_data = {
+            mid: this.props.location.state.employee.mid
+        };
+        var request = new Request('http://10.10.7.153:3000/api/manager_employees', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(managed_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                        that.setState({employees: data.rows});
                     })
             })
             .catch(function(err) {
@@ -63,9 +83,15 @@ class Profile extends Component {
     }
 
     render() {
+        console.log(this.props.location.state);
+        let employees = this.state.employees;
         let employee = this.props.location.state.employee;
         let myProfile = this.props.location.state.myProfile;
         let dob = new Date (employee.birthday);
+        let tabs = 3;
+        if(employee.mid) {
+            tabs = 4;
+        }
         return (
             <div className="ProfilePage">
                 <CompanyHeader
@@ -74,9 +100,10 @@ class Profile extends Component {
                 />
                 <div className="profile-place">
                     <ProfileModal
+                        employees={employees}
                         employee={employee}
                         myProfile={myProfile}
-                        tabCount={3}
+                        tabCount={tabs}
                         manager={this.state.manager}
                         apps={this.state.applications}
                     />

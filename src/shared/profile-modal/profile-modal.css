@@ -28,7 +28,6 @@
 .profile-tab1 {
     width: calc(100% - 2px);
     vertical-align: middle;
-    border: 1px solid #007EFF;
     height: 46px;
     text-align: center;
     display: inline-block;
@@ -58,7 +57,6 @@
 .profile-tab4 {
     width: calc(25% - 2px);
     vertical-align: middle;
-    border: 1px solid #007EFF;
     height: 46px;
     text-align: center;
     display: inline-block;
@@ -101,7 +99,7 @@
 }
 
 .personal-information-container {
-    height: calc(100% - 220px);
+    height: calc(100% - 240px);
     width: calc(100% - 20px);
     position: absolute;
 }
@@ -116,11 +114,17 @@
 
 .profile-image {
     width: 150px;
-    left: calc(50% - 75px);
-    position: relative;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+.profile-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .employee-app-list-label {
@@ -151,6 +155,7 @@
     font-size: 50px;
     text-align: center;
     text-decoration: underline;
+    padding-bottom: 10px;
 }
 
 .request-button-container {
@@ -172,4 +177,12 @@
     text-align: center;
     line-height: 30px;
     color: white;
+}
+
+.profile-search-container {
+    height: calc(100% - 0px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }

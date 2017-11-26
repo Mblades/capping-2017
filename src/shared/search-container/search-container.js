@@ -3,6 +3,7 @@ import Dropdown from 'react-dropdown'
 import './search-container.css';
 import ProfileBox from "../profile-box/profile-box";
 import {orderBy} from 'lodash';
+import AutoSearch from "../auto-search/auto-search";
 
 // import searchBtn from '../Images/searchBtn.jpg';
 class SearchContainer extends Component {
@@ -26,6 +27,7 @@ class SearchContainer extends Component {
     renderProfileBoxes = function() {
         let myProfile = this.props.myProfile;
         let curList = [];
+        let employees = this.props.employees;
         if(this.state.filterOn) {
             curList = this.state.newEmployees;
         } else {
@@ -33,14 +35,17 @@ class SearchContainer extends Component {
         }
         curList = orderBy(curList, [this.state.orderEmp], [this.state.AorDfilter]);
         let emp = curList.map(function (value) {
-            return (
-                <div className="Profile-Box-Spacing">
-                    <ProfileBox
-                        employee={value}
-                        myProfile={myProfile}
-                    />
-                </div>
-            )
+            if(value.eid !== myProfile.eid){
+                return (
+                    <div className="Profile-Box-Spacing">
+                        <ProfileBox
+                            employees={employees}
+                            employee={value}
+                            myProfile={myProfile}
+                        />
+                    </div>
+                )
+            }
         })
         return(emp);
     };
@@ -64,6 +69,11 @@ class SearchContainer extends Component {
         this.setState({AorDlabel: values.label});
     };
 
+    applyFilter3 = (values) => {
+        // print the form values to the console
+        console.log(values);
+    };
+
     alphaChange = (values) => {
         let newEmployees = [];
         let letter = values;
@@ -77,6 +87,7 @@ class SearchContainer extends Component {
     };
 
     render() {
+        let employees = this.props.employees;
         const filterOptions = [
             { value: 'location', label: 'Location' },
             { value: 'lastname', label: 'Last Name' },
@@ -91,6 +102,11 @@ class SearchContainer extends Component {
                 <div>
                     <div className="search-area">
                         <div>
+                            <AutoSearch
+                                list={employees}
+                                placeholder="Employee Name"
+                                choice={this.filter3}
+                            />
                             <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder={this.state.orderLabel} />
                             <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder={this.state.AorDlabel}/>
 

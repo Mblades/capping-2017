@@ -22,7 +22,7 @@
 
 .confirm-delete-button {
     width: 30%;
-    margin: 20px;
+    margin-right: 10px;
     background-color: #06CA0B;
     border-radius: 20px;
     border: 2px solid #4ADB1E;
@@ -31,7 +31,7 @@
 
 .cancel-delete-button {
     width: 30%;
-    margin: 20px;
+    margin-left: 10px;
     background-color: #E52332;
     border-radius: 20px;
     border: 2px solid #F23746;
@@ -41,6 +41,27 @@
 .action-employee-info {
     font-size: 2em;
     text-decoration: none;
+}
+
+.HR-modal-title {
+    font-size: 30px;
+}
+
+.HR-profile-container {
+    width: calc(100% - 30px);
+    height: 80%;
+    min-height: 470px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.HR-action-buttons {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    position: absolute;
 }
 
 .action-employee-info span {
