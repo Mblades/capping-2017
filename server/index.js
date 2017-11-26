@@ -96,6 +96,25 @@ app.post('/api/get_employee_applications', function(request, response) {
         }
     })
 });
+//  The get managed employees api
+app.post('/api/manager_employees', function(request, response) {
+    var mid = request.body.mid;
+    pool.connect((err, db, done) => {
+        if(err) {
+            return response.status(400).send(err);
+        } else {
+            db.query('SELECT * FROM manager_employees($1)', [mid], (err, res) => {
+                done();
+                if(err){
+                    return response.status(400).send(err);
+                } else {
+                    db.end();
+                    response.status(201).send(res);
+                }
+            })
+        }
+    })
+});
 //  The manager fin API
 app.post('/api/manager-find', function(request, response) {
     var eid = request.body.eid;

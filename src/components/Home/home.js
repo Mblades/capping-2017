@@ -46,10 +46,12 @@ class Home extends Component {
                     myProfile={this.props.location.state.myProfile}
                     employeeList={this.state.employees}
                 />
+                <div className="searchContainer-container">
                 <SearchContainer
                     employees={ this.state.employees }
                     myProfile={this.props.location.state.myProfile}
                 />
+                </div>
             </div>
         );
     }
