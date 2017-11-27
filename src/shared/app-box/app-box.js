@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import basicProfilePic from '../images/basicProfilePic.png';
 import './app-box.css';
 
 class AppBox extends Component {

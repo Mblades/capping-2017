@@ -86,6 +86,7 @@ class HRAction extends Component {
                                     myProfile={myProfile}
                                     tabCount={2}
                                     manager='n/a'
+                                    HRaction={true}
                                 />
                             </div>
                             <div className="HR-action-buttons">
@@ -98,11 +99,12 @@ class HRAction extends Component {
                 <div className="HR-Action-Container">
                     <div>
                         <div className="Action_Text">
-                            Please Enter the Employee's ID or name that you would like to {this.props.location.state.action}.
+                            Please Enter the Employee's ID or name that you would like to <div className="Action_Text_Word"> {this.props.location.state.action}</div>.
                         </div>
                         <div className="Employee_ID_Box">
                             <AutoSearch
                                 list={this.props.location.state.employeeList}
+                                searchBy="id"
                                 placeholder="Employee ID"
                                 choice={this.submit}
                             />

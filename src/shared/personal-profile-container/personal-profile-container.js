@@ -21,7 +21,7 @@ class PersonalProfileContainer extends Component {
                                 loggedIn: true
                             }
                         })}}>
-                        Edit My Profile
+                        My Profile
                     </div>
                     { this.props.myProfile.accesslevel <= 2 &&
                     <div className="HR-Options-Button" onClick={() => {

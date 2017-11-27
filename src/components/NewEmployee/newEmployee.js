@@ -32,7 +32,6 @@ class NewEmployee extends Component {
         //let that = this;
         event.preventDefault();
         console.log(this.refs);
-        var d = new Date(this.refs.dob.value | '1996-10-08');
         let employee_data = {
             first: this.refs.Fname.value,
             last: this.refs.Lname.value,

@@ -66,11 +66,14 @@
 .profile-content {
     width: 90%;
     height: calc(90% - 50px);
+    min-height: 375px;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin: auto;
     background-color: #D9E5FF;
     border-radius: 20px;
     position: absolute;
-    padding: 10px;
+    padding: 5px;
 }
 
 .content {
@@ -82,8 +85,7 @@
 }
 
 .information-line {
-    font-size: 30px;
-    margin-bottom: 1px;
+    font-size: 25px;
 }
 
 .profile-info {
@@ -152,7 +154,7 @@
 }
 
 .employee-name {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     text-decoration: underline;
     padding-bottom: 10px;
@@ -185,4 +187,37 @@
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.Edit-Button {
+    display: inline-block;
+    color: #0441D1;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+
+.done-edit-button {
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    color: white;
+    background: #0441D1;
+    width: 25%;
+    min-width: 100px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.input-edit {
+    background: whitesmoke;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-color: black;
+    border-width: 1px;
+    font-size: 20px;
 }

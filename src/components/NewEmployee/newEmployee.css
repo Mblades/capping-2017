@@ -40,7 +40,6 @@
 
 .information-line {
     font-size: 30px;
-    margin-bottom: 1px;
 }
 
 .profile-info {
@@ -67,14 +66,6 @@
     border-radius: 20px;
     margin-left: 75%;
     cursor: pointer;
-}
-
-.Edit-Button {
-    display: inline-block;
-    color: #007EFF;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 16px;
 }
 
 .App-Images {

@@ -10,6 +10,7 @@ class ProfileModal extends Component {
         super(props);
         this.state = {
             currentTab: 1,
+            editMode: false,
             image: '../Images/basicProfilePic.png'
         }
 
@@ -28,6 +29,12 @@ class ProfileModal extends Component {
         return(appList);
     };
 
+    toggleEdit () {
+        this.setState({
+            editMode: true
+        })
+    }
+
     render() {
         console.log(this.props);
         let employee = this.props.employee;
@@ -38,7 +45,7 @@ class ProfileModal extends Component {
                     { this.props.tabCount ===1 &&
                         (
                             <div className="profile-tab1"  onClick={() => {
-                                this.setState({currentTab: 1});
+                                this.setState({currentTab: 1, editMode: false});
                             }}>
                                 Personal Information
                             </div>
@@ -48,13 +55,13 @@ class ProfileModal extends Component {
                     (
                         <div>
                             <div className="profile-tab2" onClick={() => {
-                                this.setState({currentTab: 1});
+                                this.setState({currentTab: 1, editMode: false});
                             }}>
                                 Personal Information
                             </div>
                             <div className="tabBreak"></div>
                             <div className="profile-tab2" onClick={() => {
-                                this.setState({currentTab: 2});
+                                this.setState({currentTab: 2, editMode: false});
                             }}>
                                 Professional Information
                             </div>
@@ -65,19 +72,19 @@ class ProfileModal extends Component {
                     (
                         <div>
                             <div className="profile-tab3" onClick={() => {
-                                this.setState({currentTab: 1});
+                                this.setState({currentTab: 1, editMode: false});
                             }}>
                                 Personal Information
                             </div>
                             <div className="tabBreak"></div>
                             <div className="profile-tab3" onClick={() => {
-                                this.setState({currentTab: 2});
+                                this.setState({currentTab: 2, editMode: false});
                             }}>
                                 Professional Information
                             </div>
                             <div className="tabBreak"></div>
                             <div className="profile-tab3" onClick={() => {
-                                this.setState({currentTab: 3});
+                                this.setState({currentTab: 3, editMode: false});
                             }}>
                                 Applications
                             </div>
@@ -88,25 +95,25 @@ class ProfileModal extends Component {
                     (
                         <div>
                             <div className="profile-tab4" onClick={() => {
-                                this.setState({currentTab: 1});
+                                this.setState({currentTab: 1, editMode: false});
                             }}>
                                 Personal Information
                             </div>
                             <div className="tabBreak"></div>
                             <div className="profile-tab4" onClick={() => {
-                                this.setState({currentTab: 2});
+                                this.setState({currentTab: 2, editMode: false});
                             }}>
                                 Professional Information
                             </div>
                             <div className="tabBreak"></div>
                             <div className="profile-tab4" onClick={() => {
-                                this.setState({currentTab: 3});
+                                this.setState({currentTab: 3, editMode: false});
                             }}>
                                 Applications
                             </div>
                             <div className="tabBreak"></div>
                             <div className="profile-tab4" onClick={() => {
-                                this.setState({currentTab: 4});
+                                this.setState({currentTab: 4, editMode: false});
                             }}>
                                 Employees
                             </div>
@@ -117,20 +124,27 @@ class ProfileModal extends Component {
                 <div className="content">
                     <div className="profile-content">
                         {
-                            this.state.currentTab === 1 && (
+                            this.state.currentTab === 1 && !this.state.editMode && (
                                 <div>
                                     <div className="employee-name-container">
                                         <div className="employee-name">{employee.firstname} {employee.lastname}</div>
                                     </div>
+                                    {
+                                        employee.eid === this.props.myProfile.eid && (
+                                            <div className="Edit-Button" onClick={this.toggleEdit.bind(this)}>
+                                                Edit
+                                            </div>
+                                        )
+                                    }
                                     <div className="profile-image-container">
                                         <img src={ basicProfilePic } className="profile-image" alt="proPic" />
                                     </div>
                                     <div className="Profile-Personal-Information">
                                         <div className="personal-information-container">
                                             <div className="information-content">
+                                                <div className="information-line">Company ID: <div className="profile-info">{employee.eid}</div></div>
                                                 <div className="information-line">Date of Birth: <div className="profile-info">{dob.toLocaleDateString()}</div></div>
                                                 <div className="information-line">Address: <div className="profile-info">{employee.address}</div></div>
-                                                <div className="information-line">Company ID: <div className="profile-info">{employee.eid}</div></div>
                                                 <div className="information-line">Phone: <div className="profile-info">{employee.phonenumber}</div></div>
                                                 <div className="information-line">Email: <div className="profile-info">{employee.email}</div></div>
                                             </div>
@@ -140,12 +154,52 @@ class ProfileModal extends Component {
                             )
                         }
                         {
+                            this.state.currentTab === 1 && this.state.editMode && (
+                                <div>
+                                    <form>
+                                    <div className="employee-name-container">
+                                    </div>
+                                        <div className="profile-image-container">
+                                            <img src={ basicProfilePic } className="profile-image" alt="proPic" />
+                                        </div>
+                                        <div className="Profile-Personal-Information">
+                                            <div className="personal-information-container">
+                                                <div className="information-content">
+                                                    <div className="information-line">
+                                                        First Name: <input className="input-edit" ref="Fname" name="Employee_Fname" type="text" required placeholder={employee.firstname}/><br/>
+                                                        Last Name: <input className="input-edit" ref="Lname" name="Employee_Lname" type="text" required placeholder={employee.lastname}/>
+                                                    </div>
+                                                    <div className="information-line">Date of Birth: <div className="profile-info"><input className="input-edit" ref="dob" name="Employee_dob" type="text" placeholder={dob.toLocaleDateString()}/></div></div>
+                                                    <div className="information-line">Address: <div className="profile-info"><input className="input-edit" ref="address" name="Employee_address" type="text" placeholder={employee.address}/></div></div>
+                                                    <div className="information-line">Phone: <div className="profile-info"><input className="input-edit" ref="phone" name="Employee_phone" type="text" placeholder={employee.phonenumber}/></div></div>
+                                                    <div className="information-line">Email: <div className="profile-info"><input className="input-edit" ref="email" name="Employee_email" type="text" placeholder={employee.email}/></div></div>
+                                                    <div style={{paddingTop: "5px"}}>
+                                                        <div className="done-edit-button">
+                                                            Done
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            )
+                        }
+
+                        {
                             this.state.currentTab === 2 && (
                                 <div>
                                     <div className="Profile-Personal-Information">
                                         <div className="employee-name-container">
                                             <div className="employee-name">{employee.firstname} {employee.lastname}</div>
                                         </div>
+                                        {
+                                            this.props.myProfile.accesslevel <= 2 && !this.props.HRaction &&(
+                                                <div className="Edit-Button">
+                                                    Edit
+                                                </div>
+                                            )
+                                        }
                                         <div className="profestional-information-container">
                                             <div className="information-content">
                                                 <div className="information-line">Position: <div className="profile-info">{employee.jobtitle}</div></div>
