@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { browserHistory as history } from 'react-router';
 import CompanyHeader from "../../shared/header/header";
 import ProfileModal from "../../shared/profile-modal/profile-modal";
 import logo from '../../shared/images/logo.svg';
-import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import './profile.css';
 
 class Profile extends Component {
@@ -46,12 +44,12 @@ class Profile extends Component {
         let application_data = {
             eid: this.props.location.state.employee.eid
         };
-        var request = new Request('http://10.10.7.153:3000/api/get_employee_applications', {
+        var request1 = new Request('http://10.10.7.153:3000/api/get_employee_applications', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(application_data)
         });
-        fetch(request)
+        fetch(request1)
             .then(function(response) {
                 response.json()
                     .then(function(data) {
@@ -65,12 +63,12 @@ class Profile extends Component {
         let managed_data = {
             mid: this.props.location.state.employee.mid
         };
-        var request = new Request('http://10.10.7.153:3000/api/manager_employees', {
+        var request2 = new Request('http://10.10.7.153:3000/api/manager_employees', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(managed_data)
         });
-        fetch(request)
+        fetch(request2)
             .then(function(response) {
                 response.json()
                     .then(function(data) {
@@ -87,7 +85,6 @@ class Profile extends Component {
         let employees = this.state.employees;
         let employee = this.props.location.state.employee;
         let myProfile = this.props.location.state.myProfile;
-        let dob = new Date (employee.birthday);
         let tabs = 3;
         if(employee.mid) {
             tabs = 4;

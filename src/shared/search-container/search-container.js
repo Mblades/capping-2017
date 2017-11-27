@@ -102,42 +102,45 @@ class SearchContainer extends Component {
                 <div>
                     <div className="search-area">
                         <div>
+                            <div className="search-area-search-bar">
                             <AutoSearch
                                 list={employees}
                                 placeholder="Employee Name"
                                 choice={this.filter3}
                             />
+                            </div>
+                            <div className="search-area-dropdowns">
                             <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder={this.state.orderLabel} />
                             <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder={this.state.AorDlabel}/>
-
+                            </div>
                         </div>
-                        <div>
-                            <button className="AZsort" onClick={() => { this.alphaChange('A')}}>A</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('B')}}>B</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('C')}}>C</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('D')}}>D</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('E')}}>E</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('F')}}>F</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('G')}}>G</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('H')}}>H</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('I')}}>I</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('J')}}>J</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('K')}}>K</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('L')}}>L</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('M')}}>M</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('N')}}>N</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('O')}}>O</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('P')}}>P</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('Q')}}>Q</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('R')}}>R</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('S')}}>S</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('T')}}>T</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('U')}}>U</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('V')}}>V</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('W')}}>W</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('X')}}>X</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('Y')}}>Y</button>
-                            <button className="AZsort" onClick={() => { this.alphaChange('Z')}}>Z</button>
+                        <div className="AZ-container">
+                            <div className="AZsort" onClick={() => { this.alphaChange('A')}}>A</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('B')}}>B</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('C')}}>C</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('D')}}>D</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('E')}}>E</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('F')}}>F</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('G')}}>G</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('H')}}>H</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('I')}}>I</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('J')}}>J</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('K')}}>K</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('L')}}>L</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('M')}}>M</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('N')}}>N</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('O')}}>O</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('P')}}>P</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('Q')}}>Q</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('R')}}>R</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('S')}}>S</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('T')}}>T</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('U')}}>U</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('V')}}>V</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('W')}}>W</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('X')}}>X</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('Y')}}>Y</div>
+                            <div className="AZsort" onClick={() => { this.alphaChange('Z')}}>Z</div>
                         </div>
                     </div>
                     <div className="profile-boxes-container">

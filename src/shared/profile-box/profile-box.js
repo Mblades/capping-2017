@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import { browserHistory as history } from 'react-router';
 import basicProfilePic from '../images/basicProfilePic.png';
 import './profile-box.css';
@@ -9,9 +8,8 @@ class ProfileBox extends Component {
     //  into each of the profile boxes
     render() {
         const { employee } = this.props;
-        const { className, ...props } = this.props;
         return (
-            <div className={classnames('ProfileBox', className)} {...props}>
+        <div>
             <button className="Profile-Box-Container" onClick={() => {
                 //  Moves the user to the profile page and passes the information of the
                 //  selected user to populate the profile

@@ -6,15 +6,20 @@ function escapeRegexCharacters(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function getSuggestions(value, list) {
+function getSuggestions(value, list, searchBy) {
     const escapedValue = escapeRegexCharacters(value.trim());
 
     if (escapedValue === '') {
         return [];
     }
-
     const regex = new RegExp('\\b' + escapedValue, 'i');
-    return list.filter(employee => regex.test(getSuggestionValue(employee)));
+    if(searchBy === 'id') {
+        return list.filter(employee => regex.test(employee.eid));
+
+    }else {
+        return list.filter(employee => regex.test(getSuggestionValue(employee)));
+
+    }
 }
 
 function getSuggestionValue(suggestion) {
@@ -49,7 +54,7 @@ class AutoSearch extends Component {
 
     onSuggestionsFetchRequested = ({ value }) => {
         this.setState({
-            suggestions: getSuggestions(value, this.props.list)
+            suggestions: getSuggestions(value, this.props.list, this.props.searchBy)
         });
     };
 
@@ -61,6 +66,9 @@ class AutoSearch extends Component {
 
     onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
         this.props.choice(suggestion);
+        this.setState({
+            value: ''
+        })
     };
 
     render() {
