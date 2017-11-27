@@ -86,6 +86,7 @@ class HRAction extends Component {
                                     myProfile={myProfile}
                                     tabCount={2}
                                     manager='n/a'
+                                    HRaction={true}
                                 />
                             </div>
                             <div className="HR-action-buttons">

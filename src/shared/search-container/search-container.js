@@ -4,6 +4,7 @@ import './search-container.css';
 import ProfileBox from "../profile-box/profile-box";
 import {orderBy} from 'lodash';
 import AutoSearch from "../auto-search/auto-search";
+import Loader from "../loader/loader";
 
 // import searchBtn from '../Images/searchBtn.jpg';
 class SearchContainer extends Component {
@@ -34,20 +35,28 @@ class SearchContainer extends Component {
             curList = this.props.employees;
         }
         curList = orderBy(curList, [this.state.orderEmp], [this.state.AorDfilter]);
-        let emp = curList.map(function (value) {
-            if(value.eid !== myProfile.eid){
-                return (
-                    <div className="Profile-Box-Spacing">
-                        <ProfileBox
-                            employees={employees}
-                            employee={value}
-                            myProfile={myProfile}
-                        />
-                    </div>
-                )
-            }
-        })
-        return(emp);
+        if(curList.length > 0) {
+            let emp = curList.map(function (value) {
+                if (value.eid !== myProfile.eid) {
+                    return (
+                        <div className="Profile-Box-Spacing">
+                            <ProfileBox
+                                employees={employees}
+                                employee={value}
+                                myProfile={myProfile}
+                            />
+                        </div>
+                    )
+                }
+            })
+            return (emp);
+        } else{
+            return(
+                <div>
+                    <Loader/>
+                </div>
+            )
+        }
     };
 //Will be used to run the searches from the search bar
     doSearch = (values) => {

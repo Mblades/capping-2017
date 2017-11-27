@@ -1,0 +1,28 @@
+.loader-container {
+
+}
+
+@keyframes spin
+{
+    0% { transform: rotate(0);}
+    100% { transform: rotate(360deg); }
+}
+
+.loader
+{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    margin-left: -50px;
+    margin-top: -50px;
+    border: calc(100px * 0.07) solid;
+    border-color: #007EFF #f2f2f3 #f2f2f3 #f2f2f3;
+    border-radius: 50%;
+    box-shadow: 0 0 calc(100px * 0.80) #007EFF;
+    opacity: 0.9;
+    animation: spin 1s infinite linear;
+    background-color: #EAEBEC;
+}

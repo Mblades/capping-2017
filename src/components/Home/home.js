@@ -10,7 +10,7 @@ class Home extends Component {
     constructor() {
         super();
         this.state = {
-            employees: []
+            employees: [],
         }
     }
 //  This is wear we will make all of the AJAX Calla
@@ -18,21 +18,24 @@ class Home extends Component {
         //  This fires before the page renders to gather all profiles,
         //  I may move this so that we have a loader while the employee
         //  list loads
-        let that = this;
-        fetch('http://10.10.7.153:3000/api/get-all-employees')
-            .then(function(response) {
-                response.json()
-                    .then(function(data) {
-                        let employees = that.state.employees;
-                        employees = data.rows;
-                        that.setState({
-                            employees: employees
-                        });
-                    })
-            })
-            .catch(function(err) {
-                console.log(err);
-            })
+      let that = this;
+      let emp = [];
+      setTimeout(function() {
+          fetch('http://10.10.7.153:3000/api/get-all-employees')
+              .then(function(response) {
+                  response.json()
+                      .then(function(data) {
+                          emp = data.rows;
+                          that.setState({
+                              employees: emp,
+                              loading: false
+                          });
+                      })
+              })
+              .catch(function(err) {
+                  console.log(err);
+              });
+      }, 1000);
     }
 
     render() {
