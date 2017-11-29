@@ -38,14 +38,16 @@
     vertical-align: top;
 }
 
-.information-line {
+.new-information-line {
     font-size: 30px;
 }
 
-.profile-info {
+.new-profile-info {
     font-size: 20px;
     margin-bottom: 1px;
     display: inline;
+    float: right;
+    width: calc(100% - 190px);
 }
 
 .Profile-Headers {
@@ -71,4 +73,35 @@
 .App-Images {
     width: 10%;
     padding: 1%
+}
+
+.newEmp-container {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: calc(50% + 25px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.newEmp-information-content {
+    position: relative;
+    width: 100%;
+    text-align: left;
+}
+
+.new-input-edit {
+    background: whitesmoke;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-color: black;
+    border-width: 1px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.missingInfo-label {
+    font-size: 30px;
+    text-align: center;
 }

@@ -187,7 +187,7 @@ class ProfileModal extends Component {
                         }
 
                         {
-                            this.state.currentTab === 2 && (
+                            this.state.currentTab === 2 && !this.state.editMode && (
                                 <div>
                                     <div className="Profile-Personal-Information">
                                         <div className="employee-name-container">
@@ -195,7 +195,7 @@ class ProfileModal extends Component {
                                         </div>
                                         {
                                             this.props.myProfile.accesslevel <= 2 && !this.props.HRaction &&(
-                                                <div className="Edit-Button">
+                                                <div className="Edit-Button" onClick={this.toggleEdit.bind(this)}>
                                                     Edit
                                                 </div>
                                             )
@@ -206,7 +206,30 @@ class ProfileModal extends Component {
                                                 <div className="information-line">Location: <div className="profile-info">{employee.city}, Need to change location to string</div></div>
                                                 <div className="information-line">Department: <div className="profile-info">{employee.organization}</div></div>
                                                 <div className="information-line">Manager: <div className="profile-info">{this.props.manager.firstname} {this.props.manager.lastname}</div></div>
-                                                <div className="information-line">Local Time: <div className="profile-info">NEED TO DISCUSS</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        {
+                            this.state.currentTab === 2 && this.state.editMode && (
+                                <div>
+                                    <div className="Profile-Personal-Information">
+                                        <div className="employee-name-container">
+                                            <div className="employee-name">{employee.firstname} {employee.lastname}</div>
+                                        </div>
+                                        <div className="profestional-information-container">
+                                            <div className="information-content">
+                                                <div className="information-line">Position: <div className="profile-info"><input className="input-edit" ref="position" name="Employee_dob" type="text" placeholder={employee.jobtitle}/></div></div>
+                                                <div className="information-line">Location: <div className="profile-info"><input className="input-edit" ref="location" name="Employee_dob" type="text" placeholder={employee.city}/></div></div>
+                                                <div className="information-line">Department: <div className="profile-info"><input className="input-edit" ref="department" name="Employee_dob" type="text" placeholder={employee.organization}/></div></div>
+                                                <div className="information-line">Manager: <div className="profile-info">{this.props.manager.firstname} {this.props.manager.lastname}</div></div>
+                                                <div style={{paddingTop: "5px"}}>
+                                                    <div className="done-edit-button">
+                                                        Done
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
