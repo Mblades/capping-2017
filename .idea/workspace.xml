@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b6b67fd-272a-4224-81f5-9ac515bc3307" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/shared/loader/loader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/shared/loader/loader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HRAction/HRAction.css" afterPath="$PROJECT_DIR$/src/components/HRAction/HRAction.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HRAction/HRAction.js" afterPath="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home/home.js" afterPath="$PROJECT_DIR$/src/components/Home/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css" afterPath="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Profile/profile.css" afterPath="$PROJECT_DIR$/src/components/Profile/profile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/auto-search/auto-search.css" afterPath="$PROJECT_DIR$/src/shared/auto-search/auto-search.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.css" afterPath="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" afterPath="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" afterPath="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/search-container/search-container.js" afterPath="$PROJECT_DIR$/src/shared/search-container/search-container.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/search-container/search-container.css" afterPath="$PROJECT_DIR$/src/shared/search-container/search-container.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,22 +20,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Home/home.js">
+      <file leaf-file-name="HRAction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="66">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile-modal.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js">
+      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Profile/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="118" column="34" lean-forward="true" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+            <state relative-caret-position="1377">
+              <caret line="85" column="57" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Profile/profile.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="41" column="2" lean-forward="true" selection-start-line="41" selection-start-column="2" selection-end-line="46" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newEmployee.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newEmployee.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,9 +75,10 @@
       <file leaf-file-name="search-container.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+            <state relative-caret-position="493">
+              <caret line="50" column="14" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="50" selection-end-column="14" />
               <folding>
+                <element signature="e#0#41#0" expanded="true" />
                 <marker date="1511823244828" expanded="true" signature="3569:7431" ph="..." />
                 <marker date="1511823244828" expanded="true" signature="3591:7412" ph="..." />
                 <marker date="1511823244828" expanded="true" signature="3641:7133" ph="..." />
@@ -67,8 +93,8 @@
       <file leaf-file-name="profile-modal.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="206" column="17" lean-forward="false" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+            <state relative-caret-position="396">
+              <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="222" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -156,13 +182,10 @@
         <option value="$PROJECT_DIR$/src/shared/profile-box/profile-box.js" />
         <option value="$PROJECT_DIR$/src/components/Profile/profile.js" />
         <option value="$PROJECT_DIR$/src/shared/app-box/app-box.js" />
-        <option value="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" />
         <option value="$PROJECT_DIR$/src/shared/personal-profile-container/personal-profile-container.js" />
         <option value="$PROJECT_DIR$/src/shared/auto-search/auto-search.js" />
-        <option value="$PROJECT_DIR$/src/shared/search-container/search-container.css" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/src/components/Profile/profile.css" />
-        <option value="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css" />
         <option value="$PROJECT_DIR$/src/components/HRAction/HRAction.css" />
         <option value="$PROJECT_DIR$/src/shared/auto-search/auto-search.css" />
         <option value="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
@@ -172,6 +195,9 @@
         <option value="$PROJECT_DIR$/src/shared/loader/loader.css" />
         <option value="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.css" />
         <option value="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" />
+        <option value="$PROJECT_DIR$/src/shared/search-container/search-container.css" />
+        <option value="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css" />
+        <option value="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" />
       </list>
     </option>
   </component>
@@ -370,12 +396,12 @@
       <workItem from="1509059279019" duration="45009000" />
       <workItem from="1510178735884" duration="126593000" />
       <workItem from="1511712937611" duration="976000" />
-      <workItem from="1511793040304" duration="22113000" />
+      <workItem from="1511793040304" duration="35411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226559000" />
+    <option name="totallyTimeSpent" value="239857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -617,16 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Profile/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -635,34 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Profile/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="68" column="1" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/personal-profile-summary/personal-profile-summary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="100" column="97" lean-forward="true" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="97" />
           <folding />
         </state>
       </provider>
@@ -679,22 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="88" column="51" lean-forward="false" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -725,14 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="88" column="29" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/profile-box/profile-box.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -757,11 +725,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Profile/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="85" column="57" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="46" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="222" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Profile/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="41" column="2" lean-forward="true" selection-start-line="41" selection-start-column="2" selection-end-line="46" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+        <state relative-caret-position="493">
+          <caret line="50" column="14" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="50" selection-end-column="14" />
           <folding>
+            <element signature="e#0#41#0" expanded="true" />
             <marker date="1511823244828" expanded="true" signature="3569:7431" ph="..." />
             <marker date="1511823244828" expanded="true" signature="3591:7412" ph="..." />
             <marker date="1511823244828" expanded="true" signature="3641:7133" ph="..." />
@@ -772,19 +805,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.css">
+    <entry file="file://$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="206" column="17" lean-forward="false" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="118" column="34" lean-forward="true" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="429">
+          <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

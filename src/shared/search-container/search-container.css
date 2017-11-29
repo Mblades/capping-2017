@@ -55,6 +55,7 @@
     text-decoration-line: underline;
     padding: 4px;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .profile-boxes-container {

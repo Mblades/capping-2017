@@ -24,6 +24,8 @@ class NewEmployee extends Component {
                 doh: 'September 2017'
             },
             image: '../Images/basicProfilePic.png',
+            currentTab: 1,
+            missingInfo: []
         }
 
     };
@@ -31,7 +33,47 @@ class NewEmployee extends Component {
     addEmployee(event) {
         //let that = this;
         event.preventDefault();
-        console.log(this.refs);
+        let correctInfo = true;
+        let missingInfo = [];
+        if(this.refs.Fname.value === '') {
+            correctInfo = false;
+            missingInfo.push('First Name');
+        }
+        if(this.refs.Lname.value === '') {
+            correctInfo = false;
+            missingInfo.push('Last Name');
+
+        }
+        if(this.refs.phone.value === '') {
+            correctInfo = false;
+            missingInfo.push('Phone');
+
+        }
+        if(this.refs.address.value === '') {
+            correctInfo = false;
+            missingInfo.push('Address');
+        }
+        if(this.refs.position.value === '') {
+            correctInfo = false;
+            missingInfo.push('Position');
+        }
+        if(this.refs.city.value === '') {
+            correctInfo = false;
+            missingInfo.push('City');
+        }
+        if(this.refs.department.value === '') {
+            correctInfo = false;
+            missingInfo.push('Department');
+        }
+        if(this.refs.email.value === '') {
+            correctInfo = false;
+            missingInfo.push('Email');
+        }
+        if(this.refs.location.value === '') {
+            correctInfo = false;
+            missingInfo.push('Location');
+        }
+
         let employee_data = {
             first: this.refs.Fname.value,
             last: this.refs.Lname.value,
@@ -49,57 +91,116 @@ class NewEmployee extends Component {
             description: 'CEO of the companies global branch',
             accessLevel: 1
         };
+        //Still missing eid, mid, dob, roleID, description, accessLevel
+        console.log(employee_data, 'EMP Data');
         //change to 10.10.7.153
-        var request = new Request('http://10.10.7.153:3000/api/add-employee', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(employee_data)
-        });
-        fetch(request)
-            .then(function(response) {
-                response.json()
-                    .then(function(data) {
-                        console.log(data, 'err');
-                    })
+        if(correctInfo) {
+            var request = new Request('http://10.10.7.153:3000/api/add-employee', {
+                method: 'POST',
+                headers: new Headers({ 'Content-Type': 'application/json' }),
+                body: JSON.stringify(employee_data)
+            });
+            fetch(request)
+                .then(function(response) {
+                    response.json()
+                        .then(function(data) {
+                            console.log(data, 'err');
+                        })
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+        } else {
+            console.log(missingInfo);
+            this.setState({
+                missingInfo: missingInfo
             })
-            .catch(function(err) {
-                console.log(err);
-            })
+        }
+
     }
     render() {
+        console.log(this.props.location, 'hihihiih');
         return (
-            <div className="AddEmployeePage">
+            <div>
                 <CompanyHeader
                     logo={logo}
                     myProfile={this.props.location.state.myProfile}
                 />
-                <form ref="action_form" className="HRAction-Form">
-                <div className="personal-information-container-new">
-                    <img src={ basicProfilePic } className="Image" alt="proPic" />
-                    <div className="Profile-Personal-Information">
-                        <div className="Profile-Headers">Personal Information</div>
-                        <div className="information-line">First Name: <input className="input" ref="Fname" name="Employee_Fname" component="input" type="text" required placeholder="First Name"/> </div >
-                        <div className="information-line">Last Name: <input className="input" ref="Lname" name="Employee_Lname" component="input" type="text" required placeholder="Last Name"/> </div >
-                        <div className="information-line">Date of Birth: <input className="input" ref="dob" name="Employee_dob" component="input" type="text" required placeholder="Date Of Birth"/> </div>
-                        <div className="information-line">Address: <input className="input" ref="address" name="Employee_address" component="input" type="text" required placeholder="Address"/></div>
-                        <div className="information-line">Phone: <input className="input" ref="phone" name="Employee_phone" component="input" type="text" required placeholder="phone number"/></div>
-                        <div className="information-line">Email: <input className="input" ref="email" name="Employee_email" component="input" type="text" required placeholder="Email"/></div>
+                <div className="newEmp-container">
+            <div className="Profile-modal-container">
+                <div className="profile-tabs">
+                    <div>
+                        <div className="profile-tab2" onClick={() => {
+                            this.setState({currentTab: 1, editMode: false});
+                            }}>
+                            Personal Information
+                        </div>
+                        <div className="tabBreak"></div>
+                        <div className="profile-tab2" onClick={() => {
+                            this.setState({currentTab: 2, editMode: false});
+                            }}>
+                            Professional Information
+                        </div>
+                    </div>
+                 </div>
+                <div className="content">
+                    <div className="profile-content">
+                        {
+                            this.state.currentTab === 1 && (
+                                <div>
+                                    <form>
+                                        <div className="employee-name-container">
+                                        </div>
+                                        <div className="profile-image-container">
+                                            <img src={ basicProfilePic } className="profile-image" alt="proPic" />
+                                        </div>
+                                        <div className="Profile-Personal-Information">
+                                            <div className="personal-information-container">
+                                                <div className="newEmp-information-content">
+                                                    <div className="new-information-line">First Name: <div className="new-profile-info"><input className="new-input-edit" ref="Fname" name="Employee_Fname" type="text" required placeholder='First Name'/></div></div>
+                                                    <div className="new-information-line">Last Name: <div className="new-profile-info"><input className="new-input-edit" ref="Lname" name="Employee_Lname" type="text" required placeholder='Last Name'/></div></div>
+                                                    <div className="new-information-line">Date of Birth:<div className="new-profile-info"><input className="new-input-edit" ref="dob" name="Employee_dob" type="text" placeholder='Date of Birth'/></div></div>
+                                                    <div className="new-information-line">Address: <div className="new-profile-info"><input className="new-input-edit" ref="address" name="Employee_address" type="text" placeholder='Address'/></div></div>
+                                                    <div className="new-information-line">Phone: <div className="new-profile-info"><input className="new-input-edit" ref="phone" name="Employee_phone" type="text" placeholder='Phone'/></div></div>
+                                                    <div className="new-information-line">Email: <div className="new-profile-info"><input className="new-input-edit" ref="email" name="Employee_email" type="email" placeholder='Email'/></div></div>
+                                                    <div className="new-information-line">Position: <div className="new-profile-info"><input className="new-input-edit" ref="position" name="Employee_dob" type="text" placeholder='Position'/></div></div>
+                                                    <div className="new-information-line">Location: <div className="new-profile-info"><input className="new-input-edit" ref="location" name="Employee_dob" type="text" placeholder='Location'/></div></div>
+                                                    <div className="new-information-line">City: <div className="new-profile-info"><input className="new-input-edit" ref="city" name="Employee_city" component="input" type="City" required placeholder="City"/></div></div>
+                                                    <div className="new-information-line">Department: <div className="new-profile-info"><input className="new-input-edit" ref="department" name="Employee_dob" type="text" placeholder='Department'/></div></div>
+                                                    <div className="new-information-line">Manager: <div className="new-profile-info">Make a checkbox</div></div>
+                                                    <div className="new-information-line">Access Level: <div className="new-profile-info"><input className="new-input-edit" ref="accessLevel" name="Employee_accessLevel" component="input" type="text" required placeholder="Access Level"/></div></div>
+                                                    <div style={{paddingTop: "5px"}}>
+                                                        <div className="done-edit-button" onClick={this.addEmployee.bind(this)}>
+                                                            Add Employee
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            )
+                        }
+                        {
+                            this.state.currentTab === 2 && (
+                                <div>
+                                    <div className="Profile-Personal-Information">
+                                        <div className="employee-name-container">
+                                            <div className="employee-name"></div>
+                                        </div>
+                                        <div className="profestional-information-container">
+                                            <div className="information-content">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
-                <div className="personal-information-container-new">
-                    <div className="Profile-Professional-Information">
-                        <div className="Profile-Headers">Professional Information</div>
-                        <div className="information-line">Position: <input className="input" ref="position" name="Employee_position" component="input" type="text" required placeholder="Position"/></div>
-                        <div className="information-line">Location: <input className="input" ref="location" name="Employee_dob" component="input" type="text" required placeholder="Location"/></div>
-                        <div className="information-line">City: <input className="input" ref="city" name="Employee_city" component="input" type="text" required placeholder="City"/></div>
-                        <div className="information-line">Department: <input className="input" ref="department" name="Employee_department" component="input" type="text" required placeholder="Department"/></div>
-                        <div className="information-line">Manager: <input className="input" ref="manager" name="Employee_manager" component="input" type="text" required placeholder="Manager"/></div>
-                        <div className="information-line">Access Level: <input className="input" ref="accessLevel" name="Employee_accessLevel" component="input" type="text" required placeholder="Access Level"/></div>
-                    </div>
-                </div>
-                    {/*need to add function to call */}
-                    <button className="add-employee-button" onClick={this.addEmployee.bind(this)} type="submit">Add Employee</button>
-                </form>
+            </div>
+            </div>
             </div>
         );
     }
