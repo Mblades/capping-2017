@@ -14,26 +14,56 @@ class HRAction extends Component {
         this.state = {
             isModalOpen: false,
             actionEmployee: {},
-            actionComplete: false
+            actionComplete: false,
+            suspendedEmp: []
         }
     }
+
+    componentDidMount() {
+        //  This fires before the page renders to gather all profiles,
+        //  I may move this so that we have a loader while the employee
+        //  list loads
+        if(this.props.location.state.action === 'Reinstate') {
+            console.log('sadsad');
+            let that = this;
+            let emp = [];
+            //setTimeout(function() {
+            fetch('http://10.10.7.153:3000/api/get_all_suspended')
+                .then(function (response) {
+                    response.json()
+                        .then(function (data) {
+                            emp = data.rows;
+                            console.log(emp);
+                            that.setState({
+                                suspendedEmp: emp
+                            });
+                        })
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+            //}, 1000);
+        }
+    }
+
     doAction(event) {
         //let that = this;
         this.toggleModal();
         event.preventDefault();
-        let action_data = {
-            eid: this.state.actionEmployee.eid
-        };
-        var request = new Request('http://10.10.7.153:3000/api/delete-employee', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(action_data)
-        });
-        fetch(request)
-            .then(function(response) {
-                response.json()
-                    .then(function(data) {
-                        console.log("deleted", data)
+        if(this.props.location.state.action === 'Remove') {
+            let action_data = {
+                eid: this.state.actionEmployee.eid
+            };
+            var request = new Request('http://10.10.7.153:3000/api/delete-employee', {
+                method: 'POST',
+                headers: new Headers({'Content-Type': 'application/json'}),
+                body: JSON.stringify(action_data)
+            });
+            fetch(request)
+                .then(function (response) {
+                    response.json()
+                        .then(function (data) {
+                            console.log("deleted", data)
                             /*history.push({
                                 pathname: '/home',
                                 state: {
@@ -41,11 +71,64 @@ class HRAction extends Component {
                                     loggedIn: true
                                 }
                             })*/
-                    })
-            })
-            .catch(function(err) {
-                console.log(err);
-            })
+                        })
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        } else if(this.props.location.state.action === 'Suspend') {
+            let action_data = {
+                eid: this.state.actionEmployee.eid
+            };
+            var request = new Request('http://10.10.7.153:3000/api/suspend_employee', {
+                method: 'POST',
+                headers: new Headers({'Content-Type': 'application/json'}),
+                body: JSON.stringify(action_data)
+            });
+            fetch(request)
+                .then(function (response) {
+                    response.json()
+                        .then(function (data) {
+                            console.log("suspended", data)
+                            /*history.push({
+                                pathname: '/home',
+                                state: {
+                                    user: data.rows[0],
+                                    loggedIn: true
+                                }
+                            })*/
+                        })
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        } else if(this.props.location.state.action === 'Reinstate') {
+            let action_data = {
+                eid: this.state.actionEmployee.eid
+            };
+            var request = new Request('http://10.10.7.153:3000/api/reinstate_employee', {
+                method: 'POST',
+                headers: new Headers({'Content-Type': 'application/json'}),
+                body: JSON.stringify(action_data)
+            });
+            fetch(request)
+                .then(function (response) {
+                    response.json()
+                        .then(function (data) {
+                            console.log("reinstate", data)
+                            /*history.push({
+                                pathname: '/home',
+                                state: {
+                                    user: data.rows[0],
+                                    loggedIn: true
+                                }
+                            })*/
+                        })
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        }
     }
 
     submit = (employee) => {
@@ -72,6 +155,8 @@ class HRAction extends Component {
     }
 
     render() {
+        console.log(this.state, 'sdf');
+        console.log(this.props.location.state);
         let myProfile = this.props.location.state.myProfile;
         return (
             <div className="App">
@@ -111,12 +196,23 @@ class HRAction extends Component {
                             Please Enter the Employee's ID or name that you would like to <div className="Action_Text_Word"> {this.props.location.state.action}</div>.
                         </div>
                         <div className="Employee_ID_Box">
-                            <AutoSearch
-                                list={this.props.location.state.employeeList}
-                                searchBy="id"
-                                placeholder="Employee ID"
-                                choice={this.submit}
-                            />
+                            { this.props.location.state.action === 'Reinstate' && (
+                                <AutoSearch
+                                    list={this.state.suspendedEmp}
+                                    searchBy="id"
+                                    placeholder="Employee ID"
+                                    choice={this.submit}
+                                />
+                            )}
+                            { this.props.location.state.action !== 'Reinstate' && (
+                                <AutoSearch
+                                    list={this.props.location.state.employeeList}
+                                    searchBy="id"
+                                    placeholder="Employee ID"
+                                    choice={this.submit}
+                                />
+                            )}
+
                         </div>
                     </div>
             </div>
