@@ -16,3 +16,16 @@
     border: 1px solid #007EFF;
     cursor: default;
 }
+
+.request-access-button {
+    float: right;
+    background-color: #007EFF;
+    border-radius: 20px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.app-name {
+    display: inline;
+}

@@ -6,12 +6,21 @@ class AppBox extends Component {
     //  into each of the profile boxes
     render() {
         const { app } = this.props;
-        console.log(this.props.app, "tete");
+        console.log(this.props, "tete");
         return (
             <div>
                 <div className="app-link">
                     <div className="app-summary-line">
-                        { app.appname }
+                        <div className="app-name">
+                            { app.appname }
+                        </div>
+                        { this.props.request && (
+                                <div className="request-access-button" onClick={() => {
+                                    this.props.requested()
+                                }}>
+                                    Request
+                                </div>
+                        )}
                     </div>
                 </div>
             </div>

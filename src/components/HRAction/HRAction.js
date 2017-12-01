@@ -6,13 +6,15 @@ import Modal from "../../shared/modal/modal";
 import logo from '../../shared/images/logo.svg';
 import AutoSearch from "../../shared/auto-search/auto-search";
 import ProfileModal from "../../shared/profile-modal/profile-modal";
+import ConfirmModal from "../../shared/confirm-modal/confirm-modal";
 
 class HRAction extends Component {
     constructor(props) {
         super(props)
         this.state = {
             isModalOpen: false,
-            actionEmployee: {}
+            actionEmployee: {},
+            actionComplete: false
         }
     }
     doAction(event) {
@@ -96,6 +98,13 @@ class HRAction extends Component {
                         </Modal>
                     )
                 }
+                <ConfirmModal
+                    show={this.state.actionComplete}
+                >
+                    <div className="confirm-text">
+                        You have successfully **Done THIS**
+                    </div>
+                </ConfirmModal>
                 <div className="HR-Action-Container">
                     <div>
                         <div className="Action_Text">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './profile-modal.css';
+import { browserHistory as history } from 'react-router';
 import AppBox from '../../shared/app-box/app-box';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import SearchContainer from '../../shared/search-container/search-container'
@@ -36,7 +37,7 @@ class ProfileModal extends Component {
     }
 
     render() {
-        console.log(this.props);
+        console.log(this.props, 'hi');
         let employee = this.props.employee;
         let dob = new Date (employee.birthday);
         return (
@@ -249,7 +250,16 @@ class ProfileModal extends Component {
                                         }
                                     </div>
                                     <div className="request-button-container">
-                                        <div className="request-button">
+                                        <div className="request-button" onClick={() => {
+                                            history.push({
+                                                pathname: '/request',
+                                                state: {
+                                                    employees: this.props.employees,
+                                                    loggedIn: true,
+                                                    employee: this.props.employee,
+                                                    myProfile: this.props.myProfile
+                                                }
+                                            })}}>
                                             Request Access
                                         </div>
                                     </div>

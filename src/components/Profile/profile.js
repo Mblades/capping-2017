@@ -81,7 +81,6 @@ class Profile extends Component {
     }
 
     render() {
-        console.log(this.props.location.state);
         let employees = this.state.employees;
         let employee = this.props.location.state.employee;
         let myProfile = this.props.location.state.myProfile;
