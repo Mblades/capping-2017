@@ -1,0 +1,23 @@
+.confirm-backdrop {
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-Index: 999;
+    background-color: rgba(0,0,0,0.7);
+    padding: 50px;
+}
+
+.confirm-modal {
+    background-color: #fff;
+    border-radius: 5px;
+    width: calc(100% - 100px);
+    max-width: 700px;
+    height: calc(50% - 50px);
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

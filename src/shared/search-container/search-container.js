@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Dropdown from 'react-dropdown'
+import Dropdown from 'react-dropdown';
+import { browserHistory as history } from 'react-router';
 import './search-container.css';
 import ProfileBox from "../profile-box/profile-box";
 import {orderBy} from 'lodash';
@@ -50,7 +51,11 @@ class SearchContainer extends Component {
                 }
             })
             return (emp);
-        } else{
+        } else if(this.state.filterOn) {
+            return(
+                <div>No Employees Found</div>
+            )
+        } else {
             return(
                 <div>
                     <Loader/>
@@ -58,29 +63,27 @@ class SearchContainer extends Component {
             )
         }
     };
-//Will be used to run the searches from the search bar
-    doSearch = (values) => {
-        // print the form values to the console
-        console.log(values)
-    };
 //used to apply a sort on filter
     applyFilter = (values) => {
-        // print the form values to the console
-        console.log(values);
         this.setState({orderEmp: values.value});
         this.setState({orderLabel: values.label});
     };
 //used to determine ascending or descending
     applyFilter2 = (values) => {
-        // print the form values to the console
-        console.log(values);
         this.setState({AorDfilter: values.value});
         this.setState({AorDlabel: values.label});
     };
-
-    applyFilter3 = (values) => {
-        // print the form values to the console
-        console.log(values);
+//searches from the search bar to go to that profile
+    searchEmployee = (values) => {
+        history.push({
+            pathname: '/profile',
+            state: {
+                employees: this.props.employees,
+                loggedIn: true,
+                employee: values,
+                myProfile: this.props.myProfile
+            }
+        });
     };
 
     alphaChange = (values) => {
@@ -115,7 +118,7 @@ class SearchContainer extends Component {
                             <AutoSearch
                                 list={employees}
                                 placeholder="Employee Name"
-                                choice={this.filter3}
+                                choice={this.searchEmployee}
                             />
                             </div>
                             <div className="search-area-dropdowns">

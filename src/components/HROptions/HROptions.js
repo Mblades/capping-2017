@@ -75,7 +75,7 @@ class HROptions extends Component {
                                     employeeList: employeeList
                                 }
                             })}}>
-                            Reinstate
+                            Reinstate Employee
                         </div>
                     </div>
                 </div>
