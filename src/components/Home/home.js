@@ -21,7 +21,7 @@ class Home extends Component {
       let that = this;
       let emp = [];
       setTimeout(function() {
-          fetch('http://10.10.7.153:3000/api/get-all-employees')
+          fetch('http://10.10.7.153:3000/api/get_all_not_suspended')
               .then(function(response) {
                   response.json()
                       .then(function(data) {

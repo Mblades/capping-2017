@@ -94,3 +94,30 @@
 .input {
 
 }
+
+.reinstate-text {
+    font-size: 40px;
+    width: 90%
+}
+
+.reinstate-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.confirm-action-button {
+    width: 30%;
+    margin-top: 20px;
+    bottom: 10px;
+    background-color: #06CA0B;
+    border-radius: 20px;
+    border: 2px solid #4ADB1E;
+    font-size: 16px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+

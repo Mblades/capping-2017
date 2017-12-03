@@ -6,7 +6,6 @@ class AppBox extends Component {
     //  into each of the profile boxes
     render() {
         const { app } = this.props;
-        console.log(this.props, "tete");
         return (
             <div>
                 <div className="app-link">
@@ -16,7 +15,7 @@ class AppBox extends Component {
                         </div>
                         { this.props.request && (
                                 <div className="request-access-button" onClick={() => {
-                                    this.props.requested()
+                                    this.props.requested(app)
                                 }}>
                                     Request
                                 </div>

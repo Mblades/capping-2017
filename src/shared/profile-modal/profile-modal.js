@@ -249,20 +249,23 @@ class ProfileModal extends Component {
                                             this.renderAppBoxes()
                                         }
                                     </div>
-                                    <div className="request-button-container">
-                                        <div className="request-button" onClick={() => {
-                                            history.push({
-                                                pathname: '/request',
-                                                state: {
-                                                    employees: this.props.employees,
-                                                    loggedIn: true,
-                                                    employee: this.props.employee,
-                                                    myProfile: this.props.myProfile
-                                                }
-                                            })}}>
-                                            Request Access
+                                    {this.props.myProfile.eid === this.props.employee.eid && (
+                                        <div className="request-button-container">
+                                            <div className="request-button" onClick={() => {
+                                                history.push({
+                                                    pathname: '/request',
+                                                    state: {
+                                                        employees: this.props.employees,
+                                                        loggedIn: true,
+                                                        employee: this.props.employee,
+                                                        myProfile: this.props.myProfile,
+                                                        manager: this.props.manager
+                                                    }
+                                                })}}>
+                                                Request Access
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
                             )
                         }

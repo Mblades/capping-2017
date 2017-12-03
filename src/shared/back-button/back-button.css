@@ -1,0 +1,19 @@
+.back-button-container {
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border: 2px solid #007EFF;
+    background-color: #007EFF;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.back-button {
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
