@@ -3,6 +3,7 @@ import { browserHistory as history } from 'react-router';
 import CompanyHeader from "../../shared/header/header";
 import logo from '../../shared/images/logo.svg';
 import './HROptions.css';
+import BackButton from "../../shared/back-button/back-button";
 
 class HROptions extends Component {
     render() {
@@ -80,6 +81,11 @@ class HROptions extends Component {
                     </div>
                 </div>
                 </div>
+                <BackButton
+                    myProfile={myProfile}
+                    employeeList={employeeList}
+                    backTo="home"
+                />
             </div>
         );
     }

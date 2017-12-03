@@ -44,7 +44,31 @@ class RequestApp extends Component {
             });
     }
 
-    makeRequest = function() {
+    makeRequest = function(app) {
+        let today = new Date();
+        let that = this;
+        let emp = [];
+        let application_data = {
+            eid: this.props.location.state.employee.eid,
+            mid: this.props.location.state.manager.eid,
+            aid: app.aid,
+            date: today
+        };
+        var request = new Request('http://10.10.7.153:3000/api/request_app', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(application_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                        console.log(data.rows);
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
         this.toggleModal();
     };
 
@@ -62,7 +86,7 @@ class RequestApp extends Component {
                     <AppBox
                         app={value}
                         request={true}
-                        requested={() => that.makeRequest()}
+                        requested={(value) => that.makeRequest(value)}
                     />
                 </div>
             )
