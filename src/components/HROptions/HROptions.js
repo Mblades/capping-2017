@@ -16,7 +16,7 @@ class HROptions extends Component {
                     logo={logo}
                     myProfile={myProfile}
                 />
-                <div className="HR-Options-Container">
+                <div className="HR-Options-Container animation-container">
                 <div className="Option-Box-Container" >
                     <div className="HR-Option-Box" onClick={() => {
                         history.push({

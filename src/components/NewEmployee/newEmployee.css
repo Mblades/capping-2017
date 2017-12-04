@@ -86,8 +86,9 @@
 
 .newEmp-information-content {
     position: relative;
-    width: 100%;
+    width: 80%;
     text-align: left;
+    left: 10%
 }
 
 .new-input-edit {

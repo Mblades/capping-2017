@@ -36,3 +36,12 @@
     font-size: 40px;
     line-height: 140px;
 }
+
+.animation-container {
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+    from { top: 100%; left: 0; }
+    to   { top: 0px; left: 0; }
+}

@@ -40,13 +40,13 @@ class SearchContainer extends Component {
             let emp = curList.map(function (value) {
                 if (value.eid !== myProfile.eid) {
                     return (
-                        <div className="Profile-Box-Spacing">
-                            <ProfileBox
-                                employees={employees}
-                                employee={value}
-                                myProfile={myProfile}
-                            />
-                        </div>
+                            <div className="Profile-Box-Spacing">
+                                <ProfileBox
+                                    employees={employees}
+                                    employee={value}
+                                    myProfile={myProfile}
+                                />
+                            </div>
                     )
                 }
             })
