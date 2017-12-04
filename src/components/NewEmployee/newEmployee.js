@@ -73,6 +73,18 @@ class NewEmployee extends Component {
             correctInfo = false;
             missingInfo.push('Location');
         }
+        if(this.refs.roleID.value === '') {
+            correctInfo = false;
+            missingInfo.push('Role ID');
+        }
+        if(this.refs.dob.value === '') {
+            correctInfo = false;
+            missingInfo.push('Date of Birth');
+        }
+        if(this.refs.description.value === '') {
+            correctInfo = false;
+            missingInfo.push('Description');
+        }
 
         let employee_data = {
             first: this.refs.Fname.value,
@@ -86,10 +98,10 @@ class NewEmployee extends Component {
             location: this.refs.location.value,
             eid: '15',
             mid: '15',
-            dob: '2/14/1922',
-            roleId: 'AAAsdcA',
-            description: 'CEO of the companies global branch',
-            accessLevel: 1
+            dob: this.refs.dob.value,
+            roleId: this.refs.roleID.value,
+            description: this.refs.description.value,
+            accessLevel: this.refs.accessLevel.value
         };
         //Still missing eid, mid, dob, roleID, description, accessLevel
         console.log(employee_data, 'EMP Data');
@@ -104,7 +116,7 @@ class NewEmployee extends Component {
                 .then(function(response) {
                     response.json()
                         .then(function(data) {
-                            console.log(data, 'err');
+                            console.log(data);
                         })
                 })
                 .catch(function(err) {
@@ -159,7 +171,7 @@ class NewEmployee extends Component {
                                                 <div className="newEmp-information-content">
                                                     <div className="new-information-line">First Name: <div className="new-profile-info"><input className="new-input-edit" ref="Fname" name="Employee_Fname" type="text" required placeholder='First Name'/></div></div>
                                                     <div className="new-information-line">Last Name: <div className="new-profile-info"><input className="new-input-edit" ref="Lname" name="Employee_Lname" type="text" required placeholder='Last Name'/></div></div>
-                                                    <div className="new-information-line">Date of Birth:<div className="new-profile-info"><input className="new-input-edit" ref="dob" name="Employee_dob" type="text" placeholder='Date of Birth'/></div></div>
+                                                    <div className="new-information-line">Date of Birth:<div className="new-profile-info"><input className="new-input-edit" ref="dob" name="Employee_dob" type="text" placeholder='MM/DD/YYYY'/></div></div>
                                                     <div className="new-information-line">Address: <div className="new-profile-info"><input className="new-input-edit" ref="address" name="Employee_address" type="text" placeholder='Address'/></div></div>
                                                     <div className="new-information-line">Phone: <div className="new-profile-info"><input className="new-input-edit" ref="phone" name="Employee_phone" type="text" placeholder='Phone'/></div></div>
                                                     <div className="new-information-line">Email: <div className="new-profile-info"><input className="new-input-edit" ref="email" name="Employee_email" type="email" placeholder='Email'/></div></div>
@@ -169,6 +181,8 @@ class NewEmployee extends Component {
                                                     <div className="new-information-line">Department: <div className="new-profile-info"><input className="new-input-edit" ref="department" name="Employee_dob" type="text" placeholder='Department'/></div></div>
                                                     <div className="new-information-line">Manager: <div className="new-profile-info">Make a checkbox</div></div>
                                                     <div className="new-information-line">Access Level: <div className="new-profile-info"><input className="new-input-edit" ref="accessLevel" name="Employee_accessLevel" component="input" type="text" required placeholder="Access Level"/></div></div>
+                                                    <div className="new-information-line">Role ID: <div className="new-profile-info"><input className="new-input-edit" ref="roleID" name="Employee_roleID" component="input" type="text" required placeholder="Role ID"/></div></div>
+                                                    <div className="new-information-line">Description: <div className="new-profile-info"><input className="new-input-edit" ref="description" name="Employee_description" component="input" type="text" required placeholder="Description"/></div></div>
                                                     <div style={{paddingTop: "5px"}}>
                                                         <div className="done-edit-button" onClick={this.addEmployee.bind(this)}>
                                                             Add Employee

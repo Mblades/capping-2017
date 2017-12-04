@@ -261,7 +261,7 @@ class HRAction extends Component {
                         </div>
                     </div>
                 </ConfirmModal>
-                <div className="HR-Action-Container">
+                <div className="HR-Action-Container animation-container">
                     <div>
                         <div className="Action_Text">
                             Please Enter the Employee's ID or name that you would like to <div className="Action_Text_Word"> {this.props.location.state.action}</div>.
