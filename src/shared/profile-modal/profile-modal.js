@@ -162,6 +162,7 @@ class ProfileModal extends Component {
                                     </div>
                                         <div className="profile-image-container">
                                             <img src={ basicProfilePic } className="profile-image" alt="proPic" />
+                                            <img src="static/media/picture.jpg" className="profile-image" alt="proPic" />
                                         </div>
                                         <div className="Profile-Personal-Information">
                                             <div className="personal-information-container">
