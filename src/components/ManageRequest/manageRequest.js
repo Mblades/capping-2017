@@ -1,12 +1,11 @@
 // src/components/Home/home.js
 import React, { Component } from 'react';
 import logo from '../../shared/images/logo.svg';
-import './requestApp.css';
+import './manageRequest.css';
 import CompanyHeader from "../../shared/header/header";
-import AppBox from "../../shared/app-box/app-box";
-import ConfirmModal from "../../shared/confirm-modal/confirm-modal";
+import RequestBox from "../../shared/request-box/request-box";
 
-class RequestApp extends Component {
+class ManageRequest extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,8 +18,9 @@ class RequestApp extends Component {
     componentDidMount() {
         let that = this;
         let application_data = {
-            eid: this.props.location.state.employee.eid
+            eid: this.props.location.state.myProfile.eid
         };
+        //change to get the requests
         var request = new Request('http://10.10.7.153:3000/api/get_possible_applications', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -40,37 +40,13 @@ class RequestApp extends Component {
                 console.log(err);
             });
     }
-
-    makeRequest = function(app) {
-        let today = new Date();
-        let application_data = {
-            eid: this.props.location.state.employee.eid,
-            mid: this.props.location.state.manager.eid,
-            aid: app.aid,
-            date: today
-        };
-        var request = new Request('http://10.10.7.153:3000/api/request_app', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(application_data)
-        });
-        fetch(request)
-            .then(function(response) {
-                response.json()
-                    .then(function(data) {
-                        console.log(data.rows);
-                    })
-            })
-            .catch(function(err) {
-                console.log(err);
-            });
-        this.toggleModal();
+// make and accept and deny request not request
+    approveRequest = function(app) {
+        console.log('approve');
     };
 
-    toggleModal = function() {
-        this.setState({
-            requestMade: !this.state.requestMade
-        })
+    denyRequest = function(app) {
+        console.log('deny');
     };
 
     renderAppBoxes = function() {
@@ -78,10 +54,11 @@ class RequestApp extends Component {
         let appList = this.state.apps.map(function (value) {
             return (
                 <div className="App-Box-Spacing">
-                    <AppBox
+                    <RequestBox
                         app={value}
                         request={true}
-                        requested={(value) => that.makeRequest(value)}
+                        approve={(value) => that.approveRequest(value)}
+                        deny={(value) => that.denyRequest(value)}
                     />
                 </div>
             )
@@ -97,21 +74,9 @@ class RequestApp extends Component {
                     logo={logo}
                     myProfile={this.props.location.state.myProfile}
                 />
-                <ConfirmModal
-                    show={this.state.requestMade}
-                >
-                    <div className="confirm-text">
-                        You have successfully requested access!
-                    </div>
-                    <div className="done-button" onClick={() => {
-                        this.toggleModal()
-                    }}>
-                        Done
-                    </div>
-                </ConfirmModal>
                 <div className="possible-apps-container">
                     <div className="request-apps-title">
-                        Request New Applications
+                        Manage Current Requests
                     </div>
                     {
                         this.renderAppBoxes()
@@ -122,4 +87,4 @@ class RequestApp extends Component {
     }
 }
 
-export default RequestApp;
+export default ManageRequest;

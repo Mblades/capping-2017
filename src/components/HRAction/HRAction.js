@@ -84,12 +84,12 @@ class HRAction extends Component {
             let action_data = {
                 eid: this.state.actionEmployee.eid
             };
-            var request = new Request('http://10.10.7.153:3000/api/suspend_employee', {
+            var request1 = new Request('http://10.10.7.153:3000/api/suspend_employee', {
                 method: 'POST',
                 headers: new Headers({'Content-Type': 'application/json'}),
                 body: JSON.stringify(action_data)
             });
-            fetch(request)
+            fetch(request1)
                 .then(function (response) {
                     response.json()
                         .then(function (data) {
