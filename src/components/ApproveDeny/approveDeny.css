@@ -1,0 +1,32 @@
+.ApproveDeny-container {
+    width: 100%;
+    height: 100%;
+}
+
+.approve-application-button {
+    position: absolute;
+    height: 20px;
+    width: 75%;
+    left: 10%;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    border: 1px solid #007EFF;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.deny-application-button {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    height: 20px;
+    text-align: center;
+    width: 75%;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #007EFF;
+    cursor: pointer;
+}

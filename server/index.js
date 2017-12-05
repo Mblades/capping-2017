@@ -189,6 +189,30 @@ app.post('/api/add-employee', function(request, response) {
         }
     })
 });
+/*
+//  The request application api
+app.post('/api/request_app', function(request, response) {
+    var eid = request.body.eid;
+    var mid = request.body.mid;
+    var aid = request.body.aid;
+    var date = request.body.date;
+    pool.connect((err, db, done) => {
+        if(err) {
+            return response.status(400).send(err);
+        } else {
+            db.query('SELECT * FROM request_app($1, $2, $3, $4)', [eid, mid, aid, date], (err, res) => {
+                done();
+                if(err){
+                    return response.status(400).send(err);
+                } else {
+                    db.end();
+                    response.status(201).send(res);
+                }
+            })
+        }
+    })
+});
+*/
 //Logs the port that the APIs are currently listening to
 //app.listen(process.env.PORT, () => console.log('Listening on port ' + process.env.PORT));
 app.listen(PORT, () => console.log('Listening on port ' + PORT));
