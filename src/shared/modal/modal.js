@@ -11,7 +11,7 @@ class Modal extends React.Component {
 
         return (
             <div className="backdrop">
-                <div className="modal">
+                <div className="modal animation-container-modal">
                     {this.props.children}
                 </div>
             </div>

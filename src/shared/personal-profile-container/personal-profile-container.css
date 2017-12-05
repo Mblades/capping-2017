@@ -24,6 +24,21 @@
     cursor: pointer;
 }
 
+.Manage-Request-Button {
+    position: absolute;
+    height: 20px;
+    width: 75%;
+    left: 10%;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #007EFF;
+    bottom: 75px;
+    cursor: pointer;
+}
+
 .Profile-Edit-Button {
     position: absolute;
     bottom: 40px;

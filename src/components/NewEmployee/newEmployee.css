@@ -16,6 +16,11 @@
     width: 100%;
 }
 
+.employee-information-title {
+    text-align: center;
+    font-size: 30px;
+}
+
 .add-employee-button {
     width: 20%;
     margin-left: 40%;
@@ -77,9 +82,9 @@
 
 .newEmp-container {
     width: 80%;
-    height: 80%;
+    height: calc(80% - 0px);
     position: absolute;
-    top: calc(50% + 25px);
+    top: calc(50% + 5px);
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -105,4 +110,13 @@
 .missingInfo-label {
     font-size: 30px;
     text-align: center;
+}
+
+.animation-container-modal {
+    animation: fadeInUpModal 1s;
+}
+
+@keyframes fadeInUpModal {
+    from { top: 150%; left: 50%; }
+    to   { top: 50%; left: 50%; }
 }

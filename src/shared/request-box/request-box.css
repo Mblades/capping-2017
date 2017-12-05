@@ -1,0 +1,25 @@
+.approve-access-button {
+    float: right;
+    background-color: #06CA0B;
+    border: 2px solid #4ADB1E;
+    border-radius: 20px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    top: -2px;
+}
+
+.deny-access-button {
+    float: right;
+    background-color: #E52332;
+    border: 2px solid #F23746;
+    border-radius: 20px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    top: -2px;
+}

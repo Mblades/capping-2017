@@ -11,6 +11,7 @@ import HRAction from "./components/HRAction/HRAction";
 import Login from "./components/Login/login";
 import newEmployee from "./components/NewEmployee/newEmployee";
 import requestApp from "./components/RequestApp/requestApp";
+import ManageRequest from "./components/ManageRequest/manageRequest";
 //  Describes the path required  to reach each of the application pages
 
 //  Still need to add a validation function to check if the user is logged in
@@ -25,6 +26,7 @@ const Routes = (props) => (
         <Route path="/action" component={HRAction}/>
         <Route path="/add" component={newEmployee}/>
         <Route path="/request" component={requestApp}/>
+        <Route path="/manage" component={ManageRequest}/>
         <Route path="*" component={NotFound} />
     </Router>
 );

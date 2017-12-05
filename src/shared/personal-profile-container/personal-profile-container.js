@@ -36,6 +36,19 @@ class PersonalProfileContainer extends Component {
                         HR Options
                     </div>
                     }
+                    { this.props.myProfile.mid &&
+                    <div className="Manage-Request-Button" onClick={() => {
+                        history.push({
+                            pathname: '/manage',
+                            state: {
+                                employeeList: this.props.employeeList,
+                                myProfile: this.props.myProfile,
+                                loggedIn: true
+                            }
+                        })}}>
+                        Manage Requests
+                    </div>
+                    }
                 </div>
             </div>
         )

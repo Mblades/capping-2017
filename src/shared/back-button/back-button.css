@@ -1,6 +1,6 @@
 .back-button-container {
     position: absolute;
-    bottom:10px;
+    bottom: -10px;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;

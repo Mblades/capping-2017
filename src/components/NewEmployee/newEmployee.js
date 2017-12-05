@@ -3,6 +3,7 @@ import CompanyHeader from "../../shared/header/header";
 import logo from '../../shared/images/logo.svg';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import './newEmployee.css';
+import BackButton from "../../shared/back-button/back-button";
 
 class NewEmployee extends Component {
     constructor(props) {
@@ -138,20 +139,14 @@ class NewEmployee extends Component {
                     logo={logo}
                     myProfile={this.props.location.state.myProfile}
                 />
-                <div className="newEmp-container">
+                <div className="newEmp-container animation-container-modal">
             <div className="Profile-modal-container">
                 <div className="profile-tabs">
                     <div>
-                        <div className="profile-tab2" onClick={() => {
+                        <div className="employee-information-title" onClick={() => {
                             this.setState({currentTab: 1, editMode: false});
                             }}>
-                            Personal Information
-                        </div>
-                        <div className="tabBreak"></div>
-                        <div className="profile-tab2" onClick={() => {
-                            this.setState({currentTab: 2, editMode: false});
-                            }}>
-                            Professional Information
+                            Employee Information
                         </div>
                     </div>
                  </div>
@@ -215,6 +210,11 @@ class NewEmployee extends Component {
                 </div>
             </div>
             </div>
+                <BackButton
+                    myProfile={this.props.location.state.myProfile}
+                    employeeList={this.props.location.state.employeeList}
+                    backTo="options"
+                />
             </div>
         );
     }
