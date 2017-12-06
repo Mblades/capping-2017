@@ -63,6 +63,7 @@ class ManageRequest extends Component {
                 console.log(err);
             });
         console.log('approve');
+        this.denyRequest(app);
     };
 
     denyRequest = function(app) {
