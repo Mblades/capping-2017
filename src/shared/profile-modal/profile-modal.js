@@ -37,6 +37,7 @@ class ProfileModal extends Component {
     }
 
     render() {
+        console.log(basicProfilePic);
         console.log(this.props, 'hi');
         let employee = this.props.employee;
         let dob = new Date (employee.birthday);
@@ -162,7 +163,7 @@ class ProfileModal extends Component {
                                     </div>
                                         <div className="profile-image-container">
                                             <img src={ basicProfilePic } className="profile-image" alt="proPic" />
-                                            <img src="static/media/picture.jpg" className="profile-image" alt="proPic" />
+                                            <img src="../picture/picture.jpg" className="profile-image" alt="proPic" />
                                         </div>
                                         <div className="Profile-Personal-Information">
                                             <div className="personal-information-container">
