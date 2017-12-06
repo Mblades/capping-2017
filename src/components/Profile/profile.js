@@ -10,7 +10,6 @@ class Profile extends Component {
         super(props);
         //only here as a back-up place holder will be updated to be a fall back soon
         this.state = {
-            image: '../Images/basicProfilePic.png',
             manager: {firstname: 'N/A', lastname: ''},
             applications: {},
             employees: []

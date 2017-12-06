@@ -24,7 +24,6 @@ class NewEmployee extends Component {
                 loctime: 'EST',
                 doh: 'September 2017'
             },
-            image: '../Images/basicProfilePic.png',
             currentTab: 1,
             missingInfo: []
         }
