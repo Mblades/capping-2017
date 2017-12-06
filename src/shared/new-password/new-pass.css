@@ -1,0 +1,58 @@
+.confirm-new-emp {
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-Index: 999;
+    background-color: rgba(0,0,0,0.7);
+    padding: 50px;
+}
+
+.new-emp-modal {
+    background-color: #fff;
+    border-radius: 5px;
+    width: calc(100% - 100px);
+    max-width: 700px;
+    height: calc(70% - 50px);
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animation-container-modal {
+    animation: fadeInUpModal 1s;
+}
+.new-pass {
+    text-align: center;
+}
+
+.password-text {
+    font-size: 30px;
+    padding: 30px;
+}
+
+.new-password {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-color: black;
+    border-width: 1px;
+    font-size: 20px;
+    width: 70%;
+}
+
+.confirm-password-button {
+    position: absolute;
+    bottom: 10px;
+    background: #4ADB1E;
+    padding: 5px;
+    border: 1px solid #06ca0b;
+    border-radius: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+

@@ -4,6 +4,9 @@ import logo from '../../shared/images/logo.svg';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import './newEmployee.css';
 import BackButton from "../../shared/back-button/back-button";
+import NewPass from "../../shared/new-password/new-password";
+import { browserHistory as history } from 'react-router';
+
 
 class NewEmployee extends Component {
     constructor(props) {
@@ -25,7 +28,9 @@ class NewEmployee extends Component {
                 doh: 'September 2017'
             },
             currentTab: 1,
-            missingInfo: []
+            missingInfo: [],
+            confirmEmp: false,
+            currEmp: 1
         }
 
     };
@@ -107,6 +112,7 @@ class NewEmployee extends Component {
         console.log(employee_data, 'EMP Data');
         //change to 10.10.7.153
         if(correctInfo) {
+            let that = this;
             var request = new Request('http://10.10.7.153:3000/api/add-employee', {
                 method: 'POST',
                 headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -117,6 +123,10 @@ class NewEmployee extends Component {
                     response.json()
                         .then(function(data) {
                             console.log(data);
+                            that.setState({
+                                currEmp: employee_data.eid,
+                                confirmEmp: true
+                            })
                         })
                 })
                 .catch(function(err) {
@@ -130,14 +140,32 @@ class NewEmployee extends Component {
         }
 
     }
+
+    doneAdding = function() {
+        this.setState({
+            confrimEmp: false
+        });
+        history.push({
+            pathname: 'options',
+            state: {
+                myProfile: this.props.location.state.myProfile,
+                employeeList: this.props.location.state.employeeList,
+            }
+        })
+    };
+
     render() {
-        console.log(this.props.location, 'hihihiih');
         return (
             <div>
                 <CompanyHeader
                     logo={logo}
                     myProfile={this.props.location.state.myProfile}
                 />
+                { this.state.confirmEmp && (
+                    <NewPass
+                    eid={ this.state.currEmp }
+                    onClose={() => this.doneAdding()}/>
+                )}
                 <div className="newEmp-container animation-container-modal">
             <div className="Profile-modal-container">
                 <div className="profile-tabs">

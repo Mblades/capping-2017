@@ -17,7 +17,6 @@ class ProfileBox extends Component {
                     pathname: '/profile',
                     state: {
                         employees: this.props.employees,
-                        loggedIn: true,
                         employee: this.props.employee,
                         myProfile: this.props.myProfile
                     }
