@@ -278,8 +278,7 @@ class HRAction extends Component {
                             { this.props.location.state.action !== 'Reinstate' && (
                                 <AutoSearch
                                     list={this.props.location.state.employeeList}
-                                    searchBy="id"
-                                    placeholder="Employee ID"
+                                    placeholder="Employee Name or ID"
                                     choice={this.submit}
                                 />
                             )}

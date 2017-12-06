@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b6b67fd-272a-4224-81f5-9ac515bc3307" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/auto-search/auto-search.css" afterPath="$PROJECT_DIR$/src/shared/auto-search/auto-search.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/auto-search/auto-search.js" afterPath="$PROJECT_DIR$/src/shared/auto-search/auto-search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/HRAction/HRAction.js" afterPath="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" afterPath="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/search-container/search-container.js" afterPath="$PROJECT_DIR$/src/shared/search-container/search-container.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="profile-modal.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile-modal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="353" column="53" lean-forward="false" selection-start-line="353" selection-start-column="53" selection-end-line="353" selection-end-column="53" />
+            <state relative-caret-position="382">
+              <caret line="368" column="38" lean-forward="true" selection-start-line="368" selection-start-column="38" selection-end-line="368" selection-end-column="38" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -34,8 +33,8 @@
       <file leaf-file-name="search-container.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="125" column="48" lean-forward="true" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
+            <state relative-caret-position="425">
+              <caret line="54" column="64" lean-forward="true" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -54,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auto-search.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="auto-search.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/auto-search/auto-search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="69" column="19" lean-forward="false" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+            <state relative-caret-position="399">
+              <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -91,6 +90,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-85">
               <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HRAction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="280" column="69" lean-forward="true" selection-start-line="280" selection-start-column="69" selection-end-line="280" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -180,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/ManageRequest/manageRequest.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/shared/request-box/request-box.css" />
-        <option value="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
         <option value="$PROJECT_DIR$/src/shared/back-button/back-button.css" />
         <option value="$PROJECT_DIR$/src/shared/request-box/request-box.js" />
         <option value="$PROJECT_DIR$/src/shared/app-box/app-box.css" />
@@ -193,14 +201,15 @@
         <option value="$PROJECT_DIR$/src/shared/new-password/new-pass.css" />
         <option value="$PROJECT_DIR$/src/components/NewEmployee/newEmployee.js" />
         <option value="$PROJECT_DIR$/src/shared/new-password/new-password.js" />
-        <option value="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" />
         <option value="$PROJECT_DIR$/src/shared/profile-box/profile-box.js" />
         <option value="$PROJECT_DIR$/src/shared/back-button/back-button.js" />
         <option value="$PROJECT_DIR$/src/components/RequestApp/requestApp.js" />
         <option value="$PROJECT_DIR$/src/shared/search-container/search-container.css" />
-        <option value="$PROJECT_DIR$/src/shared/search-container/search-container.js" />
         <option value="$PROJECT_DIR$/src/shared/auto-search/auto-search.js" />
         <option value="$PROJECT_DIR$/src/shared/auto-search/auto-search.css" />
+        <option value="$PROJECT_DIR$/src/components/HRAction/HRAction.js" />
+        <option value="$PROJECT_DIR$/src/shared/search-container/search-container.js" />
+        <option value="$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js" />
       </list>
     </option>
   </component>
@@ -255,6 +264,13 @@
               <item name="capping" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capping" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="HRAction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="capping" type="b2602c69:ProjectViewProjectNode" />
@@ -339,12 +355,12 @@
       <workItem from="1511793040304" duration="35411000" />
       <workItem from="1511995004969" duration="2429000" />
       <workItem from="1512145641196" duration="53815000" />
-      <workItem from="1512531847184" duration="19137000" />
+      <workItem from="1512531847184" duration="19405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319138000" />
+    <option name="totallyTimeSpent" value="319406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -532,14 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HROptions/HROptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-655">
-          <caret line="18" column="72" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/back-button/back-button.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -640,14 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="217" column="95" lean-forward="false" selection-start-line="217" selection-start-column="61" selection-end-line="217" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -680,16 +680,6 @@
           <caret line="43" column="50" lean-forward="true" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
           <folding>
             <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="353" column="53" lean-forward="false" selection-start-line="353" selection-start-column="53" selection-end-line="353" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -744,14 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="125" column="48" lean-forward="true" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/auto-search/auto-search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -763,11 +745,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HROptions/HROptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="18" column="72" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/auto-search/auto-search.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="69" column="19" lean-forward="false" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+        <state relative-caret-position="399">
+          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HRAction/HRAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="280" column="69" lean-forward="true" selection-start-line="280" selection-start-column="69" selection-end-line="280" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/search-container/search-container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="54" column="64" lean-forward="true" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/profile-modal/profile-modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="368" column="38" lean-forward="true" selection-start-line="368" selection-start-column="38" selection-end-line="368" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
