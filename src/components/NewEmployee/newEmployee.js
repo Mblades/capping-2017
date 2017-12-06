@@ -46,7 +46,7 @@ class NewEmployee extends Component {
         var check_roleID = /^[A-Za-z]{1}[0-9]{4}$/;
         var check_dob = /^(0[1-9]|1[012])([- /.])(0[1-9]|[12][0-9]|3[01])\2(19|20)\d\d$/;
         var check_description = /^((([A-Za-z]+)\s+)\.)*$/m;
-        var check_access_level = /^[0-9]{1,1}$/;
+        var check_accessLevel = /^[0-9]{1,1}$/;
         let correctInfo = true;
         let missingInfo = [];
         let refs = this.refs;
