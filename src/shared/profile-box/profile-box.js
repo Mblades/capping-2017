@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { browserHistory as history } from 'react-router';
-import basicProfilePic from '../images/basicProfilePic.png';
 import './profile-box.css';
 
 class ProfileBox extends Component {
@@ -8,6 +7,7 @@ class ProfileBox extends Component {
     //  into each of the profile boxes
     render() {
         const { employee } = this.props;
+        let profilePic = 'EmployeePicture/' + this.props.employee.eid + '.jpg';
         return (
         <div>
             <button className="Profile-Box-Container" onClick={() => {
@@ -24,7 +24,7 @@ class ProfileBox extends Component {
                 })}}>
 
                 <div>
-                    <img src={ basicProfilePic } className="Profile-picture" alt="proPic" />
+                    <img src={ profilePic } className="Profile-picture" alt="proPic" />
                 </div>
                 <div className="Profile-summary-content">
                     <div className="Profile-summary-line">

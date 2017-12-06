@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './profile-modal.css';
 import { browserHistory as history } from 'react-router';
 import AppBox from '../../shared/app-box/app-box';
-import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import SearchContainer from '../../shared/search-container/search-container'
 
 
@@ -12,7 +11,6 @@ class ProfileModal extends Component {
         this.state = {
             currentTab: 1,
             editMode: false,
-            image: '../Images/basicProfilePic.png'
         }
 
     };
