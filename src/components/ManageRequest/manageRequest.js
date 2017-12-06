@@ -4,6 +4,7 @@ import logo from '../../shared/images/logo.svg';
 import './manageRequest.css';
 import CompanyHeader from "../../shared/header/header";
 import RequestBox from "../../shared/request-box/request-box";
+import BackButton from "../../shared/back-button/back-button";
 
 class ManageRequest extends Component {
     constructor() {
@@ -21,7 +22,7 @@ class ManageRequest extends Component {
             eid: this.props.location.state.myProfile.eid
         };
         //change to get the requests
-        var request = new Request('http://10.10.7.153:3000/api/get_possible_applications', {
+        var request = new Request('http://10.10.7.153:3000/api/get_requests', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(application_data)
@@ -33,7 +34,7 @@ class ManageRequest extends Component {
                         that.setState({
                             apps: data.rows
                         })
-                        console.log(data.rows);
+                        console.log(data.rows,'test');
                     })
             })
             .catch(function(err) {
@@ -42,10 +43,49 @@ class ManageRequest extends Component {
     }
 // make and accept and deny request not request
     approveRequest = function(app) {
+        let that = this;
+        let request_data = {
+            rid: app.rid
+        };
+        var request = new Request('http://10.10.7.153:3000/api/approve_request', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(request_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                        console.log(data.rows);
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
         console.log('approve');
     };
 
     denyRequest = function(app) {
+        let that = this;
+        let request_data = {
+            rid: app.rid
+        };
+        //change to get the requests
+        var request = new Request('http://10.10.7.153:3000/api/deny_request', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(request_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                        console.log(data.rows);
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
         console.log('deny');
     };
 
@@ -66,7 +106,6 @@ class ManageRequest extends Component {
         return(appList);
     };
 
-
     render() {
         return (
             <div className="requestApp-container">
@@ -78,10 +117,17 @@ class ManageRequest extends Component {
                     <div className="request-apps-title">
                         Manage Current Requests
                     </div>
+                    <div className="requests-container animation-container">
                     {
                         this.renderAppBoxes()
                     }
+                    </div>
                 </div>
+                <BackButton
+                    myProfile={this.props.location.state.myProfile}
+                    employeelist={this.props.location.state.employees}
+                    backTo="home"
+                />
             </div>
         );
     }

@@ -6,6 +6,7 @@ class RequestBox extends Component {
     //  into each of the profile boxes
     render() {
         const { app } = this.props;
+        console.log(app);
         return (
             <div>
                 <div className="app-link">
@@ -23,6 +24,12 @@ class RequestBox extends Component {
                         }}>
                             Approve
                         </div>
+                    </div>
+                    <div className="app-summary-line">
+                        Requested By: {app.firstname} {app.lastname}
+                    </div>
+                    <div className="app-summary-line">
+                        On: {app.daterequested}
                     </div>
                 </div>
             </div>

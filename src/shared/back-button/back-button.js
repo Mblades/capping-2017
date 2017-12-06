@@ -12,7 +12,7 @@ class BackButton extends Component {
                     pathname: this.props.backTo,
                     state: {
                         myProfile: this.props.myProfile,
-                        employeeList: this.props.employeeList
+                        employeeList: this.props.employeeList,
                     }
                 })}}>
                 <div className="back-button">
