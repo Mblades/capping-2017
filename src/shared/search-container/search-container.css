@@ -107,6 +107,18 @@
     width: calc(70% - 10px);
 }
 
+.clear-filter-button {
+    display: inline;
+    background: white;
+    position: absolute;
+    padding: 5px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
 .AZ-container {
     position: absolute;
     width: 100%;
