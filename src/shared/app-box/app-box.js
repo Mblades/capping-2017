@@ -5,6 +5,7 @@ class AppBox extends Component {
     //  Name, Phone, Position, and Location all get passed from the search container and are then populated
     //  into each of the profile boxes
     render() {
+        console.log(this.props);
         const { app } = this.props;
         return (
             <div>
