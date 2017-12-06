@@ -13,6 +13,7 @@ class BackButton extends Component {
                     state: {
                         myProfile: this.props.myProfile,
                         employeeList: this.props.employeeList,
+                        employee: this.props.employee
                     }
                 })}}>
                 <div className="back-button">

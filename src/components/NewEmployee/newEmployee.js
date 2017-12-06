@@ -5,6 +5,8 @@ import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import './newEmployee.css';
 import BackButton from "../../shared/back-button/back-button";
 import NewPass from "../../shared/new-password/new-password";
+import { browserHistory as history } from 'react-router';
+
 
 class NewEmployee extends Component {
     constructor(props) {
@@ -27,7 +29,8 @@ class NewEmployee extends Component {
             },
             currentTab: 1,
             missingInfo: [],
-            confirmEmp: true
+            confirmEmp: false,
+            currEmp: 1
         }
 
     };
@@ -121,6 +124,7 @@ class NewEmployee extends Component {
                         .then(function(data) {
                             console.log(data);
                             that.setState({
+                                currEmp: employee_data.eid,
                                 confirmEmp: true
                             })
                         })
@@ -136,6 +140,20 @@ class NewEmployee extends Component {
         }
 
     }
+
+    doneAdding = function() {
+        this.setState({
+            confrimEmp: false
+        });
+        history.push({
+            pathname: 'options',
+            state: {
+                myProfile: this.props.location.state.myProfile,
+                employeeList: this.props.location.state.employeeList,
+            }
+        })
+    };
+
     render() {
         return (
             <div>
@@ -144,7 +162,9 @@ class NewEmployee extends Component {
                     myProfile={this.props.location.state.myProfile}
                 />
                 { this.state.confirmEmp && (
-                    <NewPass/>
+                    <NewPass
+                    eid={ this.state.currEmp }
+                    onClose={() => this.doneAdding()}/>
                 )}
                 <div className="newEmp-container animation-container-modal">
             <div className="Profile-modal-container">

@@ -5,6 +5,7 @@ import './requestApp.css';
 import CompanyHeader from "../../shared/header/header";
 import AppBox from "../../shared/app-box/app-box";
 import ConfirmModal from "../../shared/confirm-modal/confirm-modal";
+import BackButton from "../../shared/back-button/back-button";
 
 class RequestApp extends Component {
     constructor() {
@@ -117,6 +118,12 @@ class RequestApp extends Component {
                         this.renderAppBoxes()
                     }
                 </div>
+                <BackButton
+                    myProfile={this.props.location.state.myProfile}
+                    employeelist={this.props.location.state.employees}
+                    employee={this.props.location.state.employee}
+                    backTo="profile"
+                />
             </div>
         );
     }
