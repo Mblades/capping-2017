@@ -12,25 +12,23 @@ function getSuggestions(value, list, searchBy) {
     if (escapedValue === '') {
         return [];
     }
-    const regex = new RegExp('\\b' + escapedValue, 'i');
-    if(searchBy === 'id') {
-        return list.filter(employee => regex.test(employee.eid));
+    const regex = new RegExp('^' + escapedValue + '[0-9]*', 'i');
+    return list.filter(employee => (getSuggestionValue(employee)).includes(escapedValue.toLowerCase()) || regex.test(employee.eid) );
 
-    }else {
-        return list.filter(employee => regex.test(getSuggestionValue(employee)));
-
-    }
 }
 
 function getSuggestionValue(suggestion) {
-    return `${suggestion.firstname} ${suggestion.lastname}`;
+    return `${suggestion.firstname.toLowerCase()} ${suggestion.lastname.toLowerCase()}`;
     // suggestion.eid;
 }
 
 function renderSuggestion(suggestion) {
     let suggestionText = `${suggestion.firstname} ${suggestion.lastname}`;
     return (
-        <span>{suggestionText}</span>
+        <div>
+        <div className="suggest-test">{suggestionText}</div>
+            <div className="suggestion-eid">{suggestion.eid}</div>
+        </div>
     );
 }
 

@@ -124,7 +124,7 @@ class SearchContainer extends Component {
                             <div className="search-area-search-bar">
                             <AutoSearch
                                 list={employees}
-                                placeholder="Employee Name"
+                                placeholder="Employee Name ot ID"
                                 choice={this.searchEmployee}
                             />
                             </div>
