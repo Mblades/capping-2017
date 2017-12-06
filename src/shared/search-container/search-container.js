@@ -27,6 +27,7 @@ class SearchContainer extends Component {
     }
 
     renderProfileBoxes = function() {
+        console.log(this.state, 'state');
         let myProfile = this.props.myProfile;
         let curList = [];
         let employees = this.props.employees;
@@ -51,7 +52,7 @@ class SearchContainer extends Component {
                 }
             })
             return (emp);
-        } else if(this.state.filterOn) {
+        } else if(this.state.filterOn || this.props.managerProfile) {
             return(
                 <div>No Employees Found</div>
             )
@@ -124,7 +125,7 @@ class SearchContainer extends Component {
                             <div className="search-area-search-bar">
                             <AutoSearch
                                 list={employees}
-                                placeholder="Employee Name"
+                                placeholder="Employee Name ot ID"
                                 choice={this.searchEmployee}
                             />
                             </div>

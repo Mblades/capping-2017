@@ -365,6 +365,7 @@ class ProfileModal extends Component {
                                     <SearchContainer
                                         employees={ this.props.employees }
                                         myProfile={this.props.myProfile}
+                                        managerProfile={true}
                                     />
                                 </div>
                             )
