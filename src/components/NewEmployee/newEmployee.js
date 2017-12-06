@@ -4,6 +4,7 @@ import logo from '../../shared/images/logo.svg';
 import basicProfilePic from '../../shared/images/basicProfilePic.png';
 import './newEmployee.css';
 import BackButton from "../../shared/back-button/back-button";
+import NewPass from "../../shared/new-password/new-password";
 
 class NewEmployee extends Component {
     constructor(props) {
@@ -25,7 +26,8 @@ class NewEmployee extends Component {
                 doh: 'September 2017'
             },
             currentTab: 1,
-            missingInfo: []
+            missingInfo: [],
+            confirmEmp: true
         }
 
     };
@@ -107,6 +109,7 @@ class NewEmployee extends Component {
         console.log(employee_data, 'EMP Data');
         //change to 10.10.7.153
         if(correctInfo) {
+            let that = this;
             var request = new Request('http://10.10.7.153:3000/api/add-employee', {
                 method: 'POST',
                 headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -117,6 +120,9 @@ class NewEmployee extends Component {
                     response.json()
                         .then(function(data) {
                             console.log(data);
+                            that.setState({
+                                confirmEmp: true
+                            })
                         })
                 })
                 .catch(function(err) {
@@ -131,13 +137,15 @@ class NewEmployee extends Component {
 
     }
     render() {
-        console.log(this.props.location, 'hihihiih');
         return (
             <div>
                 <CompanyHeader
                     logo={logo}
                     myProfile={this.props.location.state.myProfile}
                 />
+                { this.state.confirmEmp && (
+                    <NewPass/>
+                )}
                 <div className="newEmp-container animation-container-modal">
             <div className="Profile-modal-container">
                 <div className="profile-tabs">

@@ -112,9 +112,7 @@
     text-align: center;
 }
 
-.animation-container-modal {
-    animation: fadeInUpModal 1s;
-}
+
 
 @keyframes fadeInUpModal {
     from { top: 150%; left: 50%; }
