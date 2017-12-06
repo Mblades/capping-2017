@@ -34,55 +34,69 @@ class NewEmployee extends Component {
     addEmployee(event) {
         //let that = this;
         event.preventDefault();
+        // multi: \s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?
+        var check_Fname = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?)?$/;
+        var check_Lname = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?)?$/;
+        var check_phone = /\--(.*?)\--/gim;
+        var check_address = /^([0-9]{1,5})\s([A-Za-z]+)+$/;
+        var check_position = /^(([A-Za-z]+)\s+)$/;
+        var check_city = /^(([A-Za-z]+)\s+)$/;
+        var check_department = /^(([A-Za-z]+)\s+)$/;
+        var check_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var check_location = /^(([A-Za-z]+)\s+)$/;
+        var check_roleID = /^[A-Za-z]{1}[0-9]{4}$/;
+        var check_dob = /^(0[1-9]|1[012])([- /.])(0[1-9]|[12][0-9]|3[01])\2(19|20)\d\d$/;
+        var check_description = /^((([A-Za-z]+)\s+)\.)*$/;
         let correctInfo = true;
         let missingInfo = [];
-        if(this.refs.Fname.value === '') {
+        let refs = this.refs;
+        if(this.refs.Fname.value === '' || check_Fname.test(refs.Fname.value)) {
             correctInfo = false;
             missingInfo.push('First Name');
         }
-        if(this.refs.Lname.value === '') {
+        if(this.refs.Lname.value === '' || check_Lname.test(refs.Lname.value)) {
             correctInfo = false;
             missingInfo.push('Last Name');
 
         }
-        if(this.refs.phone.value === '') {
+        if(this.refs.phone.value === '' || check_phone.test(refs.phone.value)) {
             correctInfo = false;
             missingInfo.push('Phone');
 
         }
-        if(this.refs.address.value === '') {
+        if(this.refs.address.value === '' || check_address.test(refs.address.value)) {
             correctInfo = false;
             missingInfo.push('Address');
         }
-        if(this.refs.position.value === '') {
+        if(this.refs.position.value === '' || check_position.test(refs.position.value)) {
             correctInfo = false;
             missingInfo.push('Position');
         }
-        if(this.refs.city.value === '') {
+        if(this.refs.city.value === '' || check_city.test(refs.city.value)) {
             correctInfo = false;
             missingInfo.push('City');
         }
-        if(this.refs.department.value === '') {
+        if(this.refs.department.value === '' || check_department.test(refs.department.value)) {
             correctInfo = false;
-            missingInfo.push('Department');
+            missingInfo.push('Department' || check_Fname.test(refs.Fname.value));
         }
-        if(this.refs.email.value === '') {
+        if(this.refs.email.value === '' || check_Fname.test(refs.Fname.value)) {
             correctInfo = false;
             missingInfo.push('Email');
         }
-        if(this.refs.location.value === '') {
+        if(this.refs.location.value === '' || check_location.test(refs.location.value)) {
             correctInfo = false;
             missingInfo.push('Location');
         }
-        if(this.refs.roleID.value === '') {
+        if(this.refs.roleID.value === '' || check_roleID.test(refs.roleID.value)) {
             correctInfo = false;
             missingInfo.push('Role ID');
         }
-        if(this.refs.dob.value === '') {
+        if(this.refs.dob.value === '' || check_dob.test(refs.dob.value)) {
             correctInfo = false;
             missingInfo.push('Date of Birth');
         }
-        if(this.refs.description.value === '') {
+        if(this.refs.description.value === '' || check_description.test(refs.description.value)) {
             correctInfo = false;
             missingInfo.push('Description');
         }
