@@ -51,7 +51,7 @@ class RequestApp extends Component {
         console.log(app);
         let application_data1 = {
             eid: this.props.location.state.employee.eid,
-            mid: 2,
+            mid: '2',
             aid: app.aid,
             date: today
         };
