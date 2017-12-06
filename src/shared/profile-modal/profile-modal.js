@@ -17,6 +17,95 @@ class ProfileModal extends Component {
 
     };
 
+    doEdit1 = function() {
+        let employee = this.props.employee;
+        let employee_data = {
+            first: this.refs.Fname.value ===  '' ? employee.firstname : this.refs.Fname.value,
+            last: this.refs.Lname.value ===  '' ? employee.lastname : this.refs.Lname.value,
+            phone: this.refs.phone.value ===  '' ? employee.phonenumber : this.refs.phone.value,
+            address: this.refs.address.value ===  '' ? employee.address : this.refs.address.value,
+            title: employee.jobtitle,
+            city:  employee.city,
+            organization: employee.organization,
+            email: this.refs.email.value ===  '' ? employee.email : this.refs.email.value,
+            location: employee.location,
+            eid: employee.eid,
+            dob: this.refs.dob.value ===  '' ? employee.birthday : this.refs.dob.value,
+            roleId: employee.roleid,
+            description: employee.description,
+            accessLevel: employee.accesslevel
+        };
+        let that = this;
+        console.log(employee_data, 'EMP Data');
+            var request = new Request('http://10.10.7.153:3000/api/edit_employee', {
+                method: 'POST',
+                headers: new Headers({ 'Content-Type': 'application/json' }),
+                body: JSON.stringify(employee_data)
+            });
+            fetch(request)
+                .then(function(response) {
+                    response.json()
+                        .then(function(data) {
+                            console.log(data);
+                            that.props.employee.firstname = employee_data.first;
+                            that.props.employee.lastname = employee_data.last;
+                            that.props.employee.phonenumber = employee_data.phone;
+                            that.props.employee.address = employee_data.address;
+                            that.props.employee.email = employee_data.email;
+                            that.props.employee.birthday = employee_data.dob;
+                            that.setState({
+                                editMode: false
+                            })
+                        })
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+    }
+
+    doEdit2 = function() {
+        let employee = this.props.employee;
+        let employee_data = {
+            first: employee.firstname,
+            last: employee.lastname,
+            phone: employee.phonenumber,
+            address: employee.address,
+            title: this.refs.position.value ===  '' ? employee.jobtitle : this.refs.position.value,
+            city:  this.refs.city.value === '' ? employee.city : this.refs.city.value,
+            organization: this.refs.department.value ===  '' ? employee.organization : this.refs.department.value,
+            email: employee.email,
+            location: employee.location,
+            eid: employee.eid,
+            dob: employee.birthday,
+            roleId: employee.roleid,
+            description: employee.description,
+            accessLevel: employee.accesslevel
+        };
+        let that = this;
+        console.log(employee_data, 'EMP Data');
+        var request = new Request('http://10.10.7.153:3000/api/edit_employee', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(employee_data)
+        });
+        fetch(request)
+            .then(function(response) {
+                response.json()
+                    .then(function(data) {
+                        console.log(data);
+                        that.props.employee.jobtitle = employee_data.title;
+                        that.props.employee.city = employee_data.city;
+                        that.props.employee.organization = employee_data.organization;
+                        that.setState({
+                            editMode: false
+                        })
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+    }
+
     renderAppBoxes = function() {
         let appList = this.props.apps.map(function (value) {
             return (
@@ -177,7 +266,7 @@ class ProfileModal extends Component {
                                                     <div className="information-line">Phone: <div className="profile-info"><input className="input-edit" ref="phone" name="Employee_phone" type="text" placeholder={employee.phonenumber}/></div></div>
                                                     <div className="information-line">Email: <div className="profile-info"><input className="input-edit" ref="email" name="Employee_email" type="text" placeholder={employee.email}/></div></div>
                                                     <div style={{paddingTop: "5px"}}>
-                                                        <div className="done-edit-button">
+                                                        <div className="done-edit-button" onClick={this.doEdit1.bind(this)}>
                                                             Done
                                                         </div>
                                                     </div>
@@ -225,11 +314,11 @@ class ProfileModal extends Component {
                                         <div className="profestional-information-container">
                                             <div className="information-content">
                                                 <div className="information-line">Position: <div className="profile-info"><input className="input-edit" ref="position" name="Employee_dob" type="text" placeholder={employee.jobtitle}/></div></div>
-                                                <div className="information-line">Location: <div className="profile-info"><input className="input-edit" ref="location" name="Employee_dob" type="text" placeholder={employee.city}/></div></div>
+                                                <div className="information-line">Location: <div className="profile-info"><input className="input-edit" ref="city" name="Employee_dob" type="text" placeholder={employee.city}/></div></div>
                                                 <div className="information-line">Department: <div className="profile-info"><input className="input-edit" ref="department" name="Employee_dob" type="text" placeholder={employee.organization}/></div></div>
                                                 <div className="information-line">Manager: <div className="profile-info">{this.props.manager.firstname} {this.props.manager.lastname}</div></div>
                                                 <div style={{paddingTop: "5px"}}>
-                                                    <div className="done-edit-button">
+                                                    <div className="done-edit-button" onClick={this.doEdit2.bind(this)}>
                                                         Done
                                                     </div>
                                                 </div>
