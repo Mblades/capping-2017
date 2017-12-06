@@ -98,6 +98,13 @@ class SearchContainer extends Component {
         this.setState({filterOn: true});
     };
 
+    clearFilter = () => {
+        console.log('hi');
+        this.setState({
+            filterOn: false
+        })
+    }
+
     render() {
         let employees = this.props.employees;
         const filterOptions = [
@@ -124,6 +131,7 @@ class SearchContainer extends Component {
                             <div className="search-area-dropdowns">
                             <Dropdown options={filterOptions} onChange={this.applyFilter} placeholder={this.state.orderLabel} />
                             <Dropdown options={ascDESC} onChange={this.applyFilter2} placeholder={this.state.AorDlabel}/>
+                            <div className="clear-filter-button" onClick={() => {this.clearFilter()}}>Clear Filter</div>
                             </div>
                         </div>
                         <div className="AZ-container">
