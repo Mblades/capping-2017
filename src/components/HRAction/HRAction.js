@@ -205,6 +205,7 @@ class HRAction extends Component {
     }
 
     render() {
+        console.log(this.props.location.state.employeeList)
         console.log(this.state, 'sdf');
         console.log(this.props.location.state);
         let myProfile = this.props.location.state.myProfile;
