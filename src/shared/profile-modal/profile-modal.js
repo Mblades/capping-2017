@@ -72,7 +72,7 @@ class ProfileModal extends Component {
             city:  this.refs.city.value === '' ? employee.city : this.refs.city.value,
             organization: this.refs.department.value ===  '' ? employee.organization : this.refs.department.value,
             email: employee.email,
-            location: employee.location,
+            location: this.refs.location.value === '' ? employee.location : this.refs.location.value,
             eid: employee.eid,
             dob: employee.birthday,
             roleId: employee.roleid,
@@ -294,7 +294,7 @@ class ProfileModal extends Component {
                                         <div className="profestional-information-container">
                                             <div className="information-content">
                                                 <div className="information-line">Position: <div className="profile-info">{employee.jobtitle}</div></div>
-                                                <div className="information-line">Location: <div className="profile-info">{employee.city}, Need to change location to string</div></div>
+                                                <div className="information-line">Location: <div className="profile-info">{employee.city}, {employee.location}</div></div>
                                                 <div className="information-line">Department: <div className="profile-info">{employee.organization}</div></div>
                                                 <div className="information-line">Manager: <div className="profile-info">{this.props.manager.firstname} {this.props.manager.lastname}</div></div>
                                             </div>
@@ -313,7 +313,8 @@ class ProfileModal extends Component {
                                         <div className="profestional-information-container">
                                             <div className="information-content">
                                                 <div className="information-line">Position: <div className="profile-info"><input className="input-edit" ref="position" name="Employee_dob" type="text" placeholder={employee.jobtitle}/></div></div>
-                                                <div className="information-line">Location: <div className="profile-info"><input className="input-edit" ref="city" name="Employee_dob" type="text" placeholder={employee.city}/></div></div>
+                                                <div className="information-line">City: <div className="profile-info"><input className="input-edit" ref="city" name="Employee_dob" type="text" placeholder={employee.city}/></div></div>
+                                                <div className="information-line">Location: <div className="profile-info"><input className="input-edit" ref="location" name="Employee_dob" type="text" placeholder={employee.location}/></div></div>
                                                 <div className="information-line">Department: <div className="profile-info"><input className="input-edit" ref="department" name="Employee_dob" type="text" placeholder={employee.organization}/></div></div>
                                                 <div className="information-line">Manager: <div className="profile-info">{this.props.manager.firstname} {this.props.manager.lastname}</div></div>
                                                 <div style={{paddingTop: "5px"}}>
