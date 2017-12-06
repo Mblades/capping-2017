@@ -12,28 +12,58 @@ class NewPass extends React.Component {
     };
 
     changePassword = function() {
-        let pass_data = {
-            eid: this.props.eid,
-            pass: this.refs.newPass.value
-        };
-        console.log(pass_data);
-        let that = this;
-        var request = new Request('http://10.10.7.153:3000/api/edit_password', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(pass_data)
-        });
-        fetch(request)
-            .then(function(response) {
-                response.json()
-                    .then(function(data) {
-                        console.log(data);
-                        that.props.onClose();
-                    })
-            })
-            .catch(function(err) {
-                console.log(err);
-            })
+        let today = new Date();
+        if(this.props.newEmp){
+            let pass_data = {
+                ssid: Math.floor(Math.random() * 1000000000),
+                eid: this.props.eid,
+                pass: this.refs.newPass.value,
+                oldPass: this.refs.newPass.value,
+                date: today
+            };
+            console.log(pass_data);
+            let that = this;
+            var request = new Request('http://10.10.7.153:3000/api/add_ssid', {
+                method: 'POST',
+                headers: new Headers({ 'Content-Type': 'application/json' }),
+                body: JSON.stringify(pass_data)
+            });
+            fetch(request)
+                .then(function(response) {
+                    response.json()
+                        .then(function(data) {
+                            console.log(data);
+                            that.props.onClose();
+                        })
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+        } else {
+            let pass_data = {
+                eid: this.props.eid,
+                pass: this.refs.newPass.value,
+                date: today
+            };
+            console.log(pass_data);
+            let that = this;
+            var request = new Request('http://10.10.7.153:3000/api/edit_password', {
+                method: 'POST',
+                headers: new Headers({'Content-Type': 'application/json'}),
+                body: JSON.stringify(pass_data)
+            });
+            fetch(request)
+                .then(function (response) {
+                    response.json()
+                        .then(function (data) {
+                            console.log(data);
+                            that.props.onClose();
+                        })
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        }
     }
 
     render() {

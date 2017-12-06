@@ -44,16 +44,21 @@ class RequestApp extends Component {
 
     makeRequest = function(app) {
         let today = new Date();
-        let application_data = {
+        let mid = 1;
+        if(this.props.location.state.manager.eid){
+            mid = this.props.location.state.eid;
+        }
+        console.log(app);
+        let application_data1 = {
             eid: this.props.location.state.employee.eid,
-            mid: this.props.location.state.manager.eid,
+            mid: mid,
             aid: app.aid,
             date: today
         };
         var request = new Request('http://10.10.7.153:3000/api/request_app', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify(application_data)
+            body: JSON.stringify(application_data1)
         });
         fetch(request)
             .then(function(response) {

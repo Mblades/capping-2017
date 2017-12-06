@@ -164,6 +164,7 @@ class NewEmployee extends Component {
                 { this.state.confirmEmp && (
                     <NewPass
                     eid={ this.state.currEmp }
+                    newEmp={true}
                     onClose={() => this.doneAdding()}/>
                 )}
                 <div className="newEmp-container animation-container-modal">
