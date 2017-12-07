@@ -36,84 +36,72 @@ class NewEmployee extends Component {
         event.preventDefault();
         var check_Fname = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?)?$/;
         var check_Lname = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?)?$/;
-        var check_phone = /\--(.*?)\--/gim;
-        var check_address = /^([0-9]{1,5})\s([A-Za-z]+)+$/;
-        var check_position = /^(([A-Za-z]+)\s+)$/;
-        var check_city = /^(([A-Za-z]+)\s+)$/;
-        var check_department = /^(([A-Za-z]+)\s+)$/;
+        var check_phone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+        var check_address = /^([0-9]{1,5})\s((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w)$/;
+        var check_position = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
+        var check_city = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
+        var check_department = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
         var check_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        var check_location = /^(([A-Za-z]+)\s+)$/;
+        var check_location = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
         var check_roleID = /^[A-Za-z]{1}[0-9]{4}$/;
         var check_dob = /^(0[1-9]|1[012])([- /.])(0[1-9]|[12][0-9]|3[01])\2(19|20)\d\d$/;
-        var check_description = /^((([A-Za-z]+)\s+)\.)*$/m;
-        var check_accessLevel = /^[0-9]{1,1}$/;
+        var check_description = /^(((((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))\.)\s)*((((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))\.)$/;
+        var check_accessLevel = /^[1-6]{1,1}$/;
         let correctInfo = true;
         let missingInfo = [];
         let refs = this.refs;
-        if(this.refs.Fname.value === '' || check_Fname.test(refs.Fname.value)) {
+        if(this.refs.Fname.value === '' || !check_Fname.test(refs.Fname.value)) {
             correctInfo = false;
-            missingInfo.push('First Name');
-            console.log('Please enter a valid first name.');
+            missingInfo.push('Please enter a valid first name.');
         }
-        if(this.refs.Lname.value === '' || check_Lname.test(refs.Lname.value)) {
+        if(this.refs.Lname.value === '' || !check_Lname.test(refs.Lname.value)) {
             correctInfo = false;
-            missingInfo.push('Last Name');
-            console.log('Please enter a valid last name.');
+            missingInfo.push('Please enter a valid last name.');
         }
-        if(this.refs.phone.value === '' || check_phone.test(refs.phone.value)) {
+        if(this.refs.phone.value === '' || !check_phone.test(refs.phone.value)) {
             correctInfo = false;
-            missingInfo.push('Phone');
-            console.log('Please enter a valid phone number.');
+            missingInfo.push('Please enter a valid phone number.');
         }
-        if(this.refs.address.value === '' || check_address.test(refs.address.value)) {
+        if(this.refs.address.value === '' || !check_address.test(refs.address.value)) {
             correctInfo = false;
-            missingInfo.push('Address');
-            console.log('Please enter a valid address.');
+            missingInfo.push('Please enter a valid address.');
         }
-        if(this.refs.position.value === '' || check_position.test(refs.position.value)) {
+        if(this.refs.position.value === '' || !check_position.test(refs.position.value)) {
             correctInfo = false;
-            missingInfo.push('Position');
-            console.log('Please enter a valid position.');
+            missingInfo.push('Please enter a valid position.');
         }
-        if(this.refs.city.value === '' || check_city.test(refs.city.value)) {
+        if(this.refs.city.value === '' || !check_city.test(refs.city.value)) {
             correctInfo = false;
-            missingInfo.push('City');
-            console.log('Please enter a valid city.');
+            missingInfo.push('Please enter a valid city.');
         }
-        if(this.refs.department.value === '' || check_department.test(refs.department.value)) {
+        if(this.refs.department.value === '' || !check_department.test(refs.department.value)) {
             correctInfo = false;
-            missingInfo.push('Department');
-            console.log('Please enter a valid department.');
+            missingInfo.push('Please enter a valid department.');
         }
-        if(this.refs.email.value === '' || check_email.test(refs.email.value)) {
+        if(this.refs.email.value === '' || !check_email.test(refs.email.value)) {
             correctInfo = false;
-            missingInfo.push('Email');
-            console.log('Please enter a valid email address.');
+            missingInfo.push('Please enter a valid email address.');
         }
-        if(this.refs.location.value === '' || check_location.test(refs.location.value)) {
+        if(this.refs.location.value === '' || !check_location.test(refs.location.value)) {
             correctInfo = false;
-            missingInfo.push('Location');
-            console.log('Please enter a valid location.');
+            missingInfo.push('Please enter a valid location.');
         }
-        if(this.refs.roleID.value === '' || check_roleID.test(refs.roleID.value)) {
+        if(this.refs.roleID.value === '' || !check_roleID.test(refs.roleID.value)) {
             correctInfo = false;
-            missingInfo.push('Role ID');
-            console.log('Please enter a valid role ID.');
+            missingInfo.push('Please enter a valid role ID.');
+            console.log();
         }
-        if(this.refs.dob.value === '' || check_dob.test(refs.dob.value)) {
+        if(this.refs.dob.value === '' || !check_dob.test(refs.dob.value)) {
             correctInfo = false;
-            missingInfo.push('Date of Birth');
-            console.log('Please enter a valid role date of birth.');
+            missingInfo.push('Please enter a valid role date of birth.');
         }
-        if(this.refs.description.value === '' || check_description.test(refs.description.value)) {
+        if(this.refs.description.value === '' || !check_description.test(refs.description.value)) {
             correctInfo = false;
-            missingInfo.push('Description');
-            console.log('Please enter a valid description.');
+            missingInfo.push('Please enter a valid description.');
         }
-        if(this.refs.accessLevel.value === '' || check_accessLevel.test(refs.accessLevel.value)) {
+        if(this.refs.accessLevel.value === '' || !check_accessLevel.test(refs.accessLevel.value)) {
             correctInfo = false;
-            missingInfo.push('Acces Level');
-            console.log('Please enter a valid access level.');
+            missingInfo.push('Please enter a valid access level.');
         }
 
         let employee_data = {
