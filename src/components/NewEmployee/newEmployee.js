@@ -22,7 +22,7 @@ class NewEmployee extends Component {
     };
 
     addEmployee(event) {
-        //let that = this;
+        // let that = this;
         event.preventDefault();
         var check_Fname = /^(([A-Za-z]+[\-]?)*([A-Za-z]+)?)?[\w\s]$/;
         var check_Lname = /^(([A-Za-z]+[\-]?)*([A-Za-z]+)?)?[\w\s]$/
