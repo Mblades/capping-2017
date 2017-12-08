@@ -2,17 +2,43 @@ import React, { Component } from 'react';
 import { browserHistory as history } from 'react-router';
 import './personal-profile-container.css';
 import PersonalProfileSummary from "../personal-profile-summary/personal-profile-summary";
+import NewPass from "../new-password/new-password";
 
 
 class PersonalProfileContainer extends Component {
+    constructor(props) {
+        super(props);
+        //only here as a back-up place holder will be updated to be a fall back soon
+        this.state = {
+            passChange: false
+        }
+
+    };
+
+    togglePass = function() {
+        this.setState({
+            passChange: !this.state.passChange
+        });
+    };
+
     render() {
         return (
             <div className="Personal-Profile-Window-Container">
+                { this.state.passChange && (
+                    <NewPass
+                        eid={ this.props.myProfile.eid }
+                        onClose={() => this.togglePass()}
+                    />
+                )}
                 <div>
                     <PersonalProfileSummary
                         myProfile={this.props.myProfile}
                     />
-                    <div className="Profile-Edit-Button" onClick={() => {
+                    <div className="profile-button-container">
+                        <div className="profile-special-button" onClick={() => {this.togglePass()}}>
+                            Change Password
+                        </div>
+                    <div className="profile-special-button" onClick={() => {
                         history.push({
                             pathname: '/profile',
                             state: {
@@ -24,7 +50,7 @@ class PersonalProfileContainer extends Component {
                         My Profile
                     </div>
                     { this.props.myProfile.accesslevel <= 2 &&
-                    <div className="HR-Options-Button" onClick={() => {
+                    <div className="profile-special-button" onClick={() => {
                         history.push({
                             pathname: '/options',
                             state: {
@@ -37,7 +63,7 @@ class PersonalProfileContainer extends Component {
                     </div>
                     }
                     { this.props.myProfile.mid &&
-                    <div className="Manage-Request-Button" onClick={() => {
+                    <div className="profile-special-button" onClick={() => {
                         history.push({
                             pathname: '/manage',
                             state: {
@@ -49,6 +75,7 @@ class PersonalProfileContainer extends Component {
                         Manage Requests
                     </div>
                     }
+                    </div>
                 </div>
             </div>
         )
