@@ -44,7 +44,6 @@ class AutoSearch extends Component {
     }
 
     onChange = (event, { newValue, method }) => {
-        console.log(newValue, method);
         this.setState({
             value: newValue
         });

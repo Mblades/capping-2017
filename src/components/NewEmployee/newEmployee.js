@@ -13,20 +13,6 @@ class NewEmployee extends Component {
         super(props);
         //only here as a back-up place holder will be updated to be a fall back soon
         this.state = {
-            person: {
-                name: 'John Doe',
-                dob: '05-01-1900',
-                address: '42 Wallaby Way',
-                cid: 'D34DB33F',
-                phone: '8675309',
-                email: 'nunya(at)acme(dot)com',
-                position: 'ACME Employee',
-                location: 'USA',
-                department: 'Quality Control',
-                manager: 'Boss Man',
-                loctime: 'EST',
-                doh: 'September 2017'
-            },
             currentTab: 1,
             missingInfo: [],
             confirmEmp: false,
@@ -93,7 +79,6 @@ class NewEmployee extends Component {
         if(this.refs.roleID.value === '' || !check_roleID.test(refs.roleID.value)) {
             correctInfo = false;
             missingInfo.push('Please enter a valid role ID.');
-            console.log();
         }
         if(this.refs.dob.value === '' || !check_dob.test(refs.dob.value)) {
             correctInfo = false;
@@ -107,7 +92,7 @@ class NewEmployee extends Component {
             correctInfo = false;
             missingInfo.push('Please enter a valid access level (1-6).');
         }
-
+        //employee eid is
         let employee_data = {
             first: this.refs.Fname.value,
             last: this.refs.Lname.value,
@@ -125,9 +110,6 @@ class NewEmployee extends Component {
             description: this.refs.description.value,
             accessLevel: this.refs.accessLevel.value
         };
-        //Still missing eid, mid, dob, roleID, description, accessLevel
-        console.log(employee_data, 'EMP Data');
-        //change to 10.10.7.153
         if(correctInfo) {
             let that = this;
             var request = new Request('http://10.10.7.153:3000/api/add-employee', {
@@ -139,7 +121,6 @@ class NewEmployee extends Component {
                 .then(function(response) {
                     response.json()
                         .then(function(data) {
-                            console.log(data);
                             that.setState({
                                 currEmp: employee_data.eid,
                                 confirmEmp: true
@@ -150,10 +131,10 @@ class NewEmployee extends Component {
                     console.log(err);
                 })
         } else {
-            console.log(missingInfo);
             this.setState({
                 missingInfo: missingInfo
             })
+            console.log(missingInfo);
         }
 
     }

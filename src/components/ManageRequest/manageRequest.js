@@ -34,7 +34,6 @@ class ManageRequest extends Component {
                         that.setState({
                             apps: data.rows
                         })
-                        console.log(data.rows,'test');
                     })
             })
             .catch(function(err) {
@@ -56,13 +55,11 @@ class ManageRequest extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log(data.rows);
                     })
             })
             .catch(function(err) {
                 console.log(err);
             });
-        console.log('approve');
         this.denyRequest(app);
     };
 
@@ -81,13 +78,11 @@ class ManageRequest extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log(data.rows);
                     })
             })
             .catch(function(err) {
                 console.log(err);
             });
-        console.log('deny');
     };
 
     renderAppBoxes = function() {

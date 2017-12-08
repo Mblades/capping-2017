@@ -47,25 +47,9 @@ class Login extends Component {
                     console.log(err);
                 })
         } else {
-            console.log('Missing Username and Password');
         }
      }
-/*
-    submit = (values) => {
-        let User_id = 1;
-        // print the form values to the console
-        console.log(values, 'Login Values');
-        if(values.Username === 'HR' && values.Password === 'HR'){
-            User_id = 2;
-        }
-        history.push({
-            pathname: '/home',
-            state: {
-                id: User_id,
-                loggedIn: true
-            }
-        })
-    }; */
+
     render() {
         const { className, ...props } = this.props;
         return (

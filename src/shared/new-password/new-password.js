@@ -21,7 +21,6 @@ class NewPass extends React.Component {
                 oldPass: this.refs.newPass.value,
                 date: today
             };
-            console.log(pass_data);
             let that = this;
             var request = new Request('http://10.10.7.153:3000/api/add_ssid', {
                 method: 'POST',
@@ -32,7 +31,6 @@ class NewPass extends React.Component {
                 .then(function(response) {
                     response.json()
                         .then(function(data) {
-                            console.log(data);
                             that.props.onClose();
                         })
                 })
@@ -45,7 +43,6 @@ class NewPass extends React.Component {
                 pass: this.refs.newPass.value,
                 date: today
             };
-            console.log(pass_data);
             let that = this;
             var request = new Request('http://10.10.7.153:3000/api/edit_password', {
                 method: 'POST',
@@ -56,7 +53,6 @@ class NewPass extends React.Component {
                 .then(function (response) {
                     response.json()
                         .then(function (data) {
-                            console.log(data);
                             that.props.onClose();
                         })
                 })
