@@ -5,17 +5,21 @@ import classnames from 'classnames';
 import CompanyHeader from "../../shared/header/header";
 import logo from '../../shared/images/logo.svg';
 import './login.css';
+import NewPass from "../../shared/new-password/new-password";
 
 class Login extends Component {
     constructor() {
         super();
         this.state = {
-            employees: []
+            employees: [],
+            loginError: false,
+            newPass: false,
+            myProfile: []
         }
     }
 
     addTest(event) {
-         //let that = this;
+         let that = this;
         //Validation for login fields
         if(this.refs.username.value !== "" && this.refs.password.value !== "") {
             event.preventDefault();
@@ -33,12 +37,28 @@ class Login extends Component {
                     response.json()
                         .then(function(data) {
                             if(data.rows.length === 1) {
-                                history.push({
+                                //checks for 90 days
+                                let passDate = new Date(data.rows[0].passwordsetdate);
+                                passDate.setDate(passDate.getDate() + 90);
+                                let now = new Date();
+                                if(passDate > now){
+                                    history.push({
                                     pathname: '/home',
                                     state: {
                                         myProfile: data.rows[0],
                                         loggedIn: true
                                     }
+                                })
+                                }else {
+                                    that.setState({
+                                        newPass: true,
+                                        myProfile: data.rows[0]
+                                    })
+                                }
+
+                            }else {
+                                that.setState({
+                                    loginError: true
                                 })
                             }
                         })
@@ -47,8 +67,22 @@ class Login extends Component {
                     console.log(err);
                 })
         } else {
+            this.setState({
+                loginError: true
+            })
         }
      }
+
+     nowLogin () {
+         history.push({
+             pathname: '/home',
+             state: {
+                 myProfile: this.state.myProfile,
+                 loggedIn: true
+             }
+         })
+     }
+
 
     render() {
         const { className, ...props } = this.props;
@@ -58,7 +92,19 @@ class Login extends Component {
                 <CompanyHeader
                     logo={logo}
                 />
+                { this.state.newPass && (
+                    <NewPass
+                        eid={ this.state.myProfile.eid }
+                        onClose={() => this.newLogin()}
+                    />
+                )}
+
                 <form ref="login_form" className="Login-Form">
+                    { this.state.loginError && (
+                        <div className="login-error">
+                            Incorrect Username or Password
+                        </div>
+                    )}
                     <div className="Login-Form-Line">
                         <input className="input" ref="username" name="Username" component="input" type="text" required placeholder="Username"/>
                     </div>
