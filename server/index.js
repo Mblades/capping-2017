@@ -1,5 +1,4 @@
-// server/index.js
-/* This is where all of the APIs will be housed */
+// ./server/index.js: location of all APIs */
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -8,7 +7,7 @@ const pg = require('pg');
 const PORT = 3000;
 
 const { Pool, Client } = require('pg');
-//This is the connection information for the database
+// This is the connection information for the database
 const pool = new Pool({
     user: 'postgres',
     host: '10.10.7.151',

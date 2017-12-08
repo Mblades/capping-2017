@@ -13,11 +13,10 @@ class Home extends Component {
             employees: [],
         }
     }
-//  This is wear we will make all of the AJAX Calla
+
+//  AJAX call to grab non-suspended employees from employee table
   componentDidMount() {
-        //  This fires before the page renders to gather all profiles,
-        //  I may move this so that we have a loader while the employee
-        //  list loads
+        //  This fires before the page renders to gather all profiles
       let that = this;
       let emp = [];
       setTimeout(function() {
