@@ -30,3 +30,7 @@
 .inputLable {
     width: 50%;
 }
+
+.login-error {
+    color: red;
+}

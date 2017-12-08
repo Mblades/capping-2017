@@ -81,6 +81,11 @@ class NewPass extends React.Component {
                         <div className="confirm-password-button"  onClick={this.changePassword.bind(this)}>
                             Change Password
                         </div>
+                        { !this.props.newEmp & (
+                            <div className="close-password-button"  onClick={this.props.onClose}>
+                                Cancel
+                            </div>
+                        )}
 
                     </form>
                 </div>
