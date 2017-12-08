@@ -5,7 +5,11 @@ import logo from '../../shared/images/logo.svg';
 import './HROptions.css';
 import BackButton from "../../shared/back-button/back-button";
 
+/* @class HROptions */
+// @classdesc React component for HR options page
 class HROptions extends Component {
+    /* @function render */
+    // @return {void} React component for rendering buttons that navigate to (the four different) HR actions
     render() {
         let myProfile = this.props.location.state.myProfile;
         let employeeList = this.props.location.state.employeeList;

@@ -9,6 +9,8 @@ import ProfileModal from "../../shared/profile-modal/profile-modal";
 import ConfirmModal from "../../shared/confirm-modal/confirm-modal";
 import BackButton from "../../shared/back-button/back-button";
 
+/* @class HRAction */
+// @classdesc React component for HR actions performed on an employee
 class HRAction extends Component {
     constructor(props) {
         super(props)
@@ -21,10 +23,10 @@ class HRAction extends Component {
         }
     }
 
+    /* @function componentDidMount */
+    // @return {void} employee data on which to perform HR actions is loaded from database
     componentDidMount() {
-        //  This fires before the page renders to gather all profiles,
-        //  I may move this so that we have a loader while the employee
-        //  list loads
+        //  This fires before the page renders to gather all profiles
         if(this.props.location.state.action === 'Reinstate') {
             let that = this;
             let emp = [];
@@ -44,6 +46,9 @@ class HRAction extends Component {
         }
     }
 
+    /* @function doAction */
+    // @param {event} clicking one of the HR options
+    // @return {void} assignment of approprite values to HRAction state
     doAction(event) {
         let that = this;
         this.toggleModal();
@@ -94,14 +99,20 @@ class HRAction extends Component {
         }
     }
 
+    /* @function submit */
+    // @param {employee} employee data to perform HR actions on
+    // @return {void} assignment of appropriate values to HRAction state
     submit = (employee) => {
         // when you submit an employee it will the gather the employee information you plan to delete
-        //Need to look up employee with an API to get name and to see if they exist. Then do front end error checking
+        // Need to look up employee with an API to get name and to see if they exist. Then do front end error checking
         let curEmployee = employee;
         this.setState({actionEmployee: curEmployee});
         this.toggleModal();
     };
 
+    /* @function cancel */
+    // @param {employee} employee data to perform HR actions on
+    // @return {void} assignment of appropriate values to HRAction state
     cancel = () => {
         history.push({
             pathname: '/home',
@@ -111,18 +122,24 @@ class HRAction extends Component {
         })
     }
 
+    /* @function toggleModal */
+    // @return {void} requests confirmation of selected employee action
     toggleModal = () => {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         });
     }
 
+    /* @function toggleConfirm */
+    // @return {void} displays confirmation of performed action
     toggleConfirm = () => {
         this.setState({
             actionComplete: !this.state.actionComplete
         });
     }
-    
+
+    /* @function actionDone */
+    // @return {void} prompts HR employee choose new action
     actionDone = () => {
         history.push({
             pathname: '/options',
@@ -134,6 +151,8 @@ class HRAction extends Component {
         })
     }
 
+    /* @function confirmReinstate */
+    // @return {void} prompts HR employee to input eid, access level, and temporary password for reinstatement
     confirmReinstate = () => {
         let that = this;
         let action_data = {
@@ -162,6 +181,8 @@ class HRAction extends Component {
         })
     }
 
+    /* @function render */
+    // @return {void} handles selected HR actions and
     render() {
         let myProfile = this.props.location.state.myProfile;
         return (

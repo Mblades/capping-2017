@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import { Field, reduxForm } from 'redux-form'
 import { browserHistory as history } from 'react-router';
 import classnames from 'classnames';
 import CompanyHeader from "../../shared/header/header";
@@ -7,6 +6,8 @@ import logo from '../../shared/images/logo.svg';
 import './login.css';
 import NewPass from "../../shared/new-password/new-password";
 
+/* @class Login */
+// @classdesc React component for logging into the directory
 class Login extends Component {
     constructor() {
         super();
@@ -20,7 +21,7 @@ class Login extends Component {
 
     addTest(event) {
          let that = this;
-        //Validation for login fields
+        // Validation for login fields
         if(this.refs.username.value !== "" && this.refs.password.value !== "") {
             event.preventDefault();
             let login_data = {
@@ -37,7 +38,7 @@ class Login extends Component {
                     response.json()
                         .then(function(data) {
                             if(data.rows.length === 1) {
-                                //checks for 90 days
+                                // checks for 90 days
                                 let passDate = new Date(data.rows[0].passwordsetdate);
                                 passDate.setDate(passDate.getDate() + 90);
                                 let now = new Date();
@@ -49,14 +50,13 @@ class Login extends Component {
                                         loggedIn: true
                                     }
                                 })
-                                }else {
+                                } else {
                                     that.setState({
                                         newPass: true,
                                         myProfile: data.rows[0]
                                     })
                                 }
-
-                            }else {
+                            } else {
                                 that.setState({
                                     loginError: true
                                 })
