@@ -46,12 +46,12 @@ class RequestApp extends Component {
         let today = new Date();
         let mid = 1;
         if(this.props.location.state.manager.eid){
-            mid = this.props.location.state.eid;
+            mid = this.props.location.state.manager.eid;
         }
-        console.log(app);
+        console.log(mid);
         let application_data1 = {
             eid: this.props.location.state.employee.eid,
-            mid: '2',
+            mid: mid,
             aid: app.aid,
             date: today
         };
