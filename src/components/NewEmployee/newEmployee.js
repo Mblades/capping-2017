@@ -95,8 +95,7 @@ class NewEmployee extends Component {
         //employee eid is
         let eid = Math.floor(Math.random() * 1000000000);
         let mid = null;
-        console.log(this.refs.EmpYes);
-        if(this.refs.EmpYes === 5) {
+        if(this.refs.EmpYes.checked) {
             mid = eid;
         }
         let employee_data = {
@@ -116,6 +115,7 @@ class NewEmployee extends Component {
             description: this.refs.description.value,
             accessLevel: this.refs.accessLevel.value
         };
+        console.log(employee_data);
         if(correctInfo) {
             let that = this;
             var request = new Request('http://10.10.7.153:3000/api/add-employee', {
@@ -206,7 +206,7 @@ class NewEmployee extends Component {
                                                     <div className="new-information-line">Location: <div className="new-profile-info"><input className="new-input-edit" ref="location" name="Employee_dob" type="text" placeholder='Location'/></div></div>
                                                     <div className="new-information-line">City: <div className="new-profile-info"><input className="new-input-edit" ref="city" name="Employee_city" component="input" type="City" required placeholder="City"/></div></div>
                                                     <div className="new-information-line">Department: <div className="new-profile-info"><input className="new-input-edit" ref="department" name="Employee_dob" type="text" placeholder='Department'/></div></div>
-                                                    <div className="new-information-line">Manager: <div className="new-profile-info"> <input ref="EmpYes" name="Employee_yes" value="yes" type="radio"/>Yes <input ref="EmpNo" value="no" name="Employee_no" type="radio"/>No</div></div>
+                                                    <div className="new-information-line">Manager: <div className="new-profile-info"> <input ref="EmpYes" name="Employee_manager" value="yes" type="radio"/>Yes <input ref="EmpNo" value="no" name="Employee_manager" defaultChecked type="radio"/>No</div></div>
                                                     <div className="new-information-line">Access Level: <div className="new-profile-info"><input className="new-input-edit" ref="accessLevel" name="Employee_accessLevel" component="input" type="text" required placeholder="Access Level"/></div></div>
                                                     <div className="new-information-line">Role ID: <div className="new-profile-info"><input className="new-input-edit" ref="roleID" name="Employee_roleID" component="input" type="text" required placeholder="Role ID"/></div></div>
                                                     <div className="new-information-line">Description: <div className="new-profile-info"><input className="new-input-edit" ref="description" name="Employee_description" component="input" type="text" required placeholder="Description"/></div></div>
