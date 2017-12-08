@@ -34,18 +34,18 @@ class NewEmployee extends Component {
     addEmployee(event) {
         //let that = this;
         event.preventDefault();
-        var check_Fname = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?)?$/;
-        var check_Lname = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?)?$/;
-        var check_phone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
-        var check_address = /^([0-9]{1,5})\s((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w)$/;
-        var check_position = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
-        var check_city = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
-        var check_department = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
-        var check_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        var check_location = /^(((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))$/;
+        var check_Fname = /^(([A-Za-z]+[\-]?)*([A-Za-z]+)?)?\s$/;
+        var check_Lname = /^(([A-Za-z]+[\-]?)*([A-Za-z]+)?)?\s$/;
+        var check_phone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}\s$/;
+        var check_address = /^([0-9]{1,5})\s((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)[\w\s])$/;
+        var check_position = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
+        var check_city = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
+        var check_department = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
+        var check_email = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s$/;
+        var check_location = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
         var check_roleID = /^[A-Za-z]{1}[0-9]{4}$/;
         var check_dob = /^(0[1-9]|1[012])([- /.])(0[1-9]|[12][0-9]|3[01])\2(19|20)\d\d$/; // MM-DD-YYYY
-        var check_description = /^(((((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))\.)\s)*((((([A-Za-z]+)+)\s)*((([A-Za-z]+)+)\w))\.)$/;
+        var check_description = /^(((([A-Za-z]*)*)[\w\s])*[\w\s\n.])$/;
         var check_accessLevel = /^[1-6]{1,1}$/; // (1-6)
         let correctInfo = true;
         let missingInfo = [];
@@ -93,7 +93,7 @@ class NewEmployee extends Component {
         }
         if(this.refs.dob.value === '' || !check_dob.test(refs.dob.value)) {
             correctInfo = false;
-            missingInfo.push('Please enter a valid role date of birth.');
+            missingInfo.push('Please enter a valid role date of birth (\"MM-DD-YYYY\").');
         }
         if(this.refs.description.value === '' || !check_description.test(refs.description.value)) {
             correctInfo = false;
@@ -101,7 +101,7 @@ class NewEmployee extends Component {
         }
         if(this.refs.accessLevel.value === '' || !check_accessLevel.test(refs.accessLevel.value)) {
             correctInfo = false;
-            missingInfo.push('Please enter a valid access level.');
+            missingInfo.push('Please enter a valid access level (1-6).');
         }
 
         let employee_data = {
