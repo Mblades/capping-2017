@@ -6,6 +6,7 @@ import './newEmployee.css';
 import BackButton from "../../shared/back-button/back-button";
 import NewPass from "../../shared/new-password/new-password";
 import { browserHistory as history } from 'react-router';
+import Modal from "../../shared/modal/modal";
 
 
 class NewEmployee extends Component {
@@ -140,7 +141,6 @@ class NewEmployee extends Component {
             this.setState({
                 missingInfo: missingInfo
             })
-            console.log(missingInfo);
         }
 
     }
@@ -157,6 +157,25 @@ class NewEmployee extends Component {
             }
         })
     };
+
+    toggleModal () {
+        this.setState({
+            missingInfo: []
+        })
+    }
+
+    displayError () {
+        if(this.state.missingInfo.length > 0) {
+            let emp = this.state.missingInfo.map(function (value) {
+                    return (
+                        <div className="login-error">
+                            {value}
+                        </div>
+                    )
+            })
+            return (emp);
+        }
+    }
 
     render() {
         return (
@@ -193,6 +212,9 @@ class NewEmployee extends Component {
                                         <div className="profile-image-container">
                                             <img src={ basicProfilePic } className="profile-image" alt="proPic" />
                                         </div>
+                                        {
+                                            this.displayError()
+                                        }
                                         <div className="Profile-Personal-Information">
                                             <div className="personal-information-container">
                                                 <div className="newEmp-information-content">
@@ -219,22 +241,6 @@ class NewEmployee extends Component {
                                             </div>
                                         </div>
                                     </form>
-                                </div>
-                            )
-                        }
-                        {
-                            this.state.currentTab === 2 && (
-                                <div>
-                                    <div className="Profile-Personal-Information">
-                                        <div className="employee-name-container">
-                                            <div className="employee-name"></div>
-                                        </div>
-                                        <div className="profestional-information-container">
-                                            <div className="information-content">
-
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             )
                         }
