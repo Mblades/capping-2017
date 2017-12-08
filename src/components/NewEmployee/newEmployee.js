@@ -7,7 +7,6 @@ import BackButton from "../../shared/back-button/back-button";
 import NewPass from "../../shared/new-password/new-password";
 import { browserHistory as history } from 'react-router';
 
-
 class NewEmployee extends Component {
     constructor(props) {
         super(props);
@@ -22,19 +21,20 @@ class NewEmployee extends Component {
     };
 
     addEmployee(event) {
-        //let that = this;
+        // let that = this;
         event.preventDefault();
         var check_Fname = /^(([A-Za-z]+[\-]?)*([A-Za-z]+)?)?[\w\s]$/;
         var check_Lname = /^(([A-Za-z]+[\-]?)*([A-Za-z]+)?)?[\w\s]$/
-        var check_phone = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}\s$/;
+        var check_phone = /^[0-9]{9}$/;
         var check_address = /^(((([A-Za-z0-9]*)*)[\w\s])*[\w\s])$/;
         var check_position = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
         var check_city = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
         var check_department = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
-        var check_email = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s$/;
+        var check_email = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
         var check_location = /^(((([A-Za-z]*)*)[\w\s])*[\w\s])$/;
         var check_roleID = /^[A-Za-z0-9]{5}$/;
-        var check_dob = /^(0[1-9]|1[012])([- /.])(0[1-9]|[12][0-9]|3[01])\2(19|20)\d\d$/; // MM-DD-YYYY
+        // var check_dob = /^(0[1-9]|1[012])([- /.])(0[1-9]|[12][0-9]|3[01])\2(19|20)\d\d$/; // MM-DD-YYYY
+        var check_dob = /^(((([A-Za-z0-9]*)*)[\w\s])*[\w\s])$/;
         var check_description = /^(((([A-Za-z0-9]*)*)[\w\s])*[\w\s\n.])$/;
         var check_accessLevel = /^[1-6]{1,1}$/; // (1-6)
         let correctInfo = true;
@@ -80,7 +80,7 @@ class NewEmployee extends Component {
             correctInfo = false;
             missingInfo.push('Please enter a valid role ID.');
         }
-        if(this.refs.dob.value === '' || !check_dob.test(refs.dob.value)) {
+        if(this.refs.dob.value === '') {
             correctInfo = false;
             missingInfo.push('Please enter a valid role date of birth (\"MM-DD-YYYY\").');
         }
@@ -92,7 +92,7 @@ class NewEmployee extends Component {
             correctInfo = false;
             missingInfo.push('Please enter a valid access level (1-6).');
         }
-        //employee eid is
+        // employee eid is
         let employee_data = {
             first: this.refs.Fname.value,
             last: this.refs.Lname.value,
@@ -245,4 +245,5 @@ class NewEmployee extends Component {
         );
     }
 }
+
 export default NewEmployee;

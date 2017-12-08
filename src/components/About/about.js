@@ -5,8 +5,7 @@ import classnames from 'classnames';
 import './about.css';
 
 export default class About extends Component {
-    // THis page is only here for testing will e removed soon
-
+    // This page is only here for testing will e removed soon
     render() {
         const { className, ...props } = this.props;
         return (
