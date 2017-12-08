@@ -9,11 +9,9 @@
     min-height: 86vh;
 }
 
-.HR-Options-Button {
-    position: absolute;
+.profile-special-button {
     height: 20px;
     width: 75%;
-    left: 10%;
     padding: 5px;
     display: inline-block;
     background-color: white;
@@ -22,34 +20,11 @@
     border: 1px solid #007EFF;
     bottom: 5px;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
-.Manage-Request-Button {
-    position: absolute;
-    height: 20px;
-    width: 75%;
+.profile-button-container {
+    bottom: 0px;
     left: 10%;
-    padding: 5px;
-    display: inline-block;
-    background-color: white;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid #007EFF;
-    bottom: 75px;
-    cursor: pointer;
-}
-
-.Profile-Edit-Button {
     position: absolute;
-    bottom: 40px;
-    left: 10%;
-    height: 20px;
-    text-align: center;
-    width: 75%;
-    padding: 5px;
-    display: inline-block;
-    background-color: white;
-    border-radius: 20px;
-    border: 1px solid #007EFF;
-    cursor: pointer;
 }

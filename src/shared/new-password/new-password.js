@@ -31,6 +31,7 @@ class NewPass extends React.Component {
                 .then(function(response) {
                     response.json()
                         .then(function(data) {
+                            console.log(data, 'test');
                             that.props.onClose();
                         })
                 })
