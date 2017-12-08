@@ -93,6 +93,12 @@ class NewEmployee extends Component {
             missingInfo.push('Please enter a valid access level (1-6).');
         }
         //employee eid is
+        let eid = Math.floor(Math.random() * 1000000000);
+        let mid = null;
+        console.log(this.refs.EmpYes);
+        if(this.refs.EmpYes === 5) {
+            mid = eid;
+        }
         let employee_data = {
             first: this.refs.Fname.value,
             last: this.refs.Lname.value,
@@ -103,8 +109,8 @@ class NewEmployee extends Component {
             organization: this.refs.department.value,
             email: this.refs.email.value,
             location: this.refs.location.value,
-            eid: Math.floor(Math.random() * 1000000000),
-            mid: null,
+            eid: eid,
+            mid: mid,
             dob: this.refs.dob.value,
             roleId: this.refs.roleID.value,
             description: this.refs.description.value,
@@ -192,7 +198,7 @@ class NewEmployee extends Component {
                                                 <div className="newEmp-information-content">
                                                     <div className="new-information-line">First Name: <div className="new-profile-info"><input className="new-input-edit" ref="Fname" name="Employee_Fname" type="text" required placeholder='First Name'/></div></div>
                                                     <div className="new-information-line">Last Name: <div className="new-profile-info"><input className="new-input-edit" ref="Lname" name="Employee_Lname" type="text" required placeholder='Last Name'/></div></div>
-                                                    <div className="new-information-line">Date of Birth:<div className="new-profile-info"><input className="new-input-edit" ref="dob" name="Employee_dob" type="text" placeholder='MM/DD/YYYY'/></div></div>
+                                                    <div className="new-information-line">Date of Birth:<div className="new-profile-info"><input className="new-input-edit" ref="dob" name="Employee_dob" type="date" placeholder='MM/DD/YYYY'/></div></div>
                                                     <div className="new-information-line">Address: <div className="new-profile-info"><input className="new-input-edit" ref="address" name="Employee_address" type="text" placeholder='Address'/></div></div>
                                                     <div className="new-information-line">Phone: <div className="new-profile-info"><input className="new-input-edit" ref="phone" name="Employee_phone" type="text" placeholder='Phone'/></div></div>
                                                     <div className="new-information-line">Email: <div className="new-profile-info"><input className="new-input-edit" ref="email" name="Employee_email" type="email" placeholder='Email'/></div></div>
@@ -200,7 +206,7 @@ class NewEmployee extends Component {
                                                     <div className="new-information-line">Location: <div className="new-profile-info"><input className="new-input-edit" ref="location" name="Employee_dob" type="text" placeholder='Location'/></div></div>
                                                     <div className="new-information-line">City: <div className="new-profile-info"><input className="new-input-edit" ref="city" name="Employee_city" component="input" type="City" required placeholder="City"/></div></div>
                                                     <div className="new-information-line">Department: <div className="new-profile-info"><input className="new-input-edit" ref="department" name="Employee_dob" type="text" placeholder='Department'/></div></div>
-                                                    <div className="new-information-line">Manager: <div className="new-profile-info">Make a checkbox</div></div>
+                                                    <div className="new-information-line">Manager: <div className="new-profile-info"> <input ref="EmpYes" name="Employee_yes" value="yes" type="radio"/>Yes <input ref="EmpNo" value="no" name="Employee_no" type="radio"/>No</div></div>
                                                     <div className="new-information-line">Access Level: <div className="new-profile-info"><input className="new-input-edit" ref="accessLevel" name="Employee_accessLevel" component="input" type="text" required placeholder="Access Level"/></div></div>
                                                     <div className="new-information-line">Role ID: <div className="new-profile-info"><input className="new-input-edit" ref="roleID" name="Employee_roleID" component="input" type="text" required placeholder="Role ID"/></div></div>
                                                     <div className="new-information-line">Description: <div className="new-profile-info"><input className="new-input-edit" ref="description" name="Employee_description" component="input" type="text" required placeholder="Description"/></div></div>
