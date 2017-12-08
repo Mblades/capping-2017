@@ -15,6 +15,12 @@ class ProfileModal extends Component {
 
     };
 
+    componentWillReceiveProps() {
+        this.setState({
+            currentTab: 1
+        })
+    }
+
     doEdit1 = function() {
         let employee = this.props.employee;
         let employee_data = {
@@ -34,7 +40,6 @@ class ProfileModal extends Component {
             accessLevel: employee.accesslevel
         };
         let that = this;
-        console.log(employee_data, 'EMP Data');
             var request = new Request('http://10.10.7.153:3000/api/edit_employee', {
                 method: 'POST',
                 headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -44,7 +49,6 @@ class ProfileModal extends Component {
                 .then(function(response) {
                     response.json()
                         .then(function(data) {
-                            console.log(data);
                             that.props.employee.firstname = employee_data.first;
                             that.props.employee.lastname = employee_data.last;
                             that.props.employee.phonenumber = employee_data.phone;
@@ -80,7 +84,6 @@ class ProfileModal extends Component {
             accessLevel: employee.accesslevel
         };
         let that = this;
-        console.log(employee_data, 'EMP Data');
         var request = new Request('http://10.10.7.153:3000/api/edit_employee', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -90,7 +93,6 @@ class ProfileModal extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log(data);
                         that.props.employee.jobtitle = employee_data.title;
                         that.props.employee.city = employee_data.city;
                         that.props.employee.organization = employee_data.organization;
@@ -125,8 +127,6 @@ class ProfileModal extends Component {
 
     render() {
         let profilePic = 'EmployeePicture/' + this.props.employee.eid + '.jpg';
-        console.log(profilePic);
-        console.log(this.props, 'hi');
         let employee = this.props.employee;
         let dob = new Date (employee.birthday);
         return (
@@ -331,7 +331,6 @@ class ProfileModal extends Component {
                         {
                             this.state.currentTab === 3 && (
                                 <div>
-                                    {console.log(this.props.apps)}
                                     <div className="employee-app-list-label">
                                         Your Applications
                                     </div>

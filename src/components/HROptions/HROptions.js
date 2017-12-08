@@ -7,7 +7,6 @@ import BackButton from "../../shared/back-button/back-button";
 
 class HROptions extends Component {
     render() {
-        console.log(this.props.location.state, 'HR options');
         let myProfile = this.props.location.state.myProfile;
         let employeeList = this.props.location.state.employeeList;
         return (

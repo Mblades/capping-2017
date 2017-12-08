@@ -6,7 +6,6 @@ class RequestBox extends Component {
     //  into each of the profile boxes
     render() {
         const { app } = this.props;
-        console.log(app);
         return (
             <div>
                 <div className="app-link">

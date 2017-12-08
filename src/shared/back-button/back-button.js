@@ -4,8 +4,8 @@ import { browserHistory as history } from 'react-router';
 
 
 class BackButton extends Component {
+    //Simple button used to go back to the last main screen
     render() {
-        console.log(this.props);
         return (
             <div className="back-button-container"onClick={() => {
                 history.push({

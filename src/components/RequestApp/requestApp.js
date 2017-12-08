@@ -34,7 +34,6 @@ class RequestApp extends Component {
                         that.setState({
                             apps: data.rows
                         })
-                        console.log(data.rows);
                     })
             })
             .catch(function(err) {
@@ -48,7 +47,6 @@ class RequestApp extends Component {
         if(this.props.location.state.manager.eid){
             mid = this.props.location.state.manager.eid;
         }
-        console.log(mid);
         let application_data1 = {
             eid: this.props.location.state.employee.eid,
             mid: mid,
@@ -64,7 +62,6 @@ class RequestApp extends Component {
             .then(function(response) {
                 response.json()
                     .then(function(data) {
-                        console.log(data.rows);
                     })
             })
             .catch(function(err) {

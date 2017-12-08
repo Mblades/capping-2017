@@ -26,16 +26,13 @@ class HRAction extends Component {
         //  I may move this so that we have a loader while the employee
         //  list loads
         if(this.props.location.state.action === 'Reinstate') {
-            console.log('sadsad');
             let that = this;
             let emp = [];
-            //setTimeout(function() {
             fetch('http://10.10.7.153:3000/api/get_all_suspended')
                 .then(function (response) {
                     response.json()
                         .then(function (data) {
                             emp = data.rows;
-                            console.log(emp);
                             that.setState({
                                 suspendedEmp: emp
                             });
@@ -44,7 +41,6 @@ class HRAction extends Component {
                 .catch(function (err) {
                     console.log(err);
                 });
-            //}, 1000);
         }
     }
 
@@ -65,15 +61,7 @@ class HRAction extends Component {
                 .then(function (response) {
                     response.json()
                         .then(function (data) {
-                            console.log("deleted", data)
                             that.toggleConfirm();
-                            /*history.push({
-                                pathname: '/home',
-                                state: {
-                                    user: data.rows[0],
-                                    loggedIn: true
-                                }
-                            })*/
                         })
                 })
                 .catch(function (err) {
@@ -93,15 +81,7 @@ class HRAction extends Component {
                 .then(function (response) {
                     response.json()
                         .then(function (data) {
-                            console.log("suspended", data)
                             that.toggleConfirm();
-                            /*history.push({
-                                pathname: '/home',
-                                state: {
-                                    user: data.rows[0],
-                                    loggedIn: true
-                                }
-                            })*/
                         })
                 })
                 .catch(function (err) {
@@ -111,26 +91,6 @@ class HRAction extends Component {
             this.setState({
                 reinstateOpen: true
             });
-            /*
-            let action_data = {
-                eid: this.state.actionEmployee.eid
-            };
-            var request = new Request('http://10.10.7.153:3000/api/reinstate_employee', {
-                method: 'POST',
-                headers: new Headers({'Content-Type': 'application/json'}),
-                body: JSON.stringify(action_data)
-            });
-            fetch(request)
-                .then(function (response) {
-                    response.json()
-                        .then(function (data) {
-                            console.log("reinstate", data)
-                        })
-                })
-                .catch(function (err) {
-                    console.log(err);
-                })
-*/
         }
     }
 
@@ -182,7 +142,6 @@ class HRAction extends Component {
             tempPass: this.refs.tempPass.value
 
         };
-        console.log(action_data);
         var request = new Request('http://10.10.7.153:3000/api/reinstate_employee', {
             method: 'POST',
             headers: new Headers({'Content-Type': 'application/json'}),
@@ -192,7 +151,6 @@ class HRAction extends Component {
             .then(function (response) {
                 response.json()
                     .then(function (data) {
-                        console.log("reinstate", data)
                         that.toggleConfirm();
                     })
             })
@@ -205,9 +163,6 @@ class HRAction extends Component {
     }
 
     render() {
-        console.log(this.props.location.state.employeeList)
-        console.log(this.state, 'sdf');
-        console.log(this.props.location.state);
         let myProfile = this.props.location.state.myProfile;
         return (
             <div className="App">

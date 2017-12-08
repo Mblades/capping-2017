@@ -25,12 +25,12 @@ class SearchContainer extends Component {
         //  This fires before the page renders to gather all profiles
         this.setState({newEmployees: this.props.employees});
     }
-
+//Creates all of the small profile boxes
     renderProfileBoxes = function() {
-        console.log(this.state, 'state');
         let myProfile = this.props.myProfile;
         let curList = [];
         let employees = this.props.employees;
+        //sets the current list of employees based on any filters that are set
         if(this.state.filterOn) {
             curList = this.state.newEmployees;
         } else {
@@ -86,7 +86,7 @@ class SearchContainer extends Component {
             }
         });
     };
-
+//Filter for changing the A-Z filter feature
     alphaChange = (values) => {
         let newEmployees = [];
         let letter = values;
@@ -98,9 +98,8 @@ class SearchContainer extends Component {
         this.setState({newEmployees: newEmployees});
         this.setState({filterOn: true});
     };
-
+//Clears all filters and returns employee list to its original state
     clearFilter = () => {
-        console.log('hi');
         this.setState({
             filterOn: false
         })
